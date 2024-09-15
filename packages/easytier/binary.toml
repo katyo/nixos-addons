@@ -1,0 +1,15 @@
+# This file was generated using make. Do not etit it manually.
+["1.2.3".linux]
+arm = "sha256-iT1PfbUFaziwDayAm3QI1TGao791VfW2KImG0rApozE="
+armhf = "sha256-tIEPWwCdsNNHU87rAbJ/GPREmA9SKxqoEV+ONe1OTxU="
+armv7 = "sha256-x/Ee7PUPQ5A7E26cSpuuN1zXkSgRXh+Lw2wWkPBz/l0="
+armv7hf = "sha256-EVcFBXH8FztWC72HGm+h+QFBkxj0uyuWAeaoY6YEXMw="
+aarch64 = "sha256-BFTpplDQwpj9V29mlbAu0XxWN2owPcywzcSoDoGzPjE="
+x86_64 = "sha256-aWj6B2E2xdZkVWww7liC17+Qzz92P3CPrxVffjpx3U0="
+mips = "sha256-GvTq3DR3qkMmYTLN/zP0ycWATyY5x5PVxBCVrpAcunE="
+mipsel = "sha256-9ZBa6eQbL/Oht6nyVneuPzhJTew77ZVhKdotPGzqKsU="
+["1.2.3".macos]
+aarch64 = "sha256-rBslffuqwXt3B4GeezngLQe4DQU+ZiWr3J1BvfqRPXw="
+x86_64 = "sha256-i/4A9wj+kcZ8RRRji2Gj1pVkfUMQrQcMckD83IS6SHc="
+["1.2.3".windows]
+x86_64 = "sha256-EPIJb3M6yRNA2gEaHQoMSjxuScFlFaSUQ80WdEmxvU4="
