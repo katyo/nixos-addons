@@ -8,7 +8,7 @@ aarch64 = "sha256-BFTpplDQwpj9V29mlbAu0XxWN2owPcywzcSoDoGzPjE="
 x86_64 = "sha256-aWj6B2E2xdZkVWww7liC17+Qzz92P3CPrxVffjpx3U0="
 mips = "sha256-GvTq3DR3qkMmYTLN/zP0ycWATyY5x5PVxBCVrpAcunE="
 mipsel = "sha256-9ZBa6eQbL/Oht6nyVneuPzhJTew77ZVhKdotPGzqKsU="
-["1.2.3".macos]
+["1.2.3".darwin]
 aarch64 = "sha256-rBslffuqwXt3B4GeezngLQe4DQU+ZiWr3J1BvfqRPXw="
 x86_64 = "sha256-i/4A9wj+kcZ8RRRji2Gj1pVkfUMQrQcMckD83IS6SHc="
 ["1.2.3".windows]
