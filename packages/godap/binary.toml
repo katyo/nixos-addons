@@ -1,0 +1,11 @@
+# This file was generated using make. Do not etit it manually.
+["2.7.5".linux]
+i386 = "sha256-B9GYeHqrWz90V6EuCsklFRJilsITdjNeePfpjKsee3s="
+x86_64 = "sha256-uQIoIRKKtRrioHUP/NQ/O6CIRQGPObrOVmC4p8v3maQ="
+aarch64 = "sha256-FnEmx7PmxSv6V50TBkIUJqA/4PPIfmHYCBHmKTBR9Ns="
+["2.7.5".darwin]
+x86_64 = "sha256-BtiS1F0t/YN1BuWqYphD+AyHaZamUR7qEV3g4D5AXa8="
+aarch64 = "sha256-dcivT9bcIjGFVvAY3iZbQgHpP85wRhUW542iYgu7vzQ="
+["2.7.5".windows]
+i386 = "sha256-DQsliXVCTzDjrGZ2A5ZrQJBnndc1sNOHmQ6sD2tRPf8="
+x86_64 = "sha256-+SEx4vV2m4OR/Rdt4icGZ6n7fCbiiw7asYfootY7Z0s="

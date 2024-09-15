@@ -3,4 +3,6 @@ self: super: with self; {
 
   easytier = callPackage ./easytier {};
   easytier-bin = callPackage ./easytier/binary.nix {};
+
+  godap-bin = callPackage ./godap/binary.nix {};
 }
