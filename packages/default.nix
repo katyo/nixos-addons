@@ -5,4 +5,6 @@ self: super: with self; {
   easytier-bin = callPackage ./easytier/binary.nix {};
 
   godap-bin = callPackage ./godap/binary.nix {};
+
+  victoriametrics-datasource-bin = grafanaPlugins.callPackage ./grafana-plugins/victoriametrics-datasource/binary.nix {};
 }

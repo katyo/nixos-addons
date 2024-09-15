@@ -3,6 +3,7 @@
 - [x] [ubmsc](https://github.com/katyo/ubmsc-rs) BMS monitoring tool
 - [x] [easytier](https://easytier.top/en) A simple, secure, decentralized VPN mesh network solution
 - [x] [godap](https://github.com/Macmod/godap) A complete TUI for LDAP
+- [x] [victoriametrics-datasource](https://github.com/VictoriaMetrics/victoriametrics-datasource) Grafana datasource for VictoriaMetrics
 
 ## Installation
 
