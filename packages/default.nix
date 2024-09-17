@@ -3,6 +3,7 @@ self: super: with self; {
   ubmsc = callPackage ./ubmsc {};
 
   fdt-viewer = qt6.callPackage ./fdt-viewer {};
+  openocd-svd = libsForQt5.callPackage ./openocd-svd {};
 
   easytier = callPackage ./easytier {};
   easytier-bin = callPackage ./easytier/binary.nix {};

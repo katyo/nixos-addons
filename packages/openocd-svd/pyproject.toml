@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "openocd-svd"
+version = "1.0"
+description = "Standalone OpenOCD and CMSIS-SVD based peripheral register viewer written on Python"
+readme = "README.md"
+license = {file = "LICENSE"}
+requires-python = ">=3.8"
+dependencies = [
+  "cmsis-svd",
+  "PyQt5"
+]
+
+[project.gui-scripts]
+openocd-svd = "openocd_svd:main"
