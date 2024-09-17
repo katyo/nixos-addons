@@ -1,5 +1,6 @@
 # Additional packages and modules for NixOS
 
+- [x] [jsonst](https://github.com/katyo/jsonschema) JSON Schema hacking toolset
 - [x] [ubmsc](https://github.com/katyo/ubmsc-rs) BMS monitoring tool
 - [x] [easytier](https://easytier.top/en) A simple, secure, decentralized VPN mesh network solution
 - [x] [godap](https://github.com/Macmod/godap) A complete TUI for LDAP

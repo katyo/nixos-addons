@@ -1,4 +1,6 @@
 self: super: with self; {
+  jsonst = callPackage ./jsonst {};
+
   ubmsc = callPackage ./ubmsc {};
 
   easytier = callPackage ./easytier {};
