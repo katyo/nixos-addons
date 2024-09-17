@@ -1,7 +1,8 @@
 self: super: with self; {
   jsonst = callPackage ./jsonst {};
-
   ubmsc = callPackage ./ubmsc {};
+
+  fdt-viewer = qt6.callPackage ./fdt-viewer {};
 
   easytier = callPackage ./easytier {};
   easytier-bin = callPackage ./easytier/binary.nix {};
