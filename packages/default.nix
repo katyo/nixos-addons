@@ -2,6 +2,8 @@ self: super: with self; {
   jsonst = callPackage ./jsonst {};
   ubmsc = callPackage ./ubmsc {};
 
+  bluer-tools = callPackage ./bluer-tools {};
+
   fdt-viewer = qt6.callPackage ./fdt-viewer {};
   openocd-svd = libsForQt5.callPackage ./openocd-svd {};
 
