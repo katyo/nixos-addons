@@ -14,6 +14,8 @@ self: super: with self; {
 
   victoriametrics-datasource-bin = grafanaPlugins.callPackage ./grafana-plugins/victoriametrics-datasource/binary.nix {};
 
+  mayo = libsForQt5.callPackage ./mayo {};
+  mayo-bin = callPackage ./mayo/binary.nix {};
   cura-bin = callPackage ./cura/binary.nix {};
 
   blueman-fixed = super.blueman.overrideDerivation (attrs: {
