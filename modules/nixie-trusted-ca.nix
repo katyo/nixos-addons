@@ -1,0 +1,38 @@
+{ pkgs, lib, config, ... }:
+with lib;
+let 
+  cfg = config.security.pki.nixie-trusted-ca;
+in {
+  options.security.pki.nixie-trusted-ca = {
+    enable = mkEnableOption "Nixie Trusted Certs";
+  };
+
+  config = mkIf cfg.enable {
+    security.pki.certificates = [
+      ''
+-----BEGIN CERTIFICATE-----
+MIIDqzCCApOgAwIBAgIUKKXqB+95PEsD/6Gr5W+OlYR0IaQwDQYJKoZIhvcNAQEL
+BQAwZTELMAkGA1UEBhMCUlUxDTALBgNVBAgMBENoZWwxDDAKBgNVBAcMA1RyZzEM
+MAoGA1UECgwDTml4MQowCAYDVQQDDAFLMR8wHQYJKoZIhvcNAQkBFhBrYXlvQGFy
+dHppbGxhLnJ1MB4XDTI0MDkxNjA2NDk1NloXDTI5MDkxNTA2NDk1NlowZTELMAkG
+A1UEBhMCUlUxDTALBgNVBAgMBENoZWwxDDAKBgNVBAcMA1RyZzEMMAoGA1UECgwD
+Tml4MQowCAYDVQQDDAFLMR8wHQYJKoZIhvcNAQkBFhBrYXlvQGFydHppbGxhLnJ1
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuOlghFX94pdoZqz5910C
+EaHq5FyB7wtZJf9y8MoZZa9aiy/5FAMD5txzZqA7OmEtfcIKHnzBVOHXiNT0bfkH
+U7ZacFBtnp34zqdHsGJElRY1EhSlM7bq6q0V6SkROgCsGlk9FaYpzC6HHSmrjcdj
+pPym/pS7PsQtkW3d2ftKAPIq5C+OsTlzeL8cPa+GR132333yPpGbya0dKEJby8cv
+6XIaBiLaHOZuvBxl6Zy86dHhDbPXslUXupabuTL5opztLTW34tm8IM4JfaaY2B5G
+kY2w/y9n3GfR4N4cbRIGPTF3xAY6iLm78g2F6HyX30XJ/9AWOzCijm59oUWnkr3N
+BwIDAQABo1MwUTAdBgNVHQ4EFgQUD3BPmMxSWDYxcbiculJC8P+tnZMwHwYDVR0j
+BBgwFoAUD3BPmMxSWDYxcbiculJC8P+tnZMwDwYDVR0TAQH/BAUwAwEB/zANBgkq
+hkiG9w0BAQsFAAOCAQEAdRW4hF+UYGS8k6+8asrWhEXHNvBtfbpLThVw9nTvk2wG
+DAFK7FdUtiOige6G5Yugxsn8dOsBd6BURlpdnOJOuU0ZLplcvjNeYJ9057k/aoPZ
+9KKZj0X8qRf3rVIgaQMlah33n7oE/5s4PR0AFdAM9RWs3jAEFkSbq8hikED+KmBw
+7l46ktgM6vkurAUbvD02byqmYVeJ/T/0ocSTbnV7sj0kXPYS4D0Flvc8HZK8VJk2
+owPIBSWdahzF83F/KRVN2oiRpGvkBA5dUvWykLxa2U3U7ImPz08HqaGHdSfmOo1e
+30ir7BqZsRVo3BXr+olD2KWXw/VoaIZaVoQusl9Ubw==
+-----END CERTIFICATE-----
+      ''
+    ];
+  };
+}
