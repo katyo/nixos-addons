@@ -8,6 +8,8 @@ self: super: with self; {
 
   victoriametrics-datasource-bin = grafanaPlugins.callPackage ./grafana-plugins/victoriametrics-datasource/binary.nix {};
 
+  cura-bin = callPackage ./cura/binary.nix {};
+
   blueman-fixed = super.blueman.overrideDerivation (attrs: {
     postInstall = ''
       cat >> $out/lib/python*/site-packages/blueman/Constants.py << EOS
