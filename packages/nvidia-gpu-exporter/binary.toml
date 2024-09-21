@@ -1,0 +1,10 @@
+# This file was generated using make. Do not etit it manually.
+["1.2.1".linux]
+x86_64 = "sha256-ueUG4NOiunl0fniALC4jjtCcwEhyE42tL2z948SmQGE="
+armv7 = "sha256-zpQ1BtKAdG7AgwuYhkpGXT7b5Wgc65A40/5btkLMYb8="
+arm64 = "sha256-KzPjRySR136t8JjsBNU8X60u8qCGHxNocvTU5CBpQIs="
+["1.2.1".darwin]
+x86_64 = "sha256-a0jTzfhADOCeKCGE/sU5MJGjQy5RHg3OE1J01H08tGk="
+["1.2.1".windows]
+i386 = "sha256-79DhZjnmZfEbEXAwAkDE2nXg6hLmH5BVqibDEzVLqdc="
+x86_64 = "sha256-EAvYTEp1Nxddv/qgTE8tlN0+1kF2G0XbSfwsR5aQDB8="

@@ -13,6 +13,7 @@ self: super: with self; {
   godap-bin = callPackage ./godap/binary.nix {};
 
   victoriametrics-datasource-bin = grafanaPlugins.callPackage ./grafana-plugins/victoriametrics-datasource/binary.nix {};
+  nvidia-gpu-exporter-bin = callPackage ./nvidia-gpu-exporter/binary.nix {};
 
   mayo = libsForQt5.callPackage ./mayo {};
   mayo-bin = callPackage ./mayo/binary.nix {};

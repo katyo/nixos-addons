@@ -6,6 +6,7 @@
 - [x] [easytier](https://easytier.top/en) A simple, secure, decentralized VPN mesh network solution
 - [x] [godap](https://github.com/Macmod/godap) A complete TUI for LDAP
 - [x] [victoriametrics-datasource](https://github.com/VictoriaMetrics/victoriametrics-datasource) Grafana datasource for VictoriaMetrics
+- [x] [nvidia_gpu_exporter](https://github.com/utkuozdemir/nvidia_gpu_exporter) Nvidia GPU exporter for prometheus using nvidia-smi binary
 - [x] [FDT viewer](https://github.com/dev-0x7C6/fdt-viewer) Flattened Device Tree Viewer written in Qt
 - [x] [OpenOCD SVD](https://github.com/esynr3z/openocd-svd) OpenOCD and CMSIS-SVD based peripheral register viewer
 - [x] [Mayo](https://github.com/fougue/mayo) 3D CAD viewer and converter based on Qt + OpenCascade
