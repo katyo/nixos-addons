@@ -1,4 +1,8 @@
 self: super: with self; {
+  ukvm = callPackage ./ukvm { pname = "ukvm"; };
+  ukvms = callPackage ./ukvm { pname = "ukvms"; };
+  ukvmc = callPackage ./ukvm { pname = "ukvmc"; };
+
   jsonst = callPackage ./jsonst {};
   ubmsc = callPackage ./ubmsc {};
 

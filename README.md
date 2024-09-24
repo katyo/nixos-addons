@@ -4,6 +4,7 @@
 - [x] [ubmsc](https://github.com/katyo/ubmsc-rs) BMS monitoring tool
 - [x] [bluer-tools](https://github.com/bluez/bluer) A tools for GATT services, L2CAP and RFCOMM sockets on Linux
 - [x] [easytier](https://easytier.top/en) A simple, secure, decentralized VPN mesh network solution
+- [x] [ukvm](https://github.com/katyo/ukvm) A network KVM solution in Rust
 - [x] [godap](https://github.com/Macmod/godap) A complete TUI for LDAP
 - [x] [victoriametrics-datasource](https://github.com/VictoriaMetrics/victoriametrics-datasource) Grafana datasource for VictoriaMetrics
 - [x] [nvidia_gpu_exporter](https://github.com/utkuozdemir/nvidia_gpu_exporter) Nvidia GPU exporter for prometheus using nvidia-smi binary
