@@ -1,0 +1,596 @@
+
+["3.6.5".cp27.none."macosx_10_13_x86_64.macosx_10_13_intel"]
+url = "https://files.pythonhosted.org/packages/e5/80/0ba51b24b9db588f02256be00c2a99c6340e703ccfc3cfcb2818c4aea59c/casadi-3.6.5-cp27-none-macosx_10_13_x86_64.macosx_10_13_intel.whl"
+hash = "sha256-YDkIH90dr073+itSgUqVTXW/wD6w3GJBTgKvXSV0bo8="
+
+["3.6.5".cp27.none.manylinux1_i686]
+url = "https://files.pythonhosted.org/packages/9f/a6/edb201c436c820779b1f4e2bf5a74b6fd5e4d7d7b703336e5c0518e1b08f/casadi-3.6.5-cp27-none-manylinux1_i686.whl"
+hash = "sha256-tRkt+r9vUmaxaLmE0STdMIbBxaQIwHQ/86gikKjM87U="
+
+["3.6.5".cp27.none.manylinux2010_x86_64]
+url = "https://files.pythonhosted.org/packages/f7/4d/6c8f37e08a3a91a69be8fffa67ce4a27823d3d4ca2099312f938690938f9/casadi-3.6.5-cp27-none-manylinux2010_x86_64.whl"
+hash = "sha256-NbL/YJjjhqTV6LxoF0TlK80vLxXPpEwJgUqJebUaZ5Q="
+
+["3.6.5".cp27.none.win_amd64]
+url = "https://files.pythonhosted.org/packages/b5/95/1a087e511ded93ab74f3a0adf36a4beaee22ce30d2951ab7115dad3d26b5/casadi-3.6.5-cp27-none-win_amd64.whl"
+hash = "sha256-yvOV0eNr+yFbFU6N9hWD1TSgfdq7GMvlDyWbdpKkGsg="
+
+["3.6.5".cp310.none."macosx_10_13_x86_64.macosx_10_13_intel"]
+url = "https://files.pythonhosted.org/packages/a6/29/11a974e24bdaa50c0ee4c03b8631c7cfed65b5caba5123d91331d4cb969b/casadi-3.6.5-cp310-none-macosx_10_13_x86_64.macosx_10_13_intel.whl"
+hash = "sha256-MUiG70S9AfGphXnneEo77W4FhOiPlGXPlZavJSPvsN0="
+
+["3.6.5".cp310.none.macosx_11_0_arm64]
+url = "https://files.pythonhosted.org/packages/31/57/28043eca210517b9071ef41e4b965ed3f9366e4441b6af5d172466b76d5e/casadi-3.6.5-cp310-none-macosx_11_0_arm64.whl"
+hash = "sha256-xnicgGCpmzKbtYTZfB6ral5PPi0ts5HmwgAcYyN3SZA="
+
+["3.6.5".cp310.none.manylinux2014_aarch64]
+url = "https://files.pythonhosted.org/packages/56/21/ef9baac75ada94da8d2470578533cbd3a48755277e9dbcd2d65b954678c2/casadi-3.6.5-cp310-none-manylinux2014_aarch64.whl"
+hash = "sha256-5Ar7PAYoF91s4kl80AHwDxB+4epB7E1u6fmlBW0hnoM="
+
+["3.6.5".cp310.none.manylinux2014_i686]
+url = "https://files.pythonhosted.org/packages/3d/89/0bfc9a71d632750685763751698b233f5a9622cea8fbdb03f94bcfe04950/casadi-3.6.5-cp310-none-manylinux2014_i686.whl"
+hash = "sha256-7lpO1Q0r7NC9bSA8emD/rSfBSj4K41dIDeEchGqN2Sg="
+
+["3.6.5".cp310.none.manylinux2014_x86_64]
+url = "https://files.pythonhosted.org/packages/b4/b0/1289804327602e892c36f14fa2b4492afbeee8f465a365c8759b03186f1c/casadi-3.6.5-cp310-none-manylinux2014_x86_64.whl"
+hash = "sha256-HdtuSv3R2pXX2dZS7Zc8G39Q7xRUllqRcLZX4iOixz4="
+
+["3.6.5".cp310.none.win_amd64]
+url = "https://files.pythonhosted.org/packages/b3/bc/95a28e081c303b876b1fd85edc3acc26f73430c056b5aea273ece5765c66/casadi-3.6.5-cp310-none-win_amd64.whl"
+hash = "sha256-6WyoGwC5YhAH1F2xJU/PIy1RjrzIAvQoU/V7Tfl3xWc="
+
+["3.6.5".cp311.none."macosx_10_13_x86_64.macosx_10_13_intel"]
+url = "https://files.pythonhosted.org/packages/7b/fa/7198dff19f2d6d511c220f1815709581ff9e533403cfeebe187f204f68b2/casadi-3.6.5-cp311-none-macosx_10_13_x86_64.macosx_10_13_intel.whl"
+hash = "sha256-vr05CdskunEeCUqswKIym5kD1CLXP2G+hRhzcxJEt9E="
+
+["3.6.5".cp311.none.macosx_11_0_arm64]
+url = "https://files.pythonhosted.org/packages/3d/fc/2ba7f33fa843f56cc4df55b4027a037f7f34e8396bd585003f113ee6bcfa/casadi-3.6.5-cp311-none-macosx_11_0_arm64.whl"
+hash = "sha256-zLli6gK31tJF1c1A+1LCnoEgQKRSc8bu0yy4/P9nPdo="
+
+["3.6.5".cp311.none.manylinux2014_aarch64]
+url = "https://files.pythonhosted.org/packages/1f/c1/2a3290487330fa334c3a86308f9378dce226a7f0f3f7bd11a8f70ac47d3b/casadi-3.6.5-cp311-none-manylinux2014_aarch64.whl"
+hash = "sha256-HOGZpOodN27b5Tmc1iKkVkBAyD9QxQEU/lCmmo6oHZI="
+
+["3.6.5".cp311.none.manylinux2014_i686]
+url = "https://files.pythonhosted.org/packages/e6/8c/a5ea931171781795bff86e21931280094e3622d497e46f7cc65dcffb3772/casadi-3.6.5-cp311-none-manylinux2014_i686.whl"
+hash = "sha256-0Stn1GelsrCpCTeO9yMfvJrw2pI7qhOx1UZNhHFgGsM="
+
+["3.6.5".cp311.none.manylinux2014_x86_64]
+url = "https://files.pythonhosted.org/packages/26/0f/99b55122b36173633c3b6b8a1fc5ae80ff8fd2707c3f5db2cd544611b383/casadi-3.6.5-cp311-none-manylinux2014_x86_64.whl"
+hash = "sha256-Oj+4r4aPg9Sk8m2HjEn0rMTtfukucxxz5lDliTQYpjQ="
+
+["3.6.5".cp311.none.win_amd64]
+url = "https://files.pythonhosted.org/packages/a2/4c/719bd1ec8a46a7067a4c7fcd095260f593179e0e053ae3825ac503671c4e/casadi-3.6.5-cp311-none-win_amd64.whl"
+hash = "sha256-O91kUVG+2gE69f0Bn7VUdW59rDdUG58SDN+6kEBbJnE="
+
+["3.6.5".cp312.none."macosx_10_13_x86_64.macosx_10_13_intel"]
+url = "https://files.pythonhosted.org/packages/f9/6e/fbb3cfbf92f96198e9ab16fb8a57750e90b912c650242e89195ee58812dd/casadi-3.6.5-cp312-none-macosx_10_13_x86_64.macosx_10_13_intel.whl"
+hash = "sha256-M6/RpNoMhrQxaVP+VBY1qKfcUXAyguJKhwraE6Rq21M="
+
+["3.6.5".cp312.none.macosx_11_0_arm64]
+url = "https://files.pythonhosted.org/packages/4d/02/7fd381330c621d3aa5161bf1b9df3119f9cc169c931498eaed3ce42e0b08/casadi-3.6.5-cp312-none-macosx_11_0_arm64.whl"
+hash = "sha256-DW7gVYtOzdiqSqcP0xUosTWAHxCGwoqct42OgkK3rt0="
+
+["3.6.5".cp312.none.manylinux2014_i686]
+url = "https://files.pythonhosted.org/packages/46/49/551760cdcedcd8d0fd7109d620c7c9e332cb8a706b2bd1beec6e4fda1cd1/casadi-3.6.5-cp312-none-manylinux2014_i686.whl"
+hash = "sha256-vkDpiX2A+3KpfnULIUPDL2P4gAz7ePmzltjOepE/yjk="
+
+["3.6.5".cp312.none.manylinux2014_x86_64]
+url = "https://files.pythonhosted.org/packages/ff/17/2f97a9638072216448b50fd14855939abeff1632edac92739683ffac9b08/casadi-3.6.5-cp312-none-manylinux2014_x86_64.whl"
+hash = "sha256-ARhjeCPikqknATPgLJxtPzx/dejJGm9txSda3oLdHZ0="
+
+["3.6.5".cp312.none.win_amd64]
+url = "https://files.pythonhosted.org/packages/88/08/c55e2172f033a44b831ee771bb32fa89c369311c0598a52c03755f29a75e/casadi-3.6.5-cp312-none-win_amd64.whl"
+hash = "sha256-/itk13fjbMPxASIN0eIZoOEcPk7itecIsw/qmicQfkE="
+
+["3.6.5".cp35.none."macosx_10_13_x86_64.macosx_10_13_intel"]
+url = "https://files.pythonhosted.org/packages/66/e7/2b24199211f92b8ba3533fe09bef42b352caccf381429e7fda449f07458b/casadi-3.6.5-cp35-none-macosx_10_13_x86_64.macosx_10_13_intel.whl"
+hash = "sha256-oa42RJrexTQSXUr1vpErb7na/nTR/uOfbIImNpXiHKU="
+
+["3.6.5".cp35.none.manylinux1_i686]
+url = "https://files.pythonhosted.org/packages/4d/0d/fea3604668c7bda76fa874d057a001d0006074cb6d2dca7af60d0635e1c6/casadi-3.6.5-cp35-none-manylinux1_i686.whl"
+hash = "sha256-MmRMR/v7ZD1c+Xace7yUxr25pA6pwSxUr14nVFmcMYY="
+
+["3.6.5".cp35.none.manylinux2010_x86_64]
+url = "https://files.pythonhosted.org/packages/a1/5d/16cf69bb8a00059fb0e4c6e21ed5d550a99b17a1dee5e4cae304b4a1456e/casadi-3.6.5-cp35-none-manylinux2010_x86_64.whl"
+hash = "sha256-YBt2t6/LJ7EVY5mfatHZ0qJRCrPQCm9M6GoL7pfJ0Xo="
+
+["3.6.5".cp35.none.win_amd64]
+url = "https://files.pythonhosted.org/packages/ab/7d/9204a8c2e6a8a3f6447d2d9e5e0b177443dcd9f8b5165743f26a1335a3da/casadi-3.6.5-cp35-none-win_amd64.whl"
+hash = "sha256-/rxkW8wK7W16K9tuWLmonLj3Sxm8AoxBzIB9daXVQFg="
+
+["3.6.5".cp36.none."macosx_10_13_x86_64.macosx_10_13_intel"]
+url = "https://files.pythonhosted.org/packages/a8/e4/a5ae1ef8909b26dd7c4ab7f5303a3ac298c143661b437d9070c0608d35ae/casadi-3.6.5-cp36-none-macosx_10_13_x86_64.macosx_10_13_intel.whl"
+hash = "sha256-yY5oAjyeWQXZ1rma4fu/5LhbqYRrNoVAi7SYsgUJ+Zo="
+
+["3.6.5".cp36.none.manylinux2014_aarch64]
+url = "https://files.pythonhosted.org/packages/22/57/e7d2fad22a74f0ef7a5e4fc2ec77fbf11258743b94a0bbffa73f9cbdc468/casadi-3.6.5-cp36-none-manylinux2014_aarch64.whl"
+hash = "sha256-6zEQiNylNZrMBapNiJW/ma+qFsfASye/ZAzkwjYbjN4="
+
+["3.6.5".cp36.none.manylinux2014_i686]
+url = "https://files.pythonhosted.org/packages/d8/b5/c2dd2ff700d03db674cfacfa97678d7b6621cf02b47e9553616de48b3970/casadi-3.6.5-cp36-none-manylinux2014_i686.whl"
+hash = "sha256-vOtpv58E/e2KVk62TimNGelF6vRzT3FFpe5hz5rGk+c="
+
+["3.6.5".cp36.none.manylinux2014_x86_64]
+url = "https://files.pythonhosted.org/packages/92/fb/4c6b4682084eb8b567a909bea7d03b4f0bad00bdcf66aea4f29fd1dda66f/casadi-3.6.5-cp36-none-manylinux2014_x86_64.whl"
+hash = "sha256-yVEDHibZh5htvDNEkrLm7xCAd/EcAOF4/0AH5Km/kdg="
+
+["3.6.5".cp36.none.win_amd64]
+url = "https://files.pythonhosted.org/packages/8d/33/7c90f3fcb4dae99f9052a494d98c9d0c8c8b22cdca169af847a5ea4e9bb7/casadi-3.6.5-cp36-none-win_amd64.whl"
+hash = "sha256-5Er0UM6URkmTL572P/ANLSH2QrUGREQYtLIOadujra8="
+
+["3.6.5".cp37.none."macosx_10_13_x86_64.macosx_10_13_intel"]
+url = "https://files.pythonhosted.org/packages/fd/28/b22c8206615ca24f71c2ea52ff552e74d6eb0afc850750ad8bd97d778a6d/casadi-3.6.5-cp37-none-macosx_10_13_x86_64.macosx_10_13_intel.whl"
+hash = "sha256-xmH+iKk7fMfqQoAqrHamdBNc1l4+VkpvCFcN076gUgE="
+
+["3.6.5".cp37.none.manylinux2014_aarch64]
+url = "https://files.pythonhosted.org/packages/14/40/d5c1d9b3e964ef295eee7cc518c8e1abd7cb92bbfc6dcd74f9aa30839731/casadi-3.6.5-cp37-none-manylinux2014_aarch64.whl"
+hash = "sha256-Umb8guOTUuJssaTgpcPesy0J5jM75je9eMJz+lD5ASs="
+
+["3.6.5".cp37.none.manylinux2014_i686]
+url = "https://files.pythonhosted.org/packages/26/b3/85ff05610e862a90f70daa4e58772dc9719dde2a5481ff293ca27e056729/casadi-3.6.5-cp37-none-manylinux2014_i686.whl"
+hash = "sha256-Atb7Y8Rgq9maRQ6GEDTZdWiorsYh/ApP7SL3SUmJxoI="
+
+["3.6.5".cp37.none.manylinux2014_x86_64]
+url = "https://files.pythonhosted.org/packages/6b/e4/12562e3b7411afc15f923fbd9a39d065590e48e5949a395114b4e3825e56/casadi-3.6.5-cp37-none-manylinux2014_x86_64.whl"
+hash = "sha256-Xorf/iAVzeNw/FRbLQ/nMeluWD5OpMXzBE6Bj+qXXPw="
+
+["3.6.5".cp37.none.win_amd64]
+url = "https://files.pythonhosted.org/packages/bb/0d/6af19e039d99342200b9418063501c0555a57e27b461a3112812422c854f/casadi-3.6.5-cp37-none-win_amd64.whl"
+hash = "sha256-fqhUVXmHK29UEphdr+wmuQa2e9Rjmmxxi34H+AKvTkI="
+
+["3.6.5".cp38.none."macosx_10_13_x86_64.macosx_10_13_intel"]
+url = "https://files.pythonhosted.org/packages/b6/67/68eebae41a005e3897dd69b83680f18a1548b2132b87e13b595cea83b0f1/casadi-3.6.5-cp38-none-macosx_10_13_x86_64.macosx_10_13_intel.whl"
+hash = "sha256-Cji/gIv1E2hgfGQwfdd6c2P76OXJEM1cYFVGvmDt+v8="
+
+["3.6.5".cp38.none.macosx_11_0_arm64]
+url = "https://files.pythonhosted.org/packages/d3/1d/faed4b8b127d336e27753d7f9ef6895edcf4697e0f027e9eb4f934fef49d/casadi-3.6.5-cp38-none-macosx_11_0_arm64.whl"
+hash = "sha256-9i93lIGzDl6og5K9uCJelUWiHERg3D6WwreCQFuTjQQ="
+
+["3.6.5".cp38.none.manylinux2014_aarch64]
+url = "https://files.pythonhosted.org/packages/bf/6b/b47ff3b2dfc61cf0abbb0516f1621488afa199c0d79266d627e1e4c840c3/casadi-3.6.5-cp38-none-manylinux2014_aarch64.whl"
+hash = "sha256-3rLLK+6KugwsrQPIMpZbUcowXQ+OsV3ouFe6hqdvDbA="
+
+["3.6.5".cp38.none.manylinux2014_i686]
+url = "https://files.pythonhosted.org/packages/f6/0a/55839ba892dd3371b1ef96722fc11241834012c9fe5bef8396239470e244/casadi-3.6.5-cp38-none-manylinux2014_i686.whl"
+hash = "sha256-9uELZtaughbasBUy9611zJ1mqVEl1CGzPQeKUeoPwqA="
+
+["3.6.5".cp38.none.manylinux2014_x86_64]
+url = "https://files.pythonhosted.org/packages/70/25/b4aadc6efbab3603b9f344e09e415fd79cded82e3934d7ade6fd25c4df6e/casadi-3.6.5-cp38-none-manylinux2014_x86_64.whl"
+hash = "sha256-+egmWMkQ4zF1NddpM0Jg4KJNl7vOaMrbcvWS6fy6/WE="
+
+["3.6.5".cp38.none.win_amd64]
+url = "https://files.pythonhosted.org/packages/07/e2/d859726b623a6239fcb3a95b78bc2aa932d9e162cf5755bd7ec942b02623/casadi-3.6.5-cp38-none-win_amd64.whl"
+hash = "sha256-CS5EjgX+rtiVjWhOiW2QnnVtGZuE07nQGC2jjNPe6/Y="
+
+["3.6.5".cp39.none."macosx_10_13_x86_64.macosx_10_13_intel"]
+url = "https://files.pythonhosted.org/packages/42/32/0924ac73b83258322d2d4ab4aeabcc615b428e6b6e60eb72fc068428d4e0/casadi-3.6.5-cp39-none-macosx_10_13_x86_64.macosx_10_13_intel.whl"
+hash = "sha256-+cHemnmHZ8APicJ2d7dAWd9MlgHWknCWewbX/P8gS00="
+
+["3.6.5".cp39.none.macosx_11_0_arm64]
+url = "https://files.pythonhosted.org/packages/f4/09/8f56da3a01294ccbaeecc47ef6500b43a0abd5920e99fe7cf2ea28649b12/casadi-3.6.5-cp39-none-macosx_11_0_arm64.whl"
+hash = "sha256-g+NATeREnLc4LknYEe7HnNNw5kuXtclLFVxgTXxSOkA="
+
+["3.6.5".cp39.none.manylinux2014_aarch64]
+url = "https://files.pythonhosted.org/packages/ef/7a/8eb40df7b234ffff254714b48a51ad7181496122dbc342e4b7ce714c8103/casadi-3.6.5-cp39-none-manylinux2014_aarch64.whl"
+hash = "sha256-r5XeWqWULWJ9QzEoNHkWIzhMKta6h5KL8OPKzIpmmOg="
+
+["3.6.5".cp39.none.manylinux2014_i686]
+url = "https://files.pythonhosted.org/packages/a1/78/3655586496b7560e9a3a789dc8185ed3e30a48b147069b2e26e8c98c9e23/casadi-3.6.5-cp39-none-manylinux2014_i686.whl"
+hash = "sha256-2+tQcmYDRUofhTI8unyvclJM1DygrrHyhtBwBaln7Ok="
+
+["3.6.5".cp39.none.manylinux2014_x86_64]
+url = "https://files.pythonhosted.org/packages/a1/f8/06b68c5f7fa724c8ce5b5a7c269c7836efc10914d97dc0d37c497f5937b0/casadi-3.6.5-cp39-none-manylinux2014_x86_64.whl"
+hash = "sha256-i7+y64y2ueI4SBTWQn5IvPbfBJv37QWwpYuzEaH78Yw="
+
+["3.6.5".cp39.none.win_amd64]
+url = "https://files.pythonhosted.org/packages/81/16/c413a49a582935009f6fd9e7b031c43a3b2e919c02e38de0dba1b91d776f/casadi-3.6.5-cp39-none-win_amd64.whl"
+hash = "sha256-DkpOwuJuvrIrDBKfLbPPkPcwz5++mK25oScg/2yhg0o="
+
+["3.6.6".cp27.none."macosx_10_13_x86_64.macosx_10_13_intel"]
+url = "https://files.pythonhosted.org/packages/c0/7d/1b34f46cc84299e52982cdf13eda446c82ae648c4ba764beea67d25d287f/casadi-3.6.6-cp27-none-macosx_10_13_x86_64.macosx_10_13_intel.whl"
+hash = "sha256-6Wn41P5B8AR03H/cJQAHobuX9ocszCAsylIRIUNA71g="
+
+["3.6.6".cp27.none.manylinux1_i686]
+url = "https://files.pythonhosted.org/packages/b9/c7/b23eaef7a10ef8e1b90988b881c4ad2da5c0162e7092efad5851754bd55e/casadi-3.6.6-cp27-none-manylinux1_i686.whl"
+hash = "sha256-L2I0ue0nGKfge2XP7/l0ARJmTh2DPIZ5cZE74Y67eok="
+
+["3.6.6".cp27.none.manylinux2010_x86_64]
+url = "https://files.pythonhosted.org/packages/dc/d9/9da9a7138f714a25c1b253de368d98319662c965dd09563298cc9b6402fa/casadi-3.6.6-cp27-none-manylinux2010_x86_64.whl"
+hash = "sha256-h4ypB5TyRGeVWXmn7seAL34RrfQO85CHjSEUSdfSmag="
+
+["3.6.6".cp27.none.win_amd64]
+url = "https://files.pythonhosted.org/packages/0c/28/5776a48622638839a6e7dffc90d02e5ae1c770a648ff2993b0a3060dd347/casadi-3.6.6-cp27-none-win_amd64.whl"
+hash = "sha256-9cDpMS5Y9KNfe3oAm0I7/d0a3AZUR8riSNzmhs7FsI0="
+
+["3.6.6".cp310.none."macosx_10_13_x86_64.macosx_10_13_intel"]
+url = "https://files.pythonhosted.org/packages/26/fc/a4ab33a08314ee8b80f5176f657be2490739a43e953c7bf973f64334bd71/casadi-3.6.6-cp310-none-macosx_10_13_x86_64.macosx_10_13_intel.whl"
+hash = "sha256-Re3gM8sGN1H/18ZrKRIuaja0Pptnxy1Mb4foxZUG/rQ="
+
+["3.6.6".cp310.none.macosx_11_0_arm64]
+url = "https://files.pythonhosted.org/packages/75/0d/760f7f2af1eccd9adff4e7185a53d258f12d4b83069882331588d1c85db7/casadi-3.6.6-cp310-none-macosx_11_0_arm64.whl"
+hash = "sha256-TrpFbAFXXQ9kkAWQK+mmLbcRVGdMr49b1o9+qpGHC74="
+
+["3.6.6".cp310.none.manylinux2014_aarch64]
+url = "https://files.pythonhosted.org/packages/b3/c4/b9edd655d585b19282255677cdecb6abf9063bb7028b9bbf286b1fa7634f/casadi-3.6.6-cp310-none-manylinux2014_aarch64.whl"
+hash = "sha256-hK4NdBbbzXFnVRFxqpFTRhU/C5pLFcpSq6YyBHYXIbA="
+
+["3.6.6".cp310.none.manylinux2014_i686]
+url = "https://files.pythonhosted.org/packages/07/e3/a667c0b1e0fdd7282bf8ee40aa73065cd1a48c3d9236eb161ee4121d2bd6/casadi-3.6.6-cp310-none-manylinux2014_i686.whl"
+hash = "sha256-WD+fcET3uyNfq1//8NKnrR5XoRKJQ+kgBYIRyyE7poo="
+
+["3.6.6".cp310.none.manylinux2014_x86_64]
+url = "https://files.pythonhosted.org/packages/d1/7e/11bdefc583428338bb755db4bd67dcf66e395d7e259bb9e320344e7c97cd/casadi-3.6.6-cp310-none-manylinux2014_x86_64.whl"
+hash = "sha256-7UT0l2+f2UDKKMz34mjaRLXmv9C6EnNNzX1JzHSfQyU="
+
+["3.6.6".cp310.none.win_amd64]
+url = "https://files.pythonhosted.org/packages/63/28/862fbe37632a7e22516f48b93c1c712e71b553d252583051f113565e1307/casadi-3.6.6-cp310-none-win_amd64.whl"
+hash = "sha256-2nyL54GkV4UoEPaRZ4l4Gc7ulq/gYd+fknC3Cd3Anng="
+
+["3.6.6".cp311.none."macosx_10_13_x86_64.macosx_10_13_intel"]
+url = "https://files.pythonhosted.org/packages/b7/97/047a46d8f650a04f7692ad506de85c01b96e7eba6e85f38adc7e449fe8ee/casadi-3.6.6-cp311-none-macosx_10_13_x86_64.macosx_10_13_intel.whl"
+hash = "sha256-u/qEEpxTThf0q/60Kz9tjYa4YC+Tt1a3Op5D/r+58fA="
+
+["3.6.6".cp311.none.macosx_11_0_arm64]
+url = "https://files.pythonhosted.org/packages/47/f5/d966cd1a9fc7f0b7b6e251e17dde944e5175f01751fb7694e8146c873290/casadi-3.6.6-cp311-none-macosx_11_0_arm64.whl"
+hash = "sha256-GvBVCZz2UNW+NdwZ+wk7HWp+mxHGq0d0YESjeD4mi98="
+
+["3.6.6".cp311.none.manylinux2014_aarch64]
+url = "https://files.pythonhosted.org/packages/65/e8/49ee8ec0985c7426da5129e909b936a618bbf09f05876a078382186e8ce8/casadi-3.6.6-cp311-none-manylinux2014_aarch64.whl"
+hash = "sha256-/8upb+NpUiPJ+Iudhwy+sIt625KSm/4VutDiFD5ieQ0="
+
+["3.6.6".cp311.none.manylinux2014_i686]
+url = "https://files.pythonhosted.org/packages/29/2f/813c20dbd2c68b2bbc529e2860697b7eff0033fe87059835427feb42d256/casadi-3.6.6-cp311-none-manylinux2014_i686.whl"
+hash = "sha256-D9STh2xnOtFJsDUTxPcidWEWQ/IiX09dfH/4KPdYBaE="
+
+["3.6.6".cp311.none.manylinux2014_x86_64]
+url = "https://files.pythonhosted.org/packages/dc/35/1a46121dfb787f5c18572ce9594210c28384b4e1a614c5845da9e3594bda/casadi-3.6.6-cp311-none-manylinux2014_x86_64.whl"
+hash = "sha256-So4GYPGaGLycLr4tpudlieRkxhMEXf1iPjc9ljis5Qc="
+
+["3.6.6".cp311.none.win_amd64]
+url = "https://files.pythonhosted.org/packages/97/ab/2192d8e23a65b33e09f491eebffc45630598a1130d67dcbd1a86181d8686/casadi-3.6.6-cp311-none-win_amd64.whl"
+hash = "sha256-O6s/OYtLTqOdhhwZqZ2VrjIQ+hy4rO4pA1ONzbQVslM="
+
+["3.6.6".cp312.none."macosx_10_13_x86_64.macosx_10_13_intel"]
+url = "https://files.pythonhosted.org/packages/e6/72/688d4f44cb0e4dd42e8f84814d2d1ea1cc57d52a5ffd52f79c50487a8230/casadi-3.6.6-cp312-none-macosx_10_13_x86_64.macosx_10_13_intel.whl"
+hash = "sha256-bNPkLinBAR62RLVobfMJk1/r7IDCpYk/EvIms9xxDyE="
+
+["3.6.6".cp312.none.macosx_11_0_arm64]
+url = "https://files.pythonhosted.org/packages/04/c4/59831c12bac5d9e323d1f22917eeab7c060ce3bfff4290295880c567e985/casadi-3.6.6-cp312-none-macosx_11_0_arm64.whl"
+hash = "sha256-qkhArrVFdyjscM9rMBQr+5IVN4sbjmIsjXmcA/nBoMI="
+
+["3.6.6".cp312.none.manylinux2014_aarch64]
+url = "https://files.pythonhosted.org/packages/70/5f/391fe2294a8404759f261e91b655c0552ad2e88a6881728d13319aa0948f/casadi-3.6.6-cp312-none-manylinux2014_aarch64.whl"
+hash = "sha256-7QJBAtA3E9t3LLmP5RR8P/WeCuoxE8LoC4a0523+sWM="
+
+["3.6.6".cp312.none.manylinux2014_i686]
+url = "https://files.pythonhosted.org/packages/5b/2c/2c2537033b14d4c3f60d5929ccad43bd5f2d513857580fbadf35a532c342/casadi-3.6.6-cp312-none-manylinux2014_i686.whl"
+hash = "sha256-cZfguiJHIifi6F9LpvfxqGJPsmdcmg6S2hrE85J7YD0="
+
+["3.6.6".cp312.none.manylinux2014_x86_64]
+url = "https://files.pythonhosted.org/packages/fe/58/dfa6b2238666372b391e2a02c4eb9437f276f3babe472f2f804784d38b8e/casadi-3.6.6-cp312-none-manylinux2014_x86_64.whl"
+hash = "sha256-Ox/Fhfrw1Bqn/UGwrBB5uO2lrYzI0MwELPzrRDUoJ/U="
+
+["3.6.6".cp312.none.win_amd64]
+url = "https://files.pythonhosted.org/packages/41/21/dac7073d9d27d3527cf64797f5ae010a7e05e32864ccdf6b461597c323a0/casadi-3.6.6-cp312-none-win_amd64.whl"
+hash = "sha256-ERGu2a/uIsUrqCTWDhiak7jbN503SeptUUNMeWx9t08="
+
+["3.6.6".cp35.none."macosx_10_13_x86_64.macosx_10_13_intel"]
+url = "https://files.pythonhosted.org/packages/e4/fd/3c0102140a3d5c76eb7b46e8b909e577ed2506fb5eb4ab00675fe6f2dffa/casadi-3.6.6-cp35-none-macosx_10_13_x86_64.macosx_10_13_intel.whl"
+hash = "sha256-VbO0scVI9q+PoHA7a/hIVA2ia+zYzV+hxziHsWJA6l8="
+
+["3.6.6".cp35.none.manylinux1_i686]
+url = "https://files.pythonhosted.org/packages/74/63/c22e9735feee5bec9e6d42bc8e5ec8710f56b5e553d5a65fed88dd68e4e3/casadi-3.6.6-cp35-none-manylinux1_i686.whl"
+hash = "sha256-E82wbHAuHcZmCHgyUWhjUWqAIZ+5eSO02ldWFFQiXw8="
+
+["3.6.6".cp35.none.manylinux2010_x86_64]
+url = "https://files.pythonhosted.org/packages/22/d9/3d487dd1b9e2a707718f429273df35adb2979c523f76e3a496dbd831b166/casadi-3.6.6-cp35-none-manylinux2010_x86_64.whl"
+hash = "sha256-m3xhDWf1RSth4ZTiJP7mecDnCAJ4IbyQ+TVIzIBaN0Q="
+
+["3.6.6".cp35.none.win_amd64]
+url = "https://files.pythonhosted.org/packages/24/6b/aaf6abd187c7695a8e739580911a79cef38e660d5b2e0d72a31e9d4237e7/casadi-3.6.6-cp35-none-win_amd64.whl"
+hash = "sha256-CHDfmscEDBSzX9yCt0V4zP6PHZ2GFet5aTpWD++0Iwc="
+
+["3.6.6".cp36.none."macosx_10_13_x86_64.macosx_10_13_intel"]
+url = "https://files.pythonhosted.org/packages/92/11/20e907368ade21f71531636eb32c2d95eb77f3030cf72d14da3237451d07/casadi-3.6.6-cp36-none-macosx_10_13_x86_64.macosx_10_13_intel.whl"
+hash = "sha256-F83Wx760nzNfVUk4o5p9ltMpVFrHhtone+3z+hRyveU="
+
+["3.6.6".cp36.none.manylinux2014_aarch64]
+url = "https://files.pythonhosted.org/packages/20/f0/c37977997bb59f3adac9ea03c2f58e1d859c06767777e8a478a7bbcde0b3/casadi-3.6.6-cp36-none-manylinux2014_aarch64.whl"
+hash = "sha256-F8nTaapVxUEAAuA48tngEFlYd+bnpWcUE8Ro4PbQ71Q="
+
+["3.6.6".cp36.none.manylinux2014_i686]
+url = "https://files.pythonhosted.org/packages/ea/c1/5f5a8b8e827a31c47226c9617f0541008cfa3125c3b00fe23ec698664e81/casadi-3.6.6-cp36-none-manylinux2014_i686.whl"
+hash = "sha256-3HfJCTzdZCvqWPTovUQT4ZOX13JwsmWfSw4G8j5XU2Q="
+
+["3.6.6".cp36.none.manylinux2014_x86_64]
+url = "https://files.pythonhosted.org/packages/7f/6a/f93981a363459d1887550196bf178bccf13d0c5e3485869ea0bc86c0cdb0/casadi-3.6.6-cp36-none-manylinux2014_x86_64.whl"
+hash = "sha256-gmQo0shLL//N2qcguhdtPbopT+M3BFqZen9P67EDAjE="
+
+["3.6.6".cp36.none.win_amd64]
+url = "https://files.pythonhosted.org/packages/3f/d1/b846b844c9f8433e5021d451b4fa88edf7f2d010e69f85cb48c4dc9a8baa/casadi-3.6.6-cp36-none-win_amd64.whl"
+hash = "sha256-ge97h2Tp3v99pZun0ZoQeuPaM+nE5kIPmgLykESPm6s="
+
+["3.6.6".cp37.none."macosx_10_13_x86_64.macosx_10_13_intel"]
+url = "https://files.pythonhosted.org/packages/5d/8e/c3510422cacb829bbf88a1101eed5850b818ba0f852356cb4f009f6154b2/casadi-3.6.6-cp37-none-macosx_10_13_x86_64.macosx_10_13_intel.whl"
+hash = "sha256-3WNgnFTzqqv7/E1RlI2GOtPf71XGb2iemiuW7vKgvJY="
+
+["3.6.6".cp37.none.manylinux2014_aarch64]
+url = "https://files.pythonhosted.org/packages/5d/88/1a78a5fec60da3b743ee2dc3c3abc5e69197072e9a0b99077bc5f29b3071/casadi-3.6.6-cp37-none-manylinux2014_aarch64.whl"
+hash = "sha256-S8PQ9GHRMUB0RDhuY7J1KuYHRfcF+3pYc0GoQQOsd0o="
+
+["3.6.6".cp37.none.manylinux2014_i686]
+url = "https://files.pythonhosted.org/packages/d3/07/c236925272703224e0f9e9ad0298c884b6f3cb97fd48ef586a04c4903c3b/casadi-3.6.6-cp37-none-manylinux2014_i686.whl"
+hash = "sha256-pjp9enTzJC8c9ue1GqsB/PJhJICYlNubUroy57i0CKM="
+
+["3.6.6".cp37.none.manylinux2014_x86_64]
+url = "https://files.pythonhosted.org/packages/23/9f/cfd762a854d4bb30d9136969b56697c207697577980e82e4d0f32645b7d5/casadi-3.6.6-cp37-none-manylinux2014_x86_64.whl"
+hash = "sha256-lcI6K4E5mnEf+/GZeFbzXycLvwrW8mX+dJn+HnYHTQ8="
+
+["3.6.6".cp37.none.win_amd64]
+url = "https://files.pythonhosted.org/packages/67/81/627d888f5aaa103222bf67cb48a49b91babe9b4d4aa8670d5a1ea2d2ac8b/casadi-3.6.6-cp37-none-win_amd64.whl"
+hash = "sha256-Rz9VOsi5TIDkqIwzc+UJEHafx4OPjNXi37Y5ZGV79YU="
+
+["3.6.6".cp38.none."macosx_10_13_x86_64.macosx_10_13_intel"]
+url = "https://files.pythonhosted.org/packages/39/d5/52f561011b4da8e03b998f6469b3b16bb8c2c8161329848938cc95afd751/casadi-3.6.6-cp38-none-macosx_10_13_x86_64.macosx_10_13_intel.whl"
+hash = "sha256-kSCbxwdkpQ3dHY+z84l0uu0UGerWSyQVQa/0ej3dvto="
+
+["3.6.6".cp38.none.macosx_11_0_arm64]
+url = "https://files.pythonhosted.org/packages/9b/f1/7694b5bc26d40495c1e91524afd164d9d1d3ed33a0642b443b6be2a8e71a/casadi-3.6.6-cp38-none-macosx_11_0_arm64.whl"
+hash = "sha256-hrIwk/NCMSDiY1uWW46srmxF3SKSPLHq88Bb+yHbWjI="
+
+["3.6.6".cp38.none.manylinux2014_aarch64]
+url = "https://files.pythonhosted.org/packages/fa/e5/edfde54318560297761b4fa63f181a44af4a1675f960fa7fa023ce0f3d87/casadi-3.6.6-cp38-none-manylinux2014_aarch64.whl"
+hash = "sha256-8MVZO2NpgNLENL7s3SoV3nrmmxxCvR+9tG0VmdQMBLk="
+
+["3.6.6".cp38.none.manylinux2014_i686]
+url = "https://files.pythonhosted.org/packages/05/08/1e108f47511ec506a183883822f93e16edd0f2c7bef02537b4b63b0110e2/casadi-3.6.6-cp38-none-manylinux2014_i686.whl"
+hash = "sha256-6uY5Xvr7A1CfICzl8P9qNTgs9hkSvdZdcvXCRqoZItk="
+
+["3.6.6".cp38.none.manylinux2014_x86_64]
+url = "https://files.pythonhosted.org/packages/0a/7a/9627c9689e36878fb4164dab563d66c59b88b956ecf23655cc2213598979/casadi-3.6.6-cp38-none-manylinux2014_x86_64.whl"
+hash = "sha256-4tdgktBIR+5rBq3CXPyCJ1kM3kA80fp6KmIeGsy/XRo="
+
+["3.6.6".cp38.none.win_amd64]
+url = "https://files.pythonhosted.org/packages/60/16/9c2af4e8721fda2b94f0299ac06555a7ebed770f2a99bd53872a4e18a2b5/casadi-3.6.6-cp38-none-win_amd64.whl"
+hash = "sha256-0anS17vUlVktIUgDG4p26usJbNSe5mOGhNvj6lm/F3c="
+
+["3.6.6".cp39.none."macosx_10_13_x86_64.macosx_10_13_intel"]
+url = "https://files.pythonhosted.org/packages/57/a1/82a878ff6385580bbe60c73da723906279447d7eb8c2ad656c4304643bab/casadi-3.6.6-cp39-none-macosx_10_13_x86_64.macosx_10_13_intel.whl"
+hash = "sha256-kMbMCvqe5MbZ1PizznKxvI2HNQMidifdjWRc3cmHf+k="
+
+["3.6.6".cp39.none.macosx_11_0_arm64]
+url = "https://files.pythonhosted.org/packages/3f/2a/4f377178b6b7c3f82b56d42f820601ccd121f5c9650494831efbf4a12a03/casadi-3.6.6-cp39-none-macosx_11_0_arm64.whl"
+hash = "sha256-fObcJCgJSE82xFaF5iSRlkHb685Ut0N6Y51TLTIxY+4="
+
+["3.6.6".cp39.none.manylinux2014_aarch64]
+url = "https://files.pythonhosted.org/packages/48/29/db2c20d214ca884fa4b288274eadbabed790c6d3a4d46125f2e4de0ab70b/casadi-3.6.6-cp39-none-manylinux2014_aarch64.whl"
+hash = "sha256-vJqTdv9BLuz/BJnFIUhrckXZjhAiEkxmS6ct+N+IveY="
+
+["3.6.6".cp39.none.manylinux2014_i686]
+url = "https://files.pythonhosted.org/packages/2a/bc/60d43b8a281dcb39aa875732a30dbb2c63520fe875926c3520b45852d11d/casadi-3.6.6-cp39-none-manylinux2014_i686.whl"
+hash = "sha256-bJHtBFI2R1zrpRWm+fw327lGBkfNvY+elM557B2RyFI="
+
+["3.6.6".cp39.none.manylinux2014_x86_64]
+url = "https://files.pythonhosted.org/packages/bc/b9/b8847745c59b3539a5faf7630fdc906ef1ad8d361c1306a8e85887470ea2/casadi-3.6.6-cp39-none-manylinux2014_x86_64.whl"
+hash = "sha256-zDWUs0jzBgGLFCY40KjEAm+A6Za06XmPxQSJklansCk="
+
+["3.6.6".cp39.none.win_amd64]
+url = "https://files.pythonhosted.org/packages/49/98/7bb6deff77f8d72c1c097476c389ea667fdb14bfda5cde49693ae09a3ad5/casadi-3.6.6-cp39-none-win_amd64.whl"
+hash = "sha256-XT+5NYoFcLU5iTsb2FIZulOY0Dzy9qfQfMvBoFPkJMc="
+
+["3.6.7".cp27.none."macosx_10_13_x86_64.macosx_10_13_intel"]
+url = "https://files.pythonhosted.org/packages/f8/ec/a872e058a1f3ef766b4cf514be7a4bcb543fa9bf7e97cc27303fee21b368/casadi-3.6.7-cp27-none-macosx_10_13_x86_64.macosx_10_13_intel.whl"
+hash = "sha256-ZZdsq7b4te7NcrNG7bxCEc8Mh0PBq5EJ3cDrBAfaWn4="
+
+["3.6.7".cp27.none.manylinux1_i686]
+url = "https://files.pythonhosted.org/packages/44/77/ca3dd37f92cadda99d2018b996546c548b641e068cd1566cc10527909170/casadi-3.6.7-cp27-none-manylinux1_i686.whl"
+hash = "sha256-Be8ah6xuFzy6N2LwrQulDAIVQxehE1MXojxEahSaLhI="
+
+["3.6.7".cp27.none.manylinux2010_x86_64]
+url = "https://files.pythonhosted.org/packages/30/12/5743fceaf79bad73ceebdf10f4ea5c4f3abad778af5d8e132f0c44ba8d35/casadi-3.6.7-cp27-none-manylinux2010_x86_64.whl"
+hash = "sha256-jO/vPjDDbonflLlLoZ6zWIuWD/cT12MSM9NALTRUT0c="
+
+["3.6.7".cp27.none.win_amd64]
+url = "https://files.pythonhosted.org/packages/7e/fb/fbf0fd2b5c28cb36612ceb240c7e76c51a9367b73d727cfac5b303a79145/casadi-3.6.7-cp27-none-win_amd64.whl"
+hash = "sha256-OlG3cxEmyhdnrMvmdH33ugCH/DJTerflhD24irQkVOM="
+
+["3.6.7".cp310.none."macosx_10_13_x86_64.macosx_10_13_intel"]
+url = "https://files.pythonhosted.org/packages/4a/58/6c7caac3c92f8cff018a15364de1832c3aa15c38a776d3a3d1d9f98393fb/casadi-3.6.7-cp310-none-macosx_10_13_x86_64.macosx_10_13_intel.whl"
+hash = "sha256-faJ9wDUk1W1FCIDbLMf0XwdVJLxDSwsxfi2A3Xa0XXU="
+
+["3.6.7".cp310.none.macosx_11_0_arm64]
+url = "https://files.pythonhosted.org/packages/ec/1b/3cf92c7bd5aab402d7702790e894b839bd37a307c38067ca3627ebdc52c7/casadi-3.6.7-cp310-none-macosx_11_0_arm64.whl"
+hash = "sha256-Y2dG/u7vdVoAO2sTp/yidaitPhviH114pg5y7NypyEE="
+
+["3.6.7".cp310.none.manylinux2014_aarch64]
+url = "https://files.pythonhosted.org/packages/5d/46/f5f881309d3829986cdbec670e9609779f4836649ba6d2802c362d317b6c/casadi-3.6.7-cp310-none-manylinux2014_aarch64.whl"
+hash = "sha256-GmdkN5VfzaEEiP6of3iuZPSVpyR4Jb2kdhmc3rW6C00="
+
+["3.6.7".cp310.none.manylinux2014_i686]
+url = "https://files.pythonhosted.org/packages/ce/0e/d39d86db1f1d5be2d9810612f3c5bdd0e19581f66137a9afa01888d34a7e/casadi-3.6.7-cp310-none-manylinux2014_i686.whl"
+hash = "sha256-jEtNBEOgdFLntuBxfsUE7WqC1dqLymeYgJ+wUkSZxVI="
+
+["3.6.7".cp310.none.manylinux2014_x86_64]
+url = "https://files.pythonhosted.org/packages/af/4a/3aeed9e8a19aae12b6eaa9ef1b20099a43fe4a777afc8200050eeb795ce6/casadi-3.6.7-cp310-none-manylinux2014_x86_64.whl"
+hash = "sha256-GrUo9eoE71biZ2JSz8OgQCPeXRFpV40Yc85APiP7SNU="
+
+["3.6.7".cp310.none.win_amd64]
+url = "https://files.pythonhosted.org/packages/a9/02/af4dacc890db54225e57104cae2cf961cc7abbe396937e4f3c9a871b5160/casadi-3.6.7-cp310-none-win_amd64.whl"
+hash = "sha256-Bf7a2gmuTxuNUxlBaO+o2IyoeHF6mk56JGW24qrP+AU="
+
+["3.6.7".cp311.none."macosx_10_13_x86_64.macosx_10_13_intel"]
+url = "https://files.pythonhosted.org/packages/aa/60/9c1a2492645201e073252107c58bfb029ee703a44c6b9608202ccab01eac/casadi-3.6.7-cp311-none-macosx_10_13_x86_64.macosx_10_13_intel.whl"
+hash = "sha256-UUtdKvWcOmCyqVXZUI1fLHXwW+weL1AABDhwhW49QaM="
+
+["3.6.7".cp311.none.macosx_11_0_arm64]
+url = "https://files.pythonhosted.org/packages/04/84/b8c624aa429a3b3c185f509e7f4152149419085b5087acfcdb3dc4c9e56f/casadi-3.6.7-cp311-none-macosx_11_0_arm64.whl"
+hash = "sha256-GnEi8/1Nyg7Zr3K6w5jeBuIlspG0XD2JtzoZoyR+7rU="
+
+["3.6.7".cp311.none.manylinux2014_aarch64]
+url = "https://files.pythonhosted.org/packages/55/07/6aa1b3b258cffee0c100a8339057ad5de338e13dc47518137f72f6e270b2/casadi-3.6.7-cp311-none-manylinux2014_aarch64.whl"
+hash = "sha256-XCUoNzVMqdqRuyyYNpISE9OXLa1u31FsnI7ylucaT3Q="
+
+["3.6.7".cp311.none.manylinux2014_i686]
+url = "https://files.pythonhosted.org/packages/df/8a/9d4301d0968a2f3c743bd2b6a73a2cb28560ff1bcf04b1f65bd8c990f74d/casadi-3.6.7-cp311-none-manylinux2014_i686.whl"
+hash = "sha256-eDl2+QFu0uiC8A89yBpyq9hCT8bo0yJ5PUvTeCo3+W0="
+
+["3.6.7".cp311.none.manylinux2014_x86_64]
+url = "https://files.pythonhosted.org/packages/44/c6/9579b91b50149e41c3dcc3001027af8a44fcd796a6220968bb214528b18a/casadi-3.6.7-cp311-none-manylinux2014_x86_64.whl"
+hash = "sha256-lxzvvkHmveiFR8BZGrlCStHvvoHtxrDFpU8SXd/62/E="
+
+["3.6.7".cp311.none.win_amd64]
+url = "https://files.pythonhosted.org/packages/b4/71/458735f76f16c7ea24eee326cc8691f642a372fa60f8703228287471bcca/casadi-3.6.7-cp311-none-win_amd64.whl"
+hash = "sha256-wwkEuvLeJZl54OE7mcYFzRjEUjqoYXDeWUDt613TSPo="
+
+["3.6.7".cp312.none."macosx_10_13_x86_64.macosx_10_13_intel"]
+url = "https://files.pythonhosted.org/packages/73/96/1f8323b62c663898179dd0c74edbe09ae94d674eed4ad5eb95c40d3bb49d/casadi-3.6.7-cp312-none-macosx_10_13_x86_64.macosx_10_13_intel.whl"
+hash = "sha256-94DklhV6scrrb+GQeeRQjC16n1SJspjgTEBDijugyvQ="
+
+["3.6.7".cp312.none.macosx_11_0_arm64]
+url = "https://files.pythonhosted.org/packages/9c/49/8a1ff97a94e219142d36c7c0b70d6ad7c79c4927efa53d5a8be29a51a32b/casadi-3.6.7-cp312-none-macosx_11_0_arm64.whl"
+hash = "sha256-wCowT16LFHvKND6EtN45Yp4rdhkBwf6Z7P+mbJmHW4A="
+
+["3.6.7".cp312.none.manylinux2014_aarch64]
+url = "https://files.pythonhosted.org/packages/5c/dd/242806ccb9d36f6c006d43ad844c752566ed8cc0c0f026a86b3c8c7c2ecb/casadi-3.6.7-cp312-none-manylinux2014_aarch64.whl"
+hash = "sha256-KQ6Sp+L0zs/8Ip3BlqhYVefb7faSnu0YULJ+StitZ/A="
+
+["3.6.7".cp312.none.manylinux2014_i686]
+url = "https://files.pythonhosted.org/packages/4e/4c/d6547e51d066df4225a11770360ebcf38532d218fafc07824683ce5253fa/casadi-3.6.7-cp312-none-manylinux2014_i686.whl"
+hash = "sha256-x8FQKgQu+zIdoVVulMyO9qA1eFuevLXd1GdrMuWNCfg="
+
+["3.6.7".cp312.none.manylinux2014_x86_64]
+url = "https://files.pythonhosted.org/packages/b5/21/d4bc8c6a492fadecd68128de97595aa8038a6f31fb57159d52a8013e2f06/casadi-3.6.7-cp312-none-manylinux2014_x86_64.whl"
+hash = "sha256-FgQu8JURdwQxK+UziaDyKregloEx2yv3hWY9gAOVepU="
+
+["3.6.7".cp312.none.win_amd64]
+url = "https://files.pythonhosted.org/packages/d1/7c/ef71d5988bf4588d298a3b5cbf6ae50621dad4e291f471b5c653ef95b4b8/casadi-3.6.7-cp312-none-win_amd64.whl"
+hash = "sha256-f2XnRE3bFfUh4NxdYbJVcFTiZN4d6o2ZkCNTNtPoAkc="
+
+["3.6.7".cp313.none."macosx_10_13_x86_64.macosx_10_13_intel"]
+url = "https://files.pythonhosted.org/packages/14/da/e93f10d8c75f7886bf607f7d84b1fabc819c15eb71f63f2423c514259d05/casadi-3.6.7-cp313-none-macosx_10_13_x86_64.macosx_10_13_intel.whl"
+hash = "sha256-a2JA/NIHqhVIZ6CbuDDTBn0OVYCPuu+MTA4kxVtpBbQ="
+
+["3.6.7".cp313.none.macosx_11_0_arm64]
+url = "https://files.pythonhosted.org/packages/58/3d/c7a13503ba6684cda80d88aafd8d666294dcde5bfc30b22d8dcbb0edf51d/casadi-3.6.7-cp313-none-macosx_11_0_arm64.whl"
+hash = "sha256-ys94pePFWQvygaFgaiE6xdbZ4L5xmGRJt+UjBEq7LqA="
+
+["3.6.7".cp313.none.manylinux2014_aarch64]
+url = "https://files.pythonhosted.org/packages/bb/58/7e53d59b51bdfb6b124ee2bffa9cb62a1f144969c5e00a7dd42da0bb479d/casadi-3.6.7-cp313-none-manylinux2014_aarch64.whl"
+hash = "sha256-88LQE7y5abipsuiqm2/Pr5mQ0p7vSW0e7n1EqImw+bY="
+
+["3.6.7".cp313.none.manylinux2014_i686]
+url = "https://files.pythonhosted.org/packages/f7/1f/673aa199ae270c7ce6418ad0d690709124a0dc7e52ca463596e97e2ef25e/casadi-3.6.7-cp313-none-manylinux2014_i686.whl"
+hash = "sha256-rN2/a7BeNXyJi8syU+0QbDvmoAB5V+wCMfhMroc6Pe8="
+
+["3.6.7".cp313.none.manylinux2014_x86_64]
+url = "https://files.pythonhosted.org/packages/ab/9e/803ed4be23663a73637ecfe2e6effa40bd89018b8003b1d30c1d771bb75b/casadi-3.6.7-cp313-none-manylinux2014_x86_64.whl"
+hash = "sha256-u588Lpq0ofsop61+UBLhM3IGVrYGuPVgvBvFWoFU4tk="
+
+["3.6.7".cp313.none.win_amd64]
+url = "https://files.pythonhosted.org/packages/36/fe/40be0cd7205893bc1637d11752aacb8736d9aed01120453579f70b6a5611/casadi-3.6.7-cp313-none-win_amd64.whl"
+hash = "sha256-+o2pAvLimJPnE5TGvx08y231LQY9BpgqPotOxRGPGCc="
+
+["3.6.7".cp35.none."macosx_10_13_x86_64.macosx_10_13_intel"]
+url = "https://files.pythonhosted.org/packages/f2/13/6eb54d17864e4a2f1c23b391f029b96ddf23739146ea910622fa1b63958c/casadi-3.6.7-cp35-none-macosx_10_13_x86_64.macosx_10_13_intel.whl"
+hash = "sha256-G3Rn3V5mSofgP/EYmTWH0VQ3Gj+3AgznBe4QRatWE5k="
+
+["3.6.7".cp35.none.manylinux1_i686]
+url = "https://files.pythonhosted.org/packages/76/60/c6e56c0f36e779b7903e86c6366d524b79632ec0cd9deb3f64d4a3112980/casadi-3.6.7-cp35-none-manylinux1_i686.whl"
+hash = "sha256-ABLBlRKGATqxx6t58h/sc3SZUIX5Bn2M73hz3qBitCY="
+
+["3.6.7".cp35.none.manylinux2010_x86_64]
+url = "https://files.pythonhosted.org/packages/ee/2b/8fddf4b2893bc9cfdecdba644545e6bac901582007de4e7ff4b3e08bb09e/casadi-3.6.7-cp35-none-manylinux2010_x86_64.whl"
+hash = "sha256-ZB79oircH6svrrjLHrhmYZ8iQPMvtqAq6CtzmXRs3C4="
+
+["3.6.7".cp35.none.win_amd64]
+url = "https://files.pythonhosted.org/packages/32/16/a0ebec0c3ce6ef4cc9a521e0a4ad70317f6c25606a76787d5908042893a3/casadi-3.6.7-cp35-none-win_amd64.whl"
+hash = "sha256-rbRu9BdJ25vFWmoWd7pKQ/CuaiwabL/AVmgdkHzx474="
+
+["3.6.7".cp36.none."macosx_10_13_x86_64.macosx_10_13_intel"]
+url = "https://files.pythonhosted.org/packages/3f/11/52b9698817d9ba93d4296b08532ebfa995cf7beba79e5c0162d0baad3777/casadi-3.6.7-cp36-none-macosx_10_13_x86_64.macosx_10_13_intel.whl"
+hash = "sha256-uGZeSbbPfkD5afDLPth0aMsUxk2EVDgYX/nCicX3k4E="
+
+["3.6.7".cp36.none.manylinux2014_aarch64]
+url = "https://files.pythonhosted.org/packages/41/4e/76e116c32d4f5b0098cdeb72b0262fdd565ea41774ba8dfbc52217e3749a/casadi-3.6.7-cp36-none-manylinux2014_aarch64.whl"
+hash = "sha256-MroTNbsJKP00CtyeIdSB2RgCUHKh8FQM+UCTuV94GVE="
+
+["3.6.7".cp36.none.manylinux2014_i686]
+url = "https://files.pythonhosted.org/packages/41/fd/2c1556599784634da5c4f015a59f72b356505559c95e3da893d3f5bf2307/casadi-3.6.7-cp36-none-manylinux2014_i686.whl"
+hash = "sha256-IdW0zg+Dz8SrO5EpvddQF1hFcyNRgGn3YMsToM77f8k="
+
+["3.6.7".cp36.none.manylinux2014_x86_64]
+url = "https://files.pythonhosted.org/packages/5a/04/69e85492d653e06763b02a9dd3801b9e197c539b61f8273a841c0cd9e6d8/casadi-3.6.7-cp36-none-manylinux2014_x86_64.whl"
+hash = "sha256-BFwcf8JLsnOY8LqJeetr8HsJUlSW3IPuTnXKA3GHpr0="
+
+["3.6.7".cp36.none.win_amd64]
+url = "https://files.pythonhosted.org/packages/a7/22/2babf0f4511bb4b3fa4b646f218f243d8f9324e13ef3f6bd06aafb2d4bf0/casadi-3.6.7-cp36-none-win_amd64.whl"
+hash = "sha256-Jv6n6AsQRpjXx5lVbscGzil0jg4qBFosp+tmAy5CiSk="
+
+["3.6.7".cp37.none."macosx_10_13_x86_64.macosx_10_13_intel"]
+url = "https://files.pythonhosted.org/packages/95/53/a62dd93140d7571d43132373178cd6694b9db32094e44f569edfe8115578/casadi-3.6.7-cp37-none-macosx_10_13_x86_64.macosx_10_13_intel.whl"
+hash = "sha256-UxieVgvMIOexBxQ1bJh66YdV4o1RAzN/2WvIFjJ4ZZE="
+
+["3.6.7".cp37.none.manylinux2014_aarch64]
+url = "https://files.pythonhosted.org/packages/6a/e6/77504fafbe07ed5b20e3026314e0affd2306c1402a0334bcc7e037c6ff4c/casadi-3.6.7-cp37-none-manylinux2014_aarch64.whl"
+hash = "sha256-fXmXqdne0T+5dP7GLBtZIcE2CRDuAXhOWkIeKI0Qra0="
+
+["3.6.7".cp37.none.manylinux2014_i686]
+url = "https://files.pythonhosted.org/packages/49/75/13164553171ca78e79967d635db5ee4a8ef955f039f8b9f87622cc4e3226/casadi-3.6.7-cp37-none-manylinux2014_i686.whl"
+hash = "sha256-Tphmj+bqD8i9nkGJqPcXJazRPF50ivYrZ5a8j8txrx0="
+
+["3.6.7".cp37.none.manylinux2014_x86_64]
+url = "https://files.pythonhosted.org/packages/8c/c3/8155924a12ea28dc6e994928cd97e3e5b3455ae4ae4adb15a56ef118b7c3/casadi-3.6.7-cp37-none-manylinux2014_x86_64.whl"
+hash = "sha256-8pWbuDQJBJGjJJOEVKpCTMGrP4DK2sb9jiEzsXmmOOQ="
+
+["3.6.7".cp37.none.win_amd64]
+url = "https://files.pythonhosted.org/packages/59/d7/930a40a52f0bf2bd75d8c35eead7de38db25b3fa84e595d55c0158c76f66/casadi-3.6.7-cp37-none-win_amd64.whl"
+hash = "sha256-psVJgmoPRuDuEgWBqO2bgCEABAJ06yPD5Byn5LX5JVU="
+
+["3.6.7".cp38.none."macosx_10_13_x86_64.macosx_10_13_intel"]
+url = "https://files.pythonhosted.org/packages/f8/ce/aecf1629f5664b05bfd912b7b7b74126c746eceb6abb6ef702d7c148563d/casadi-3.6.7-cp38-none-macosx_10_13_x86_64.macosx_10_13_intel.whl"
+hash = "sha256-7SdMBjbIEYAODi+DSmFvHunubRTiHTrj5Sgbd/n2ZgM="
+
+["3.6.7".cp38.none.macosx_11_0_arm64]
+url = "https://files.pythonhosted.org/packages/92/b9/4c2f2605fdd76944a979ab5eab0f3ac36b9b368c1e9e87053e8be4622f72/casadi-3.6.7-cp38-none-macosx_11_0_arm64.whl"
+hash = "sha256-peK/IxEiWXDAYADHjZlFy24hQvs1mBQmqOuG75R6JIM="
+
+["3.6.7".cp38.none.manylinux2014_aarch64]
+url = "https://files.pythonhosted.org/packages/0e/7f/5c1da08fc32d21c3ac1e82f6c052fa43e9f1baadc4d8690c607bcbce2440/casadi-3.6.7-cp38-none-manylinux2014_aarch64.whl"
+hash = "sha256-7kBxSPV87fSZKKAns9Yo1fwAX+ydoq8n7sNNx7jaENo="
+
+["3.6.7".cp38.none.manylinux2014_i686]
+url = "https://files.pythonhosted.org/packages/ce/85/25fd0720bf6ffca71b470fc2cd238d922954bdd16f97daee3113fc414040/casadi-3.6.7-cp38-none-manylinux2014_i686.whl"
+hash = "sha256-dDttAHC7AmLsH9T4QCRJkevtJDWzEEpa5qO8ko0LMfc="
+
+["3.6.7".cp38.none.manylinux2014_x86_64]
+url = "https://files.pythonhosted.org/packages/a6/92/f56ce2fe07b9afd755ef0d4b393e66330ea9e41d342fb8bb1ec29ecaabe7/casadi-3.6.7-cp38-none-manylinux2014_x86_64.whl"
+hash = "sha256-6oV1fJkUp/Ow6h+LH5Y1r84blsiaBDr1/Fd4Q4qQ/vw="
+
+["3.6.7".cp38.none.win_amd64]
+url = "https://files.pythonhosted.org/packages/c8/d9/aa630ebc9dcc2631f9c0c2f01db6dcd3ca36ac83c9fbbff9fe54641c15d9/casadi-3.6.7-cp38-none-win_amd64.whl"
+hash = "sha256-HVLYwR0BJVUuEMRY2PM7OM2abrlgNAWh34frNarkyTo="
+
+["3.6.7".cp39.none."macosx_10_13_x86_64.macosx_10_13_intel"]
+url = "https://files.pythonhosted.org/packages/7a/9a/25d51f287a33231683b999120513ee2bfe869cda9b8afb9997a30e4191ac/casadi-3.6.7-cp39-none-macosx_10_13_x86_64.macosx_10_13_intel.whl"
+hash = "sha256-x7W/LQUUDblgmo+hcWk25+ANeNQuWZFn/GgtO4jdBbk="
+
+["3.6.7".cp39.none.macosx_11_0_arm64]
+url = "https://files.pythonhosted.org/packages/d3/14/0fd0f962d550e8e8a3d886a92df75eb274438f5bb924ed15b7380c78b5a3/casadi-3.6.7-cp39-none-macosx_11_0_arm64.whl"
+hash = "sha256-1LF1eSzYbCrih18g8k5i9P/p2N3qTC56sfDEPJ2PweY="
+
+["3.6.7".cp39.none.manylinux2014_aarch64]
+url = "https://files.pythonhosted.org/packages/45/62/439b3d49e930abbb7746956b4f566a17069b76f7d19b0adaa4288f6cd7dc/casadi-3.6.7-cp39-none-manylinux2014_aarch64.whl"
+hash = "sha256-fry7Vm8qARGLxttUU4dtKmmiq1a9zUX5tUh7a0XLsfg="
+
+["3.6.7".cp39.none.manylinux2014_i686]
+url = "https://files.pythonhosted.org/packages/35/03/341a4396dcc3a9986aef1079b7ba1cfb998d40846939d354df9d94043828/casadi-3.6.7-cp39-none-manylinux2014_i686.whl"
+hash = "sha256-+XgyR/RnWmYPWEx4XvRPY33cCy7gESxurLOozsW+QCE="
+
+["3.6.7".cp39.none.manylinux2014_x86_64]
+url = "https://files.pythonhosted.org/packages/82/39/d39d710cad52a91e10e59755c0e5adb4d36dc31403f0f64e5503baca2c24/casadi-3.6.7-cp39-none-manylinux2014_x86_64.whl"
+hash = "sha256-zowQTPxFnOoylm8P+/GJy+o3n2nP8yqrM4UtSpzwtTI="
+
+["3.6.7".cp39.none.win_amd64]
+url = "https://files.pythonhosted.org/packages/61/27/67f3078dc6200830b8660ffab762ab6c9b3746e1186f449b17ed0634c954/casadi-3.6.7-cp39-none-win_amd64.whl"
+hash = "sha256-xYp9CiNl4o8GXGjAyVjhzBj5wd3b+UB4QiFerwLwMBE="

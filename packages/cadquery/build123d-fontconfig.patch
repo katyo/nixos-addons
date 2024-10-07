@@ -1,0 +1,18 @@
+diff --git a/src/build123d/topology.py b/src/build123d/topology.py
+--- a/src/build123d/topology.py
++++ b/src/build123d/topology.py
+@@ -4160,10 +4160,12 @@
+                 -wire_angle,
+             )
+ 
+         if sys.platform.startswith("linux"):
+-            os.environ["FONTCONFIG_FILE"] = "/etc/fonts/fonts.conf"
+-            os.environ["FONTCONFIG_PATH"] = "/etc/fonts/"
++            if "FONTCONFIG_FILE" not in os.environ:
++                os.environ["FONTCONFIG_FILE"] = "/etc/fonts/fonts.conf"
++            if "FONTCONFIG_PATH" not in os.environ:
++                os.environ["FONTCONFIG_PATH"] = "/etc/fonts/"
+ 
+         font_kind = {
+             FontStyle.REGULAR: Font_FA_Regular,
+             FontStyle.BOLD: Font_FA_Bold,

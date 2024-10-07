@@ -1,0 +1,80 @@
+
+["9.2.6".cp310.cp310.macosx_13_0_x86_64]
+url = "https://files.pythonhosted.org/packages/97/0a/54d742b9763020ac8a6289533719b1f7db23655ec0df1675b1dc2003889c/cadquery_vtk-9.2.6-cp310-cp310-macosx_13_0_x86_64.whl"
+hash = "sha256-x/Q9ZnqeNHJg6ZMJ5IruywyIeqE8b4DEzGqAEQkqTts="
+
+["9.2.6".cp310.cp310.macosx_14_0_arm64]
+url = "https://files.pythonhosted.org/packages/41/f5/09022e6af829453959ad4d5cfb27207800a80372b0d7de5a0e1eeeeac6c4/cadquery_vtk-9.2.6-cp310-cp310-macosx_14_0_arm64.whl"
+hash = "sha256-/6yxK7qHf/eCmBhWMXjQqUahC9OSsHKvowMBQKRx8q4="
+
+["9.2.6".cp310.cp310.manylinux_2_35_x86_64]
+url = "https://files.pythonhosted.org/packages/ec/ef/71ab3ef9aa8393ff79742cf54cd1a8c9e651e60662dbfed7f423deb0f685/cadquery_vtk-9.2.6-cp310-cp310-manylinux_2_35_x86_64.whl"
+hash = "sha256-U6vsIwtNFq+KEm3/1WIoDDUz0Gp5ClJ1HGBPXzKD+PI="
+
+["9.2.6".cp310.cp310.manylinux_2_36_aarch64]
+url = "https://files.pythonhosted.org/packages/f5/10/239a925660fc6d3e1c06965db4102f84b0218076eeda9e8175b588ecb95f/cadquery_vtk-9.2.6-cp310-cp310-manylinux_2_36_aarch64.whl"
+hash = "sha256-yrITm+NjXwgAL69nS1RHaaEg6+njzw5vqcWS8Kg4T1A="
+
+["9.2.6".cp310.cp310.win_amd64]
+url = "https://files.pythonhosted.org/packages/19/e8/bd147e997806265f25a84987aceed2c8a9767b9e761814ebf1053edc4dfb/cadquery_vtk-9.2.6-cp310-cp310-win_amd64.whl"
+hash = "sha256-uq9+30LrwWeF7MjUuA1Z7EScL5Bz7pbz1082DeYLKwk="
+
+["9.2.6".cp311.cp311.macosx_13_0_x86_64]
+url = "https://files.pythonhosted.org/packages/ff/5e/678d3a26e77aa79d43509abe56e25522d163057e6960fe41697c2e2b90aa/cadquery_vtk-9.2.6-cp311-cp311-macosx_13_0_x86_64.whl"
+hash = "sha256-SW4yZhLuBUzvgWA7+X0RWhzPuTo2jCcCLiVrne//Y0c="
+
+["9.2.6".cp311.cp311.macosx_14_0_arm64]
+url = "https://files.pythonhosted.org/packages/91/7b/b378be0f03ad1ef366d47e5be96178b50704765e1ad6e5a5abfe25683031/cadquery_vtk-9.2.6-cp311-cp311-macosx_14_0_arm64.whl"
+hash = "sha256-VefDfkLE3bgN9neEhK34ilLFzLkV2SCtEzIVheWUba4="
+
+["9.2.6".cp311.cp311.manylinux_2_35_x86_64]
+url = "https://files.pythonhosted.org/packages/26/19/afc787a39bb8f097215964b8db5fc5e44a35e84e03a90518deb4cf3006c9/cadquery_vtk-9.2.6-cp311-cp311-manylinux_2_35_x86_64.whl"
+hash = "sha256-S2VNhBI2w9w8wEV8Kt2Wm2/xT2TZ93iE78MkiAc/K/k="
+
+["9.2.6".cp311.cp311.manylinux_2_36_aarch64]
+url = "https://files.pythonhosted.org/packages/4b/c4/bf8149490fecfedf88a693860379ed2afb50dc39c75a764eced5d537bd3b/cadquery_vtk-9.2.6-cp311-cp311-manylinux_2_36_aarch64.whl"
+hash = "sha256-dGXj2zFskhKp00TB35IvUAAnjWbHwELq4aLKNfRbkLc="
+
+["9.2.6".cp311.cp311.win_amd64]
+url = "https://files.pythonhosted.org/packages/21/9f/023c0d5185d0ef157ee6ea21fd93286cbd50fde066d750a484505f91c71f/cadquery_vtk-9.2.6-cp311-cp311-win_amd64.whl"
+hash = "sha256-hv6APnSUsj+lVGZ1J1yjN6E8P3MTLuVukF/T/pC5l78="
+
+["9.2.6".cp312.cp312.macosx_13_0_x86_64]
+url = "https://files.pythonhosted.org/packages/b6/c3/9155ddbab5abb51a669738fbf5ed4a635ae2ee01d5fe3783e5e99b3abd0c/cadquery_vtk-9.2.6-cp312-cp312-macosx_13_0_x86_64.whl"
+hash = "sha256-Q/5LYwWfrJpmgeAXRI1USRyuEYSA5QnZLciqYF9sBRQ="
+
+["9.2.6".cp312.cp312.macosx_14_0_arm64]
+url = "https://files.pythonhosted.org/packages/1b/81/50d0442881fa647c6c460c9cabe0d2b5d1a64855e790f37db6edf9ec1d58/cadquery_vtk-9.2.6-cp312-cp312-macosx_14_0_arm64.whl"
+hash = "sha256-pIBZqQiF5H58sBxDfygvS5b0GhsX8v3QlT8X2URvJOw="
+
+["9.2.6".cp312.cp312.manylinux_2_35_x86_64]
+url = "https://files.pythonhosted.org/packages/83/2e/e6cdd27b5dac7bdfbc1421241f777dc1a6f862249afd866b26578b2a4ea5/cadquery_vtk-9.2.6-cp312-cp312-manylinux_2_35_x86_64.whl"
+hash = "sha256-KqrVkqql1n7jC1GBaH9wg+kIEkqp+zNEDvEZ4FAEb0w="
+
+["9.2.6".cp312.cp312.manylinux_2_36_aarch64]
+url = "https://files.pythonhosted.org/packages/b4/f1/d425220fd4681cb5561fc536bfdd7a5066dbfdfdd7b1d51e02359d339ff2/cadquery_vtk-9.2.6-cp312-cp312-manylinux_2_36_aarch64.whl"
+hash = "sha256-9bJ/Jzxkk7VqFkiyp8SD0P4V3EDPdQ7HC3K+8yoDxvE="
+
+["9.2.6".cp312.cp312.win_amd64]
+url = "https://files.pythonhosted.org/packages/c8/72/d62b1449086f76365a64312e0bcb790e08b3c5b126348999ab3f63932780/cadquery_vtk-9.2.6-cp312-cp312-win_amd64.whl"
+hash = "sha256-4xVa1nEFhiPfwHa7D6tCYsiulbjt5JwW4tjzM9SIAyw="
+
+["9.2.6".cp39.cp39.macosx_13_0_x86_64]
+url = "https://files.pythonhosted.org/packages/c1/c4/c0bfc1e1b042ed530bcccf101ed787960e55ad71f66176a80e9a6a28d64f/cadquery_vtk-9.2.6-cp39-cp39-macosx_13_0_x86_64.whl"
+hash = "sha256-n9XTN6pLaOiUiMoWNnJlJZeXVjXphyMPZKo0hMJIVlQ="
+
+["9.2.6".cp39.cp39.macosx_14_0_arm64]
+url = "https://files.pythonhosted.org/packages/76/3a/0c60e7cc66abdd50fadc772128743d69c03ef94d04ede530966540d009fc/cadquery_vtk-9.2.6-cp39-cp39-macosx_14_0_arm64.whl"
+hash = "sha256-9+kanPyTeU4X2unRpPZg3BVwORKiBccmXi3xdCLKmKs="
+
+["9.2.6".cp39.cp39.manylinux_2_35_x86_64]
+url = "https://files.pythonhosted.org/packages/84/e0/0b27981f77c73c2778a5142f633738c48df9c74f4d02d955cb4ca8cd3c24/cadquery_vtk-9.2.6-cp39-cp39-manylinux_2_35_x86_64.whl"
+hash = "sha256-qPVo9EI0/hSeDhRabQKP5UxWG18j5gatOA8XXVDhLAk="
+
+["9.2.6".cp39.cp39.manylinux_2_36_aarch64]
+url = "https://files.pythonhosted.org/packages/90/b2/1441bb216e9cda2c9cd560d01caa6d5e59c430358e86776de9e860f8367a/cadquery_vtk-9.2.6-cp39-cp39-manylinux_2_36_aarch64.whl"
+hash = "sha256-UUb4Wp8DtxQf5+/8rxHbbkoHSBfq7HFN27oS9avX2eQ="
+
+["9.2.6".cp39.cp39.win_amd64]
+url = "https://files.pythonhosted.org/packages/94/28/57480989ce619e5742e5e4c4917b1be551314970fb883239507a40a7589f/cadquery_vtk-9.2.6-cp39-cp39-win_amd64.whl"
+hash = "sha256-AhCT/L5mqsXiY4iWPQlv10TyIiYvSN8rdz4nt/JQ+T0="
