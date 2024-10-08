@@ -20,7 +20,7 @@ self: super: with self; {
   nvidia-gpu-exporter-bin = callPackage ./nvidia-gpu-exporter/binary.nix {};
 
   pythonPackagesExtensions = super.pythonPackagesExtensions ++ [
-    (pySelf: pySuper: with pySelf; {
+    (pySelf: pySuper: with { inherit (pySelf) callPackage; }; {
       nlopt = callPackage ./cadquery/nlopt.nix {};
       casadi = callPackage ./cadquery/casadi-whl.nix {};
       ezdxf1 = callPackage ./cadquery/ezdxf.nix {};
@@ -53,7 +53,7 @@ self: super: with self; {
       build123d = callPackage ./cadquery/build123d.nix {};
 
       bd-warehouse = callPackage ./cadquery/bd-warehouse.nix {};
-    })
+    } // (import ./jupyterlab-language-packs { inherit lib callPackage; }))
   ];
 
   cadquery-editor = python311Packages.callPackage ./cadquery/cq-editor.nix {};

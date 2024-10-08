@@ -18,6 +18,7 @@
   - [x] [CadQuery Editor](https://github.com/CadQuery/CQ-editor) CadQuery GUI editor based on PyQT
   - [x] [Build123D](https://build123d.readthedocs.io/) A python CAD programming library
   - [x] [Build123D WareHouse](https://github.com/gumyr/bd_warehouse) A build123d parametric part collection
+- [x] [JupyterLab Language Packs](https://github.com/jupyterlab/language-packs) Language packs for JupyterLab ecosystem (`python3Packages.jupyterlab-language-pack-{lang-code}`)
 - [x] [Mayo](https://github.com/fougue/mayo) 3D CAD viewer and converter based on Qt + OpenCascade
 - [x] [Ultimaker Cura](https://github.com/Ultimaker/Cura) 3D printer / slicing GUI built on top of the Uranium framework
 - [x] gost-fonts Russian GOST fonts

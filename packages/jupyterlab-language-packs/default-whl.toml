@@ -1,0 +1,120 @@
+
+[ach-UG]
+
+[ar-SA."4.2.post3"]
+url = "https://files.pythonhosted.org/packages/7c/0a/bf4d7efecc66ca8ada5425973d6fda740dcc9d3fb46bd5cf86e63b4936a1/jupyterlab_language_pack_ar_sa-4.2.post3-py2.py3-none-any.whl"
+hash = "sha256-flf7jt2CBPPfP+TnITLZDbL1WaXl+9To9XUxbCeStc4="
+
+[ca-ES."4.2.post3"]
+url = "https://files.pythonhosted.org/packages/6d/f2/bfd21d8f89369332eea4bfc473d48bc6a2abc2ebf46f8606f0e039692f72/jupyterlab_language_pack_ca_es-4.2.post3-py2.py3-none-any.whl"
+hash = "sha256-fjyLFcGjEIgtQYUO8R9YEsUnsWSIOd6UNtNrBUdk534="
+
+[cs-CZ."4.2.post3"]
+url = "https://files.pythonhosted.org/packages/b9/90/1c6d45a5e4a8f8a481e25083e11059e7411d04722bfd5ee6769180023dfa/jupyterlab_language_pack_cs_cz-4.2.post3-py2.py3-none-any.whl"
+hash = "sha256-8uZdDS1BTOY2Vt4HhOhJ+YHxm2nr6IM47cXdL+I9rW8="
+
+[da-DK."4.2.post3"]
+url = "https://files.pythonhosted.org/packages/60/80/8747f908fa7354378c701595ebae88477e644e7cd2af61ff948b8829cb4d/jupyterlab_language_pack_da_dk-4.2.post3-py2.py3-none-any.whl"
+hash = "sha256-us8ZVy6cTluApdzF9AUKk/tAl86FWx2HOUqSi+JOkVo="
+
+[de-DE."4.2.post3"]
+url = "https://files.pythonhosted.org/packages/c0/71/5a6e21bc4aec2d14137012a1144dc952921b3d9d81a07b783620d1c27b1f/jupyterlab_language_pack_de_de-4.2.post3-py2.py3-none-any.whl"
+hash = "sha256-cbwRAd6wDNpYBsbPLKNBP4ZqlVXSNHDip8Lma+u/NtU="
+
+[el-GR."4.2.post3"]
+url = "https://files.pythonhosted.org/packages/62/bd/f5a21bfc87710009c75b3b5e0f59b10a83e4e9852377be56be74d54fe599/jupyterlab_language_pack_el_gr-4.2.post3-py2.py3-none-any.whl"
+hash = "sha256-XgWe5l372Busuj6h1zr23FtH4RV1YcbqqA71e6u8AFg="
+
+[es-ES."4.2.post3"]
+url = "https://files.pythonhosted.org/packages/65/34/3406177234870e58335b9b7699efb9bbe7a5febe6b057e5d707fe2505687/jupyterlab_language_pack_es_es-4.2.post3-py2.py3-none-any.whl"
+hash = "sha256-68jq3UrUUtzx+zsiualJpCofSDPKRoQ7DMYb14K3M4U="
+
+[et-EE."4.2.post3"]
+url = "https://files.pythonhosted.org/packages/b5/3a/3f19bc547ea93ee2b3951f420134827fbadc34e84eee0384eb3b9015e82e/jupyterlab_language_pack_et_ee-4.2.post3-py2.py3-none-any.whl"
+hash = "sha256-xseQudBsHqFzS9JoYAL/Xv1RcOnvrsVf2877EBdhqSA="
+
+[fi-FI."4.2.post3"]
+url = "https://files.pythonhosted.org/packages/41/e4/2d7e8ed5eaa4055d2f3820e78f9fd5a09f7f72b6edc3880e2d3ee99bf66a/jupyterlab_language_pack_fi_fi-4.2.post3-py2.py3-none-any.whl"
+hash = "sha256-lZVIdbFAsJo33MbVt/XAErmh9G2jIFDM0/u4hSnXrwc="
+
+[fr-FR."4.2.post3"]
+url = "https://files.pythonhosted.org/packages/22/59/bf6d9f495093301de1fb4407ad515720188fc406e3b1e5727bed1bad41a0/jupyterlab_language_pack_fr_fr-4.2.post3-py2.py3-none-any.whl"
+hash = "sha256-vXV9TnxjBHARz9+cM0S616Hv8hmwTi2+HDOJEzemcAA="
+
+[he-IL."4.2.post3"]
+url = "https://files.pythonhosted.org/packages/a4/16/d799f281517bad8c7dc44013354dccb77afffbbee845f1de8051e07e6099/jupyterlab_language_pack_he_il-4.2.post3-py2.py3-none-any.whl"
+hash = "sha256-CWoV35SZYsBzfX6HAt3ZQWMtyr1gC3rJYxTax/DSdL8="
+
+[hu-HU."4.2.post3"]
+url = "https://files.pythonhosted.org/packages/03/59/493b8954263e28cdff0ec0073183ceb0a3a8741b09462daf0164b720e481/jupyterlab_language_pack_hu_hu-4.2.post3-py2.py3-none-any.whl"
+hash = "sha256-wIq4WCo6AU/bboGu2d0AuTNfQogzZE/7sAQlGQRecec="
+
+[hy-AM."4.2.post3"]
+url = "https://files.pythonhosted.org/packages/7b/d4/cbb9dad8b224d16994a63824e410df15baacee95ddd79f1e171b6b2512db/jupyterlab_language_pack_hy_am-4.2.post3-py2.py3-none-any.whl"
+hash = "sha256-8BuP65OIb8jBB1nmf2dURcRTDkMgSqRpk6w1f3myU/w="
+
+[id-ID."4.2.post3"]
+url = "https://files.pythonhosted.org/packages/5f/b1/5781cb4704e52b7188f80762741fd8dfc162a1b8195f63769c3598116313/jupyterlab_language_pack_id_id-4.2.post3-py2.py3-none-any.whl"
+hash = "sha256-uMMobmLYY6mcjlHrbO71jTyDjVCRBbWCcQPN+ktfOBU="
+
+[it-IT."4.2.post3"]
+url = "https://files.pythonhosted.org/packages/9f/e7/a410a159a2785524c009769f96875f26eefde98cc7c10a1dcd228e447cd4/jupyterlab_language_pack_it_it-4.2.post3-py2.py3-none-any.whl"
+hash = "sha256-0kEBu6jhj/OBrffLV096oSJ6ulYpAEU8VKrW2sD+F7E="
+
+[ja-JP."4.2.post3"]
+url = "https://files.pythonhosted.org/packages/78/a1/999059a0f950c3d58e2656d0df7f791e18c30ed7c7984a9f4ad8e71e6f88/jupyterlab_language_pack_ja_jp-4.2.post3-py2.py3-none-any.whl"
+hash = "sha256-ZBO3qN5DmqfIDjYa5eJZusOACclkp8l/KLBFmeObGgo="
+
+[ko-KR."4.2.post3"]
+url = "https://files.pythonhosted.org/packages/0e/ff/642d316c78487fb51ffbb98aa63b2e04e4b7e9c3ea34a08e3a6317875ae5/jupyterlab_language_pack_ko_kr-4.2.post3-py2.py3-none-any.whl"
+hash = "sha256-5mFTn+5tF89+1OM+JPdnNOHIfSq8znMZvtrZTdtO1pA="
+
+[lt-LT."4.2.post3"]
+url = "https://files.pythonhosted.org/packages/1c/79/8aaf7cf6d8fe172666cf0767b225eca257ab19ad78ea771e7232b3de55ec/jupyterlab_language_pack_lt_lt-4.2.post3-py2.py3-none-any.whl"
+hash = "sha256-hha7M5xe2V+Cyjd6B4aVLLsWKrcCOVJ/ML+aoDDLGWg="
+
+[nl-NL."4.2.post3"]
+url = "https://files.pythonhosted.org/packages/9c/8c/b33f84056faff171b6057a85575edaa043ba70e4b32eb38b9bf313d6cd2f/jupyterlab_language_pack_nl_nl-4.2.post3-py2.py3-none-any.whl"
+hash = "sha256-XmyWvtTfV9AdndUCTrE7o5OP4weBkF5z0F2qq6xl9ik="
+
+[no-NO."4.2.post3"]
+url = "https://files.pythonhosted.org/packages/36/83/23051f068b4a8fb59489f2e46b5e43e69938b08c35aaf6e569b76a46ba27/jupyterlab_language_pack_no_no-4.2.post3-py2.py3-none-any.whl"
+hash = "sha256-JKTljyISC67ct5xd6RsbEk0tO4W9y2I9vXtwW7NQN+U="
+
+[pl-PL."4.2.post3"]
+url = "https://files.pythonhosted.org/packages/6d/41/c070648724a6c3bed7fa4779f30f5150157a1409f481b2fe34d28ca75526/jupyterlab_language_pack_pl_pl-4.2.post3-py2.py3-none-any.whl"
+hash = "sha256-iDpJQJGCnsvM40OG55naC4/ymDL1W6QMFt0JFCkm+bc="
+
+[pt-BR."4.2.post3"]
+url = "https://files.pythonhosted.org/packages/f1/90/6eb9994eca2297138d0fc368135fbe6b0371b2a22b15a5452929156596ab/jupyterlab_language_pack_pt_br-4.2.post3-py2.py3-none-any.whl"
+hash = "sha256-dmcYOnXHXQpq/V+ZICYpNQski+lA9snBImgL1ysnn+U="
+
+[ro-RO."4.2.post3"]
+url = "https://files.pythonhosted.org/packages/76/1e/512e49d34f7e90766bc4f41a537b8899ca8576834d6a50c18781ede62dc5/jupyterlab_language_pack_ro_ro-4.2.post3-py2.py3-none-any.whl"
+hash = "sha256-c52pOMlgAb/vCSjicLQuSIRHK5amGx06BNBMbNQdw5w="
+
+[ru-RU."4.2.post3"]
+url = "https://files.pythonhosted.org/packages/32/ea/ceaf97ab0ef8c0c1622ea1837a9d3a42e8e1539b147a4a301d4e83f0408d/jupyterlab_language_pack_ru_ru-4.2.post3-py2.py3-none-any.whl"
+hash = "sha256-iI2hycBxPKlJV9iqWbVz0eIqkSj0IY/MNyAEcabsKP4="
+
+[si-LK]
+
+[tr-TR."4.2.post3"]
+url = "https://files.pythonhosted.org/packages/c6/2f/f70fcb122e85ebfeda635235b309c6de6828e5a1f7bddd5178762a6b057f/jupyterlab_language_pack_tr_tr-4.2.post3-py2.py3-none-any.whl"
+hash = "sha256-HmKB9mlvGg8h/w1JF/EyyZp3VD+gFw1QWCBdtY0CN/g="
+
+[uk-UA."4.2.post3"]
+url = "https://files.pythonhosted.org/packages/b2/f2/1c8183ef7373aa47a423ce5622b58fe780df653e62eaa41caecb0ca95c90/jupyterlab_language_pack_uk_ua-4.2.post3-py2.py3-none-any.whl"
+hash = "sha256-PqxT+TsOLOup5slWMXwjX8DWVa5gtuRjaiGKlN4QI5U="
+
+[vi-VN."4.2.post3"]
+url = "https://files.pythonhosted.org/packages/00/10/5c06a76b090e405a0b0b1fcc0ccdb6fa111a043a8910455b4d1c9714b938/jupyterlab_language_pack_vi_vn-4.2.post3-py2.py3-none-any.whl"
+hash = "sha256-mdF3sYqcgMRvxUEyG28ArzrOpaWMt0P536lLHObS8Q0="
+
+[zh-CN."4.2.post3"]
+url = "https://files.pythonhosted.org/packages/67/cf/ac8891bec907694af7f6e84e46a7a70e82b8fa28ecd8baa19e3f27ad32c7/jupyterlab_language_pack_zh_cn-4.2.post3-py2.py3-none-any.whl"
+hash = "sha256-JLOoWjKN+6bt/ZXrHXYXnCDLbEk1ZdaRnPIxLmOVwig="
+
+[zh-TW."4.2.post3"]
+url = "https://files.pythonhosted.org/packages/f0/d1/22a97c30d31a1534ed716128c826a15f0d929fcc65405606833518c10341/jupyterlab_language_pack_zh_tw-4.2.post3-py2.py3-none-any.whl"
+hash = "sha256-HCU4MDdfUOcakYWxSPCa47DMS8kG1W+NotSk39Y2NgY="
