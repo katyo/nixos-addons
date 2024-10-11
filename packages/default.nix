@@ -4,6 +4,7 @@ self: super: with self; {
   ukvmc = callPackage ./ukvm { pname = "ukvmc"; };
 
   jsonst = callPackage ./jsonst {};
+  xonv = callPackage ./xonv {};
   ubmsc = callPackage ./ubmsc {};
 
   bluer-tools = callPackage ./bluer-tools {};

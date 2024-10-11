@@ -1,6 +1,7 @@
 # Additional packages and modules for NixOS
 
 - [x] [jsonst](https://github.com/katyo/jsonschema) JSON Schema hacking toolset
+- [x] [xonv](https://github.com/katyo/xonv) Ultimate data formats exchange commandline tool
 - [x] [ubmsc](https://github.com/katyo/ubmsc-rs) BMS monitoring tool
 - [x] [bluer-tools](https://github.com/bluez/bluer) A tools for GATT services, L2CAP and RFCOMM sockets on Linux
 - [x] [easytier](https://easytier.top/en) A simple, secure, decentralized VPN mesh network solution
