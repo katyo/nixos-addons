@@ -49,7 +49,7 @@ Or add overlay to `~/.config/nixpkgs/overlays.nix`:
 
 Or use in shell:
 ```nix
-{ pkgs ? import <nixos> {
+{ pkgs ? import <nixpkgs> {
     overlays = [
         (import <nixos-addons/packages>)
     ];
