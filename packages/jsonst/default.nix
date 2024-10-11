@@ -5,8 +5,8 @@ let owner = "katyo";
     pname = "jsonst";
     version = "0.2.0";
     rev = "v${version}";
-    hash = "sha256-M+MqRaDzJIq9hsU1J2F4U1FjQaOz9vcVPYbbVOYeMu8=";
-    cargoHash = "sha256-0UYjeCnLrXnb5FN8KTIsnaNVTPbnfb5BnYGBf7tAAhU=";
+    hash = "sha256-q6b+1si4KVDg7L12ca850QMXVkzL0qB3ThSZu6Vwo3s=";
+    cargoHash = "sha256-r6s17d1U0K0uZVFvX/vOWcDZRC8U4MfM1drX8E2tMMM=";
 
 in rustPlatform.buildRustPackage {
   inherit pname version cargoHash;
