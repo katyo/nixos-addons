@@ -1,4 +1,6 @@
 self: super: with self; {
+  makeYarnOfflineCache = callPackage ./helpers/yarn-offline-cache.nix {};
+
   ukvm = callPackage ./ukvm { pname = "ukvm"; };
   ukvms = callPackage ./ukvm { pname = "ukvms"; };
   ukvmc = callPackage ./ukvm { pname = "ukvmc"; };
@@ -8,6 +10,7 @@ self: super: with self; {
   ubmsc = callPackage ./ubmsc {};
 
   bluer-tools = callPackage ./bluer-tools {};
+  espflash_latest = callPackage ./espflash { inherit (darwin.apple_sdk.frameworks) CoreServices Security SystemConfiguration; };
 
   fdt-viewer = qt6.callPackage ./fdt-viewer {};
   openocd-svd = libsForQt5.callPackage ./openocd-svd {};
@@ -31,6 +34,7 @@ self: super: with self; {
       pylib3mf = callPackage ./cadquery/pylib3mf.nix {};
       ocpsvg = callPackage ./cadquery/ocpsvg.nix {};
       trianglesolver = callPackage ./cadquery/trianglesolver.nix {};
+      ocp-tessellate = callPackage ./cadquery/ocp-tessellate.nix {};
 
       cadquery-ocp = callPackage ./cadquery/cadquery_ocp-whl.nix {};
       cadquery-vtk = callPackage ./cadquery/cadquery_vtk-whl.nix {};
@@ -54,6 +58,14 @@ self: super: with self; {
       build123d = callPackage ./cadquery/build123d.nix {};
 
       bd-warehouse = callPackage ./cadquery/bd-warehouse.nix {};
+
+      voila = callPackage ./cadquery/voila-whl.nix {};
+      numpy-quaternion = callPackage ./cadquery/numpy-quaternion.nix {};
+      cad-viewer-widget = callPackage ./cadquery/cad-viewer-widget-whl.nix {};
+
+      jupyter-cadquery = callPackage ./cadquery/jupyter-cadquery.nix {};
+
+      ocp-vscode = callPackage ./cadquery/ocp-vscode.nix {};
     } // (import ./jupyterlab-language-packs { inherit lib callPackage; }))
   ];
 
