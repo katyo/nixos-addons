@@ -144,7 +144,7 @@ let
       type = types.listOf types.str;
       description = "Known external node to use (see: https://easytier.gd.nkbpal.cn/status/easytier)";
       default = [
-        "tcp://easytier.public.kkrainbow.top:11010"
+        #"tcp://easytier.public.kkrainbow.top:11010"
         "tcp://ah.nkbpal.cn:11010"
         #"wss://ah.nkbpal.cn:11012"
         "tcp://222.186.59.80:11113"
