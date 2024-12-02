@@ -144,19 +144,25 @@ let
       type = types.listOf types.str;
       description = "Known external node to use (see: https://easytier.gd.nkbpal.cn/status/easytier)";
       default = [
-        #"tcp://easytier.public.kkrainbow.top:11010"
-        "tcp://ah.nkbpal.cn:11010"
-        #"wss://ah.nkbpal.cn:11012"
+        "tcp://47.115.208.211:11010" # "tcp://public.easytier.top:11010"
+        "tcp://8.135.237.9:11010" # "tcp://public.server.soe.icu:11010"
+        "wss://8.135.237.9:11012" # "wss://public.server.soe.icu:11012"
+        "tcp://183.164.144.225:11010" # "tcp://ah.nkbpal.cn:11010"
+        "wss://183.164.144.225:11010" # "wss://ah.nkbpal.cn:11012"
+        "tcp://183.136.206.179:11011" # "tcp://et.gbc.moe:11011"
+        "wss://183.136.206.179:11012" # "wss://et.gbc.moe:11012"
+        "tcp://207.174.40.90:11111" # "tcp://et.pub.moe.gift:11111"
+        "wss://207.174.40.90:11111" # "wss://et.pub.moe.gift:11111"
+        "tcp://111.180.144.163:11010"
+        "tcp://156.231.117.80:11012"
+        "wss://156.231.117.80:11012"
+        "tcp://43.136.45.249:11010"
+        "wss://43.136.45.249:11012"
+        "tcp://47.103.35.100:11010"
+        "tcp://116.206.178.250:11010"
+        "tcp://45.204.206.10:56710"
+        "tcp://156.229.161.115:11010"
         "tcp://222.186.59.80:11113"
-        "tcp://et.323888.xyz:11010"
-        #"tcp://c.oee.icu:60007"
-        #"wss://c.oee.icu:60007"
-        "tcp://etvm.oee.icu:31572"
-        #"wss://etvm.oee.icu:30845"
-        "tcp://s1.ct8.pl:1101"
-        "ws://s1.ct8.pl:11012"
-        "tcp://et.pub.moe.gift:11010"
-        #"wss://et.pub.moe.gift:11012"
       ];
       example = ''["tcp://22.1.1.1:11010"]'';
     };
