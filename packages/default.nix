@@ -20,6 +20,8 @@ self: super: with self; {
 
   godap-bin = callPackage ./godap/binary.nix {};
 
+  bottom-latest = callPackage ./bottom {};
+
   victoriametrics-datasource-bin = grafanaPlugins.callPackage ./grafana-plugins/victoriametrics-datasource/binary.nix {};
   nvidia-gpu-exporter-bin = callPackage ./nvidia-gpu-exporter/binary.nix {};
 
