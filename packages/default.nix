@@ -73,6 +73,13 @@ self: super: with self; {
 
   cadquery-editor = python311Packages.callPackage ./cadquery/cq-editor.nix {};
 
+  yt-dlp-latest = python3Packages.callPackage ./yt-dlp {
+    inherit python3Packages;
+  };
+  yt-dlp-opus-split = callPackage ./yt-dlp/opus-split.nix {
+    yt-dlp = yt-dlp-latest;
+  };
+
   mayo = libsForQt5.callPackage ./mayo {};
   mayo-bin = callPackage ./mayo/binary.nix {};
   cura-bin = callPackage ./cura/binary.nix {};
