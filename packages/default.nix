@@ -14,6 +14,8 @@ self: super: with self; {
 
   fdt-viewer = qt6.callPackage ./fdt-viewer {};
   openocd-svd = libsForQt5.callPackage ./openocd-svd {};
+  probe-rs-latest = callPackage ./probe-rs {};
+  probe-rs-0_22 = callPackage ./probe-rs/v0_22.nix {};
 
   qucsator-rf = callPackage ./qucsator-rf {};
   qucs-s-latest = qt6.callPackage ./qucs-s {};
