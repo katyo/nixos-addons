@@ -78,6 +78,9 @@ self: super: with self; {
 
   cadquery-editor = python311Packages.callPackage ./cadquery/cq-editor.nix {};
 
+  frugen = callPackage ./frugen {};
+  fru-tool = python312Packages.callPackage ./fru-tool {};
+
   yt-dlp-latest = python3Packages.callPackage ./yt-dlp {
     inherit python3Packages;
   };
