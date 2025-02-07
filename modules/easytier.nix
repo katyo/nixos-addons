@@ -179,7 +179,7 @@ let
     after = ["network-online.target"];
     wants = ["network-online.target"];
     wantedBy = ["multi-user.target"];
-    path = [pkgs.bash cfg.ipPackage];
+    path = [cfg.ipPackage];
     serviceConfig = {
       Restart = "always";
       DynamicUser = true;

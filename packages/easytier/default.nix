@@ -1,4 +1,4 @@
-{ lib, fetchFromGitHub, rustPlatform, protobuf, version ? "2.0.3" }:
+{ lib, fetchFromGitHub, rustPlatform, protobuf, version ? "2.2.1" }:
 
 let
   pkgInfo = builtins.fromTOML (lib.readFile ./default.toml);
@@ -14,12 +14,13 @@ in rustPlatform.buildRustPackage {
     hash = pkgInfo.${version}.hash;
   };
 
+  useFetchCargoVendor = true;
   cargoHash = pkgInfo.${version}.cargoHash;
   cargoFlags = ["-p easytier"];
 
   postPatch = "rm -rf .cargo";
 
-  nativeBuildInputs = [protobuf];
+  nativeBuildInputs = [protobuf rustPlatform.bindgenHook];
 
   doCheck = false;
 

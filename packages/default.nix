@@ -20,7 +20,7 @@ self: super: with self; {
   qucsator-rf = callPackage ./qucsator-rf {};
   qucs-s-latest = qt6.callPackage ./qucs-s {};
 
-  easytier = callPackage ./easytier {};
+  easytier = callPackage ./easytier { rustPlatform = let rust = rust-bin.stable.latest.minimal; in makeRustPlatform { cargo = rust; rustc = rust; }; };
   easytier-bin = callPackage ./easytier/binary.nix {};
 
   godap-bin = callPackage ./godap/binary.nix {};

@@ -2,7 +2,7 @@
 
 pkgs=easytier
 pkgsFile=default.toml
-pkgsVersions=("1.2.3" "2.0.3")
+pkgsVersions=("1.2.3" "2.2.1")
 
 declare -A hash
 declare -A cargoHash
