@@ -4,6 +4,7 @@
 - [x] [xonv](https://github.com/katyo/xonv) Ultimate data formats exchange commandline tool
 - [x] [ubmsc](https://github.com/katyo/ubmsc-rs) BMS monitoring tool
 - [x] [bluer-tools](https://github.com/bluez/bluer) A tools for GATT services, L2CAP and RFCOMM sockets on Linux
+- [x] [frugen](https://codeberg.org/IPMITool/frugen) A tool to parse and generate FRU binaries
 - [x] [easytier](https://easytier.top/en) A simple, secure, decentralized VPN mesh network solution (needs [<oxalica/rust-overlay>](https://github.com/oxalica/rust-overlay))
 - [x] [ukvm](https://github.com/katyo/ukvm) A network KVM solution in Rust
 - [x] [godap](https://github.com/Macmod/godap) A complete TUI for LDAP
@@ -22,6 +23,13 @@
 - [x] [JupyterLab Language Packs](https://github.com/jupyterlab/language-packs) Language packs for JupyterLab ecosystem (`python3Packages.jupyterlab-language-pack-{lang-code}`)
 - [x] [Mayo](https://github.com/fougue/mayo) 3D CAD viewer and converter based on Qt + OpenCascade
 - [x] [Ultimaker Cura](https://github.com/Ultimaker/Cura) 3D printer / slicing GUI built on top of the Uranium framework
+- [x] [NextCloud](https://nextcloud.com/) extra appications packages
+  - [x] [memories](https://apps.nextcloud.com/apps/memories)
+  - [x] [music](https://apps.nextcloud.com/apps/music)
+  - [x] [gpxpod](https://apps.nextcloud.com/apps/gpxpod)
+  - [x] [twofactor_totp](https://apps.nextcloud.com/apps/twofactor_totp)
+  - [x] [passwords](https://apps.nextcloud.com/apps/passwords)
+  - [x] [user_migration](https://apps.nextcloud.com/apps/user_migration)
 - [x] gost-fonts Russian GOST fonts
 
 ## Installation
@@ -36,7 +44,12 @@ Edit system configuration:
 ```nix
 {
     imports = [
-      (import <nixos-addons>)
+        (import <nixos-addons>)
+    ];
+
+    # Addidional overlays (needed for some packages)
+    nixpkgs.overlays = [
+        (import <rust-overlay>)
     ];
 }
 ```
@@ -45,6 +58,8 @@ Or add overlay to `~/.config/nixpkgs/overlays.nix`:
 ```nix
 [
     (import <nixos-addons/packages>)
+    # Additional overlays (when needed)
+    (import <rust-overlay>)
 ]
 ```
 
@@ -53,6 +68,8 @@ Or use in shell:
 { pkgs ? import <nixpkgs> {
     overlays = [
         (import <nixos-addons/packages>)
+        # Additional overlays (when needed)
+        (import <rust-overlay>)
     ];
 }, ... }:
 
