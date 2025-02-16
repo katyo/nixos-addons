@@ -25,6 +25,8 @@ self: super: with self; {
 
   godap-bin = callPackage ./godap/binary.nix {};
 
+  zed-editor-bin = callPackage ./zed-editor/binary.nix {};
+
   bottom-latest = callPackage ./bottom {};
 
   victoriametrics-datasource-bin = grafanaPlugins.callPackage ./grafana-plugins/victoriametrics-datasource/binary.nix {};

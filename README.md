@@ -12,6 +12,7 @@
 - [x] [nvidia_gpu_exporter](https://github.com/utkuozdemir/nvidia_gpu_exporter) Nvidia GPU exporter for prometheus using nvidia-smi binary
 - [x] [FDT viewer](https://github.com/dev-0x7C6/fdt-viewer) Flattened Device Tree Viewer written in Qt
 - [x] [OpenOCD SVD](https://github.com/esynr3z/openocd-svd) OpenOCD and CMSIS-SVD based peripheral register viewer
+- [x] [Zed](https://zed.dev/) is a next-generation code editor designed for high-performance collaboration with humans and AI.
 - [x] [CadQuery](https://cadquery.readthedocs.io/) Python parametric CAD scripting framework based on OCC
   - [x] [CadQuery WareHouse](https://cq-warehouse.readthedocs.io/) CadQuery parametric part collection
   - [x] [CadQuery Gears](https://github.com/meadiode/cq_gears) CadQuery based involute gear parametric modelling

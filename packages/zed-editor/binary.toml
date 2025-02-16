@@ -1,0 +1,6 @@
+# This file was generated using make. Do not etit it manually.
+["0.173.10".darwin]
+aarch64 = "sha256-XotzS7FLzdnDdnWagnRn9Ytvf50ouuJLVjVpF+nKgeo="
+["0.173.10".linux]
+x86_64 = "sha256-HjZ+HYWYlQ9U3oAYj33N/oyLKCPCQC5HIoRCtezJEl8="
+aarch64 = "sha256-L8xJoevO70rWVwbzTMGegT/LJPVX9RIC+asAC1XN11w="
