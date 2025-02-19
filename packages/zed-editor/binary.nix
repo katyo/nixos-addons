@@ -1,6 +1,6 @@
 { lib, stdenv, fetchurl, unzip, autoPatchelfHook, makeWrapper,
   xorg, libxkbcommon, vulkan-loader, libbsd, zlib, alsa-lib,
-  targetPlatform, version ? "0.173.10" }:
+  targetPlatform, version ? null }:
 
 let
   pname = "zed-editor";
@@ -9,19 +9,24 @@ let
   arch = lib.elemAt system 0;
   os = lib.elemAt system 2;
 
-  pkgs = builtins.fromTOML (lib.readFile ./binary.toml);
+  releases = builtins.fromTOML (lib.readFile ./binary.toml);
 
-  file = {
+  pkgFile = {
     darwin = "Zed-${arch}.dmg";
     linux = "zed-linux-${arch}.tar.gz";
   }.${os};
 
+  latestVersion = versions: lib.elemAt (lib.sort (a: b: a > b) versions) 0;
+
+  pkgVersion = if isNull version then latestVersion (lib.attrNames releases) else version;
+
 in stdenv.mkDerivation {
-  inherit pname version;
+  inherit pname;
+  version = pkgVersion;
 
   src = fetchurl {
-    url = "https://github.com/zed-industries/zed/releases/download/v${version}/${file}";
-    hash = pkgs.${version}.${os}.${arch};
+    url = "https://github.com/zed-industries/zed/releases/download/v${pkgVersion}/${pkgFile}";
+    hash = releases.${pkgVersion}.${os}.${arch};
   };
 
   nativeBuildInputs = [unzip autoPatchelfHook makeWrapper];
