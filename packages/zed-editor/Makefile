@@ -1,9 +1,10 @@
 repository := zed-industries
 package := zed
-versions := 0.174.6
-systems := darwin linux
+versions := 0.175.5
+#systems += darwin
+systems += linux
 linux.archs := x86_64 aarch64
-darwin.archs := aarch64
+darwin.archs := x86_64 aarch64
 
 file.darwin = Zed-$(1).dmg
 file.linux = zed-linux-$(1).tar.gz
