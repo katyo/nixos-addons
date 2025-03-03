@@ -2,13 +2,13 @@
 
 pkgs=easytier
 pkgsFile=default.toml
-pkgsVersions=("1.2.3" "2.2.1")
+pkgsVersions=("2.2.2")
 
 declare -A hash
 declare -A cargoHash
 
 function getHash() {
-	nix-shell -p '(import <nixos> { overlays = [ (import ../default.nix) ]; }).'"$1"'.override { version = "'"$2"'"; }' 2>&1 | grep 'got:' | sed 's/^[[:space:]]*got:[[:space:]]*//g' | sed 's/[[:space:]]*$//g'
+	nix-shell -p '(import <nixos> { overlays = [ (import ../default.nix) (import <rust-overlay>) ]; }).'"$1"'.override { version = "'"$2"'"; }' 2>&1 | grep 'got:' | sed 's/^[[:space:]]*got:[[:space:]]*//g' | sed 's/[[:space:]]*$//g'
 }
 
 function genPkgs() {

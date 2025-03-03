@@ -1,15 +1,15 @@
 # This file was generated using make. Do not etit it manually.
-["1.2.3".linux]
-arm = "sha256-iT1PfbUFaziwDayAm3QI1TGao791VfW2KImG0rApozE="
-armhf = "sha256-tIEPWwCdsNNHU87rAbJ/GPREmA9SKxqoEV+ONe1OTxU="
-armv7 = "sha256-x/Ee7PUPQ5A7E26cSpuuN1zXkSgRXh+Lw2wWkPBz/l0="
-armv7hf = "sha256-EVcFBXH8FztWC72HGm+h+QFBkxj0uyuWAeaoY6YEXMw="
-aarch64 = "sha256-BFTpplDQwpj9V29mlbAu0XxWN2owPcywzcSoDoGzPjE="
-x86_64 = "sha256-aWj6B2E2xdZkVWww7liC17+Qzz92P3CPrxVffjpx3U0="
-mips = "sha256-GvTq3DR3qkMmYTLN/zP0ycWATyY5x5PVxBCVrpAcunE="
-mipsel = "sha256-9ZBa6eQbL/Oht6nyVneuPzhJTew77ZVhKdotPGzqKsU="
-["1.2.3".darwin]
-aarch64 = "sha256-rBslffuqwXt3B4GeezngLQe4DQU+ZiWr3J1BvfqRPXw="
-x86_64 = "sha256-i/4A9wj+kcZ8RRRji2Gj1pVkfUMQrQcMckD83IS6SHc="
-["1.2.3".windows]
-x86_64 = "sha256-EPIJb3M6yRNA2gEaHQoMSjxuScFlFaSUQ80WdEmxvU4="
+["2.2.2".linux]
+arm = "sha256-magiviTB41drz3fx59OhZkytXPpCcuMKactu54wZMfA="
+armhf = "sha256-kBXWpC0lQvqZ8ni8EzVQ9oxth7f8T5o8Mvatr4CIkv0="
+armv7 = "sha256-ZOeVmKkvTkRWb/wM60vWLv8VbVltzCH2+TMzRFe1D2k="
+armv7hf = "sha256-Q5wSvuc9ij4m3kjarSaLICeNKa3IBiZaM77ScZ7VsKU="
+aarch64 = "sha256-XL7zLARsYWcDmTbSsw8z0Tup5ACjnfvFxXcvpSmH44g="
+x86_64 = "sha256-Ud6PB5bhpJ8MMQlm3blfkvX5lO6Y3DPOXlsXzW5UCI8="
+mips = "sha256-C/FoDr6SV0DQ++7R9FTwQehoobQphmBukqu8SOy1f3o="
+mipsel = "sha256-GnePtdnDJier8O9oL629dO8z6B7BKh6Z5ar2YPZT0eA="
+["2.2.2".darwin]
+aarch64 = "sha256-zKV7RPgd0hPCxDN0iRRU7mC6VGt0wONvxEoYG7OdOBU="
+x86_64 = "sha256-z55RpU6xfphSzeXkKIs1VeSSFTBPYstf3N2p8zordcQ="
+["2.2.2".windows]
+x86_64 = "sha256-PoH1WA2+ddXqGAexQjngDqs4+srI1kzdMA6UuJZvY9g="

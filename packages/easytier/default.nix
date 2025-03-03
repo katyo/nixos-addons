@@ -1,4 +1,4 @@
-{ lib, fetchFromGitHub, rustPlatform, protobuf, version ? "2.2.1" }:
+{ lib, fetchFromGitHub, rustPlatform, protobuf, version ? "2.2.2" }:
 
 let
   pkgInfo = builtins.fromTOML (lib.readFile ./default.toml);

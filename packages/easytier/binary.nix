@@ -1,4 +1,4 @@
-{ lib, stdenv, fetchurl, unzip, targetPlatform, version ? "1.2.3" }:
+{ lib, stdenv, fetchurl, unzip, targetPlatform, version ? "2.2.2" }:
 
 let
   name = "easytier";

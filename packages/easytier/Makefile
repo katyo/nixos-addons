@@ -1,4 +1,4 @@
-versions := 1.2.3
+versions := 2.2.2
 systems := linux darwin windows
 linux.archs := arm armhf armv7 armv7hf aarch64 x86_64 mips mipsel
 darwin.archs := aarch64 x86_64
