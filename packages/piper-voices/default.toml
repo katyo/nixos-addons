@@ -1,0 +1,21 @@
+base-url = "https://huggingface.co/rhasspy/piper-voices/resolve/v1.0.0"
+[ru-ru_RU-denis-medium]
+model-file = "ru/ru_RU/denis/medium/ru_RU-denis-medium.onnx"
+model-hash = "sha256-Ffq1bhGgl4WO4RVUXQ9pf8KjFsQaKRpTYjSfuHBBGwo="
+config-file = "ru/ru_RU/denis/medium/ru_RU-denis-medium.onnx.json"
+config-hash = "sha256-gxyGDawLUHPqqBYQoKY47CPZCmz45fhxtEhcLOw3Z8g="
+[ru-ru_RU-dmitri-medium]
+model-file = "ru/ru_RU/dmitri/medium/ru_RU-dmitri-medium.onnx"
+model-hash = "sha256-8HM1brxL0PgMWvWN8pU6WYi9W9qx6zhjXOlgsHH778s="
+config-file = "ru/ru_RU/dmitri/medium/ru_RU-dmitri-medium.onnx.json"
+config-hash = "sha256-Zn7zEXvGQsKJLf92kNi9yMpCKK6qeDstwUFt9jKFXg0="
+[ru-ru_RU-irina-medium]
+model-file = "ru/ru_RU/irina/medium/ru_RU-irina-medium.onnx"
+model-hash = "sha256-j/OCEtI9owC743BcZF5uW5R18L/eAVWOsXgT4irKqqo="
+config-file = "ru/ru_RU/irina/medium/ru_RU-irina-medium.onnx.json"
+config-hash = "sha256-wuwouzjitZ6TuVmz5ANIwa/rvScvMP7V1BIF0I6Yqdc="
+[ru-ru_RU-ruslan-medium]
+model-file = "ru/ru_RU/ruslan/medium/ru_RU-ruslan-medium.onnx"
+model-hash = "sha256-cqX4jgsgkoBk60XYjh2qIfivYtGGE1gNMsu0rtSNz38="
+config-file = "ru/ru_RU/ruslan/medium/ru_RU-ruslan-medium.onnx.json"
+config-hash = "sha256-cGpPsXvDBKvQeAm1Ut6uYV5k3L/7+9CYVLo3ylnogRc="

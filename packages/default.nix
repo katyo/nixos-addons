@@ -106,6 +106,8 @@ self: super: with self; {
 
   nextcloud-extras = callPackage ./nextcloud-extras {};
 
+  piper-voices = callPackage ./piper-voices {};
+
   gost-fonts = callPackage ./gost-fonts {};
 
   russian-trusted-ca = callPackage ./extra-certs/russian-trusted-ca.nix {};
