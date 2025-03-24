@@ -108,6 +108,8 @@ self: super: with self; {
 
   piper-voices = callPackage ./piper-voices {};
 
+  mcp-openapi-schema = callPackage ./mcp-servers/mcp-openapi-schema {};
+
   gost-fonts = callPackage ./gost-fonts {};
 
   russian-trusted-ca = callPackage ./extra-certs/russian-trusted-ca.nix {};
