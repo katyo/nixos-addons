@@ -1,5 +1,5 @@
 { pkgs ? import <nixpkgs> {}, ... }:
 with pkgs;
 mkShell {
-  buildInputs = [gnumake deno];
+  buildInputs = [gnumake deno curl htmlq];
 }
