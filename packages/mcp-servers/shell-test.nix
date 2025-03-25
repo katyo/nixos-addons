@@ -27,6 +27,7 @@ mkShell {
     sqlite
     time
     # extras
+    inspector
     openapi-schema
   ];
 }

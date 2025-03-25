@@ -32,6 +32,7 @@ let
   ];
 
   extraPackages = {
+    inspector = callPackage ./mcp-inspector {};
     openapi-schema = callPackage ./mcp-openapi-schema {};
   };
   
