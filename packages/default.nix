@@ -34,6 +34,9 @@ self: super: with self; {
 
   pythonPackagesExtensions = super.pythonPackagesExtensions ++ [
     (pySelf: pySuper: with { inherit (pySelf) callPackage; }; {
+      uv-dynamic-versioning = callPackage ./mcp-servers/uv-dynamic-versioning {};
+      mcp = callPackage ./mcp-servers/mcp {};
+
       nlopt = callPackage ./cadquery/nlopt.nix {};
       casadi = callPackage ./cadquery/casadi-whl.nix {};
       ezdxf1 = callPackage ./cadquery/ezdxf.nix {};
@@ -108,7 +111,7 @@ self: super: with self; {
 
   piper-voices = callPackage ./piper-voices {};
 
-  mcp-openapi-schema = callPackage ./mcp-servers/mcp-openapi-schema {};
+  mcp-servers = callPackage ./mcp-servers {};
 
   gost-fonts = callPackage ./gost-fonts {};
 

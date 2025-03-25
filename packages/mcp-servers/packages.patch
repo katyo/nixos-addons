@@ -1,0 +1,266 @@
+diff --git a/src/aws-kb-retrieval-server/package.json b/src/aws-kb-retrieval-server/package.json
+index 072fee1..28f68bb 100644
+--- a/src/aws-kb-retrieval-server/package.json
++++ b/src/aws-kb-retrieval-server/package.json
+@@ -15,7 +15,6 @@
+   ],
+   "scripts": {
+     "build": "tsc && shx chmod +x dist/*.js",
+-    "prepare": "npm run build",
+     "watch": "tsc --watch"
+   },
+   "dependencies": {
+@@ -27,4 +26,4 @@
+     "shx": "^0.3.4",
+     "typescript": "^5.6.2"
+   }
+-}
+\ No newline at end of file
++}
+diff --git a/src/brave-search/package.json b/src/brave-search/package.json
+index 163e5af..cf605dd 100644
+--- a/src/brave-search/package.json
++++ b/src/brave-search/package.json
+@@ -15,7 +15,6 @@
+   ],
+   "scripts": {
+     "build": "tsc && shx chmod +x dist/*.js",
+-    "prepare": "npm run build",
+     "watch": "tsc --watch"
+   },
+   "dependencies": {
+@@ -26,4 +25,4 @@
+     "shx": "^0.3.4",
+     "typescript": "^5.6.2"
+   }
+-}
+\ No newline at end of file
++}
+diff --git a/src/everart/package.json b/src/everart/package.json
+index 653c654..543f790 100644
+--- a/src/everart/package.json
++++ b/src/everart/package.json
+@@ -15,7 +15,6 @@
+   ],
+   "scripts": {
+     "build": "tsc && shx chmod +x dist/*.js",
+-    "prepare": "npm run build",
+     "watch": "tsc --watch"
+   },
+   "dependencies": {
+@@ -29,4 +28,4 @@
+     "shx": "^0.3.4",
+     "typescript": "^5.3.3"
+   }
+-}
+\ No newline at end of file
++}
+diff --git a/src/everything/package.json b/src/everything/package.json
+index bc54f10..45ec91a 100644
+--- a/src/everything/package.json
++++ b/src/everything/package.json
+@@ -15,7 +15,6 @@
+   ],
+   "scripts": {
+     "build": "tsc && shx chmod +x dist/*.js",
+-    "prepare": "npm run build",
+     "watch": "tsc --watch",
+     "start": "node dist/index.js",
+     "start:sse": "node dist/sse.js"
+@@ -31,4 +30,4 @@
+     "shx": "^0.3.4",
+     "typescript": "^5.6.2"
+   }
+-}
+\ No newline at end of file
++}
+diff --git a/src/filesystem/package.json b/src/filesystem/package.json
+index 6aca648..891e806 100644
+--- a/src/filesystem/package.json
++++ b/src/filesystem/package.json
+@@ -15,7 +15,6 @@
+   ],
+   "scripts": {
+     "build": "tsc && shx chmod +x dist/*.js",
+-    "prepare": "npm run build",
+     "watch": "tsc --watch"
+   },
+   "dependencies": {
+@@ -32,4 +31,4 @@
+     "shx": "^0.3.4",
+     "typescript": "^5.3.3"
+   }
+-}
+\ No newline at end of file
++}
+diff --git a/src/gdrive/package.json b/src/gdrive/package.json
+index a2d4be3..dd15140 100644
+--- a/src/gdrive/package.json
++++ b/src/gdrive/package.json
+@@ -15,7 +15,6 @@
+   ],
+   "scripts": {
+     "build": "tsc && shx chmod +x dist/*.js",
+-    "prepare": "npm run build",
+     "watch": "tsc --watch"
+   },
+   "dependencies": {
+@@ -28,4 +27,4 @@
+     "shx": "^0.3.4",
+     "typescript": "^5.6.2"
+   }
+-}
+\ No newline at end of file
++}
+diff --git a/src/github/package.json b/src/github/package.json
+index 09da38f..c26aedd 100644
+--- a/src/github/package.json
++++ b/src/github/package.json
+@@ -15,7 +15,6 @@
+   ],
+   "scripts": {
+     "build": "tsc && shx chmod +x dist/*.js",
+-    "prepare": "npm run build",
+     "watch": "tsc --watch"
+   },
+   "dependencies": {
+@@ -31,4 +30,4 @@
+     "shx": "^0.3.4",
+     "typescript": "^5.6.2"
+   }
+-}
+\ No newline at end of file
++}
+diff --git a/src/gitlab/package.json b/src/gitlab/package.json
+index 1259e24..a5c178f 100644
+--- a/src/gitlab/package.json
++++ b/src/gitlab/package.json
+@@ -15,7 +15,6 @@
+   ],
+   "scripts": {
+     "build": "tsc && shx chmod +x dist/*.js",
+-    "prepare": "npm run build",
+     "watch": "tsc --watch"
+   },
+   "dependencies": {
+@@ -28,4 +27,4 @@
+     "shx": "^0.3.4",
+     "typescript": "^5.6.2"
+   }
+-}
+\ No newline at end of file
++}
+diff --git a/src/google-maps/package.json b/src/google-maps/package.json
+index 5e4c04c..512912d 100644
+--- a/src/google-maps/package.json
++++ b/src/google-maps/package.json
+@@ -15,7 +15,6 @@
+   ],
+   "scripts": {
+     "build": "tsc && shx chmod +x dist/*.js",
+-    "prepare": "npm run build",
+     "watch": "tsc --watch"
+   },
+   "dependencies": {
+@@ -27,4 +26,4 @@
+     "shx": "^0.3.4",
+     "typescript": "^5.6.2"
+   }
+-}
+\ No newline at end of file
++}
+diff --git a/src/memory/package.json b/src/memory/package.json
+index b64cf3b..e59eaf1 100644
+--- a/src/memory/package.json
++++ b/src/memory/package.json
+@@ -15,7 +15,6 @@
+   ],
+   "scripts": {
+     "build": "tsc && shx chmod +x dist/*.js",
+-    "prepare": "npm run build",
+     "watch": "tsc --watch"
+   },
+   "dependencies": {
+@@ -26,4 +25,4 @@
+     "shx": "^0.3.4",
+     "typescript": "^5.6.2"
+   }
+-}
+\ No newline at end of file
++}
+diff --git a/src/postgres/package.json b/src/postgres/package.json
+index 70fa0db..dc0c885 100644
+--- a/src/postgres/package.json
++++ b/src/postgres/package.json
+@@ -15,7 +15,6 @@
+   ],
+   "scripts": {
+     "build": "tsc && shx chmod +x dist/*.js",
+-    "prepare": "npm run build",
+     "watch": "tsc --watch"
+   },
+   "dependencies": {
+@@ -27,4 +26,4 @@
+     "shx": "^0.3.4",
+     "typescript": "^5.6.2"
+   }
+-}
+\ No newline at end of file
++}
+diff --git a/src/puppeteer/package.json b/src/puppeteer/package.json
+index 6ca4915..305d8e3 100644
+--- a/src/puppeteer/package.json
++++ b/src/puppeteer/package.json
+@@ -15,7 +15,6 @@
+   ],
+   "scripts": {
+     "build": "tsc && shx chmod +x dist/*.js",
+-    "prepare": "npm run build",
+     "watch": "tsc --watch"
+   },
+   "dependencies": {
+@@ -26,4 +25,4 @@
+     "shx": "^0.3.4",
+     "typescript": "^5.6.2"
+   }
+-}
+\ No newline at end of file
++}
+diff --git a/src/sequentialthinking/package.json b/src/sequentialthinking/package.json
+index 89205d3..a41fe36 100644
+--- a/src/sequentialthinking/package.json
++++ b/src/sequentialthinking/package.json
+@@ -15,7 +15,6 @@
+   ],
+   "scripts": {
+     "build": "tsc && shx chmod +x dist/*.js",
+-    "prepare": "npm run build",
+     "watch": "tsc --watch"
+   },
+   "dependencies": {
+@@ -29,4 +28,4 @@
+     "shx": "^0.3.4",
+     "typescript": "^5.3.3"
+   }
+-}
+\ No newline at end of file
++}
+diff --git a/src/slack/package.json b/src/slack/package.json
+index 337b9db..703c07d 100644
+--- a/src/slack/package.json
++++ b/src/slack/package.json
+@@ -15,7 +15,6 @@
+   ],
+   "scripts": {
+     "build": "tsc && shx chmod +x dist/*.js",
+-    "prepare": "npm run build",
+     "watch": "tsc --watch"
+   },
+   "dependencies": {
+@@ -26,4 +25,4 @@
+     "shx": "^0.3.4",
+     "typescript": "^5.6.2"
+   }
+-}
+\ No newline at end of file
++}
