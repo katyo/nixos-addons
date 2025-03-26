@@ -31,6 +31,10 @@
   - [x] [twofactor_totp](https://apps.nextcloud.com/apps/twofactor_totp)
   - [x] [passwords](https://apps.nextcloud.com/apps/passwords)
   - [x] [user_migration](https://apps.nextcloud.com/apps/user_migration)
+- [x] [Model Control Protocol](https://modelcontextprotocol.io/introduction) software
+  - [x] [MCP Servers](https://github.com/modelcontextprotocol/servers) Collection of servers which supports Model Context Protocol
+  - [x] [MCP OpenAPI Schema](https://github.com/hannesj/mcp-openapi-schema) MCP Server to work with OpenAPI Schemas
+  - [x] [MCP Inspector](https://github.com/modelcontextprotocol/inspector) Visual testing tool for MCP servers
 - [x] gost-fonts Russian GOST fonts
 
 ## Installation
