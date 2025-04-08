@@ -8,6 +8,7 @@
 - [x] [easytier](https://easytier.top/en) A simple, secure, decentralized VPN mesh network solution (needs [<oxalica/rust-overlay>](https://github.com/oxalica/rust-overlay))
 - [x] [ukvm](https://github.com/katyo/ukvm) A network KVM solution in Rust
 - [x] [godap](https://github.com/Macmod/godap) A complete TUI for LDAP
+- [x] [tty0tty](https://github.com/freemed/tty0tty) A null-modem emulator for linux
 - [x] [victoriametrics-datasource](https://github.com/VictoriaMetrics/victoriametrics-datasource) Grafana datasource for VictoriaMetrics
 - [x] [nvidia_gpu_exporter](https://github.com/utkuozdemir/nvidia_gpu_exporter) Nvidia GPU exporter for prometheus using nvidia-smi binary
 - [x] [FDT viewer](https://github.com/dev-0x7C6/fdt-viewer) Flattened Device Tree Viewer written in Qt

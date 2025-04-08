@@ -29,6 +29,9 @@ self: super: with self; {
 
   bottom-latest = callPackage ./bottom {};
 
+  tty0tty = callPackage ./tty0tty {};
+  tty0tty-module = linuxPackages.callPackage ./tty0tty {};
+
   victoriametrics-datasource-bin = grafanaPlugins.callPackage ./grafana-plugins/victoriametrics-datasource/binary.nix {};
   nvidia-gpu-exporter-bin = callPackage ./nvidia-gpu-exporter/binary.nix {};
 
