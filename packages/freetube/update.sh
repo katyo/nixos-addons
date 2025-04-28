@@ -2,7 +2,7 @@
 
 pkgs=freetube-latest
 pkgsFile=default.toml
-pkgsVers=("0.23.3-beta")
+pkgsVers=("0.23.4-beta")
 
 #set -x
 
