@@ -1,6 +1,6 @@
 repository := zed-industries
 package := zed
-versions := 0.185.10
+versions := 0.185.16
 #systems += darwin
 systems += linux
 linux.archs := x86_64 aarch64
