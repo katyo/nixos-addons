@@ -2,7 +2,7 @@
 with lib;
 
 let
-  cfg = config.services.prometheus.exporters.nvidia-gpu;
+  cfg = config.services.prometheus.exporters.nvidia-gpu-ext;
 
   hasStr = str: str != null && str != "";
 
@@ -59,7 +59,7 @@ let
   };
 
 in {
-  options.services.prometheus.exporters.nvidia-gpu = {
+  options.services.prometheus.exporters.nvidia-gpu-ext = {
     enable = mkEnableOption "Nvidia GPU Exporter";
 
     package = mkPackageOption pkgs "nvidia-gpu-exporter-bin" {};
@@ -92,7 +92,7 @@ in {
   };
 
   config = mkIf cfg.enable {
-    systemd.services.nvidia-gpu-exporter = service_defs // {
+    systemd.services.nvidia-gpu-exporter-ext = service_defs // {
       serviceConfig = service_defs.serviceConfig // {
         ExecStart =
           "${cfg.package}/bin/nvidia_gpu_exporter"
