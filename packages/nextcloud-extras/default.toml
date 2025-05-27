@@ -22,7 +22,8 @@ license = "agpl3Plus"
 
 [passwords."2025.5.1"]
 url = "https://git.mdns.eu/api/v4/projects/45/packages/generic/passwords/2025.5.1/passwords.tar.gz"
-hash = "sha256-69JEoyXNmf02qrqWV6AmQ66ZVFnlfs6cSbstGHEEOVA="
+#hash = "sha256-69JEoyXNmf02qrqWV6AmQ66ZVFnlfs6cSbstGHEEOVA="
+hash = "sha256-v4IVpqbTN3TKORESFX+sJsiSrLkUc0b5Stj8CmznSIw="
 license = "agpl3Plus"
 
 [user_migration."8.0.0"]
