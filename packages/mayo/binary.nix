@@ -7,14 +7,14 @@ let
 
   owner = "fougue";
   repo = "mayo";
-  name = "${repo}-bin";
+  pname = "${repo}-bin";
 
   hashes = {
     ${version}.x86_64 = "sha256-9mjCvHlTWLJbKFHZq333AziLnMSLo14jIOfaTqz7gUA=";
   };
 
 in appimageTools.wrapType1 { # or wrapType1
-  inherit name version;
+  inherit pname version;
 
   src = fetchurl {
     url = "https://github.com/${owner}/${repo}/releases/download/v${version}/Mayo-${version}-${platform}.AppImage";

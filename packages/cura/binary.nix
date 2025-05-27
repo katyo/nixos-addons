@@ -14,7 +14,7 @@ let
   repo = "Cura";
 
 in appimageTools.wrapType2 { # or wrapType1
-  name = "cura-bin";
+  pname = "cura-bin";
   inherit version;
 
   src = fetchurl {
