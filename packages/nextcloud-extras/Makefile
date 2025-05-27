@@ -1,10 +1,10 @@
 packages := memories music gpxpod twofactor_totp passwords user_migration
 
 package.memories.url = https://github.com/pulsejet/$(1)/releases/download/v$(2)/$(1).tar.gz
-package.memories.versions = 7.4.1
+package.memories.versions = 7.5.2
 package.memories.license = agpl3Plus
 package.music.url = https://github.com/owncloud/$(1)/releases/download/v$(2)/$(1)_$(2)_for_nextcloud.tar.gz
-package.music.versions = 2.1.1
+package.music.versions = 2.1.4
 package.music.license = agpl3Plus
 package.gpxpod.url = https://github.com/julien-nc/$(1)/releases/download/v$(2)/$(1)-$(2).tar.gz
 package.gpxpod.versions = 7.0.4
@@ -13,10 +13,10 @@ package.twofactor_totp.url = https://github.com/nextcloud-releases/$(1)/releases
 package.twofactor_totp.versions = 6.4.1
 package.twofactor_totp.license = agpl3Plus
 package.passwords.url = https://git.mdns.eu/api/v4/projects/45/packages/generic/$(1)/$(2)/$(1).tar.gz
-package.passwords.versions = 2024.12.1
+package.passwords.versions = 2025.5.1
 package.passwords.license = agpl3Plus
 package.user_migration.url = https://github.com/nextcloud-releases/$(1)/releases/download/v$(2)/$(1)-v$(2).tar.gz
-package.user_migration.versions = 7.0.1
+package.user_migration.versions = 8.0.0
 package.user_migration.license = agpl3Plus
 
 define rules
