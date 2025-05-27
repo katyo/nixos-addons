@@ -1,18 +1,19 @@
-{ lib, rustPlatform, fetchFromGitHub, pkg-config, openssl }:
+{ lib, rustPlatform, fetchFromGitHub, pkg-config, openssl, version ? "0.1.0" }:
 
 let owner = "katyo";
     repo = "xonv";
     pname = repo;
-    version = "0.1.0";
     rev = "v${version}";
-    hash = "sha256-JrNqnjQtDWNkdG6NxRtkU/vJK8cipX/iEowGmTgQLNQ=";
-    cargoHash = "sha256-6xnS99H7MVCSb086lj+MKRt1nr63f0YGho07A90PQM8=";
+
+    pkgInfo = builtins.fromTOML (lib.readFile ./default.toml);
 
 in rustPlatform.buildRustPackage {
-  inherit pname version cargoHash;
+  inherit pname version;
+  inherit (pkgInfo.${version}) cargoHash;
 
   src = fetchFromGitHub {
-    inherit owner repo rev hash;
+    inherit owner repo rev;
+    inherit (pkgInfo.${version}) hash;
   };
 
   meta = with lib; {
