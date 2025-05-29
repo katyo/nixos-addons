@@ -40,6 +40,17 @@ self: super: with self; {
       uv-dynamic-versioning = callPackage ./mcp-servers/uv-dynamic-versioning {};
       mcp = callPackage ./mcp-servers/mcp {};
 
+      spandrel = callPackage ./comfyui/spandrel {};
+      pycocoevalcap = callPackage ./comfyui/pycocoevalcap {};
+      segment-anything = callPackage ./comfyui/segment-anything {};
+      groundingdino = callPackage ./comfyui/groundingdino {};
+      transparent-background = callPackage ./comfyui/transparent-background {};
+      supervision = callPackage ./comfyui/supervision {};
+      supervision_06 = callPackage ./comfyui/supervision/0.6.nix {};
+
+      comfyui-frontend-package = callPackage ./comfyui/frontend {};
+      comfyui-workflow-templates = callPackage ./comfyui/workflows {};
+
       nlopt = callPackage ./cadquery/nlopt.nix {};
       casadi = callPackage ./cadquery/casadi-whl.nix {};
       ezdxf1 = callPackage ./cadquery/ezdxf.nix {};
@@ -83,6 +94,17 @@ self: super: with self; {
       ocp-vscode = callPackage ./cadquery/ocp-vscode.nix {};
     } // (import ./jupyterlab-language-packs { inherit lib callPackage; }))
   ];
+
+  comfyui = callPackage ./comfyui {};
+  comfyui-nodes = {
+    art-venture = import ./comfyui/art-venture;
+    custom-scripts = import ./comfyui/custom-scripts;
+    supir = import ./comfyui/supir;
+    rmbg = import ./comfyui/rmbg;
+  };
+  comfyui-with-nodes = callPackage ./comfyui {
+    customNodes = with comfyui-nodes; [ art-venture supir rmbg ];
+  };
 
   cadquery-editor = python311Packages.callPackage ./cadquery/cq-editor.nix {};
 

@@ -37,6 +37,7 @@
   - [x] [MCP Servers](https://github.com/modelcontextprotocol/servers) Collection of servers which supports Model Context Protocol
   - [x] [MCP OpenAPI Schema](https://github.com/hannesj/mcp-openapi-schema) MCP Server to work with OpenAPI Schemas
   - [x] [MCP Inspector](https://github.com/modelcontextprotocol/inspector) Visual testing tool for MCP servers
+- [x] [ComfyUI](https://www.comfy.org/) The most powerful open source node-based application for generative AI
 - [x] gost-fonts Russian GOST fonts
 
 ## Installation
