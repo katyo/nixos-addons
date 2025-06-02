@@ -1,23 +1,22 @@
-{ lib, buildCustomNode, fetchFromGitHub }:
+{ lib, buildCustomNode, fetchFromGitHub, onnxruntime }:
 
 let
     owner = "pythongosssss";
-    repo = "ComfyUI-Custom-Scripts";
-    rev = "aac13aa";
-    hash = "sha256-Qgx+/SrXrkHNI1rH+9O2CmN7NwrQi7CvPAFTdacZ2C0=";
+    repo = "ComfyUI-WD14-Tagger";
+    rev = "763d833";
+    hash = "sha256-nHYd4RdiN3dSyYW+zuf7cOqtvZdp0qu142KE8Lh4r+E=";
 
     pname = lib.strings.toLower repo;
-    version = "1.2.5-git${rev}";
+    version = "1.0.0-git${rev}";
 
 in buildCustomNode {
     inherit pname version;
     src = fetchFromGitHub {
         inherit owner repo rev hash;
     };
-    dependencies = [];
+    dependencies = [ onnxruntime ];
     patches = [ ./skip-install-js.patch ];
     postInstall = ''
-      ln -s $out/pysssss.default.json $out/pysssss.json
       mkdir -p $out/web-extensions
       ln -s $out/web/js $out/web-extensions/pysssss
     '';

@@ -1,16 +1,16 @@
 {
   lib,
-  python312,
+  python3,
   linkFarm,
   writeShellScriptBin,
   writeTextFile,
   fetchFromGitHub,
   stdenv,
-  customNodes ? [ ],
+  comfyuiCustomNodes ? [],
 }:
 
 let
-  customNodesPkgs = builtins.map (node: python312.pkgs.callPackage node {
+  customNodesPkgs = builtins.map (node: python3.pkgs.callPackage node {
     buildCustomNode = args: stdenv.mkDerivation ({
       configurePhase = "true";
       buildPhase = "true";
@@ -18,46 +18,45 @@ let
         runHook preInstall
 
         mkdir -p $out/
-        cp -r $src/* $out/
+        cp -r * $out/
 
         runHook postInstall
       '';
     } // args);
-  }) customNodes;
+  }) comfyuiCustomNodes;
 
-  pythonEnv = (
-    python312.withPackages (
-      ps:
-      with ps;
-      [
-        comfyui-frontend-package
-        comfyui-workflow-templates
-        torch
-        torchsde
-        torchvision
-        torchaudio
-        numpy
-        einops
-        transformers
-        tokenizers
-        sentencepiece
-        safetensors
-        aiohttp
-        yarl
-        pyyaml
-        pillow
-        scipy
-        tqdm
-        psutil
+  builtinPkgs = py: with py; {
+      comfyui-frontend-package = callPackage ./frontend {
+          comfyuiWebExtensions = customNodesPkgs;
+      };
+      comfyui-workflow-templates = callPackage ./workflows {};
+  };
 
-        kornia
-        spandrel
-        av
-        pydantic
-      ]
-      ++ (builtins.concatMap (node: node.dependencies) customNodesPkgs)
-    )
-  );
+  pythonEnv = python3.withPackages (ps: with ps; [
+      torch
+      torchsde
+      torchvision
+      torchaudio
+      numpy
+      einops
+      transformers
+      tokenizers
+      sentencepiece
+      safetensors
+      aiohttp
+      yarl
+      pyyaml
+      pillow
+      scipy
+      tqdm
+      psutil
+
+      kornia
+      spandrel
+      av
+      pydantic
+  ] ++ (lib.attrValues (builtinPkgs ps))
+  ++ (builtins.concatMap (node: node.dependencies) customNodesPkgs));
 
   executable = writeShellScriptBin "comfyui" ''
     cd $out && \
@@ -85,6 +84,10 @@ stdenv.mkDerivation rec {
     hash = "sha256-OtTvyqiz2Ba7HViW2MxC1hFulSWPuQaCADeQflr80Ik=";
   };
 
+  patches = [
+    ./wd14-tagger-add-model-path.patch
+  ];
+
   postInstall = ''
     substituteInPlace $out/folder_paths.py --replace-fail \
       '[os.path.join(base_path, "custom_nodes")]' \
@@ -99,15 +102,9 @@ stdenv.mkDerivation rec {
     # very future-proof.  This can lead to errors such as "ModuleNotFoundError:
     # No module named 'app'" when new directories get added (which has happened
     # at least once).  Investigate if we can just copy everything.
-    cp -r $src/app $out/
-    cp -r $src/api_server $out/
-    cp -r $src/comfy $out/
-    cp -r $src/comfy_api_nodes $out/
-    cp -r $src/comfy_extras $out/
-    cp -r $src/comfy_execution $out/
-    cp -r $src/utils $out/
-    cp $src/*.py $out/
-    cp $src/requirements.txt $out/
+    cp -r app api_server comfy comfy_api_nodes comfy_extras comfy_execution utils $out/
+    cp *.py $out/
+    cp requirements.txt $out/
     mv $out/main.py $out/comfyui
     ln -snf ${customNodesCollection} $out/custom_nodes
     cp ${executable}/bin/comfyui $out/bin/comfyui

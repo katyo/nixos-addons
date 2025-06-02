@@ -47,6 +47,7 @@ self: super: with self; {
       transparent-background = callPackage ./comfyui/transparent-background {};
       supervision = callPackage ./comfyui/supervision {};
       supervision_06 = callPackage ./comfyui/supervision/0.6.nix {};
+      mediapipe = callPackage ./comfyui/mediapipe {};
 
       comfyui-frontend-package = callPackage ./comfyui/frontend {};
       comfyui-workflow-templates = callPackage ./comfyui/workflows {};
@@ -95,15 +96,25 @@ self: super: with self; {
     } // (import ./jupyterlab-language-packs { inherit lib callPackage; }))
   ];
 
-  comfyui = callPackage ./comfyui {};
+  comfyui = callPackage ./comfyui {
+    python3 = python312;
+  };
   comfyui-nodes = {
     art-venture = import ./comfyui/art-venture;
     custom-scripts = import ./comfyui/custom-scripts;
     supir = import ./comfyui/supir;
     rmbg = import ./comfyui/rmbg;
+    rgthree = import ./comfyui/rgthree;
+    comfyroll = import ./comfyui/comfyroll;
+    wd14-tagger = import ./comfyui/wd14-tagger;
+    controlnet-aux = import ./comfyui/controlnet-aux;
+    advanced-controlnet = import ./comfyui/advanced-controlnet;
+    crystools = import ./comfyui/crystools;
   };
   comfyui-with-nodes = callPackage ./comfyui {
-    customNodes = with comfyui-nodes; [ art-venture supir rmbg ];
+    comfyuiCustomNodes = with comfyui-nodes; [
+      art-venture custom-scripts supir rmbg rgthree comfyroll wd14-tagger controlnet-aux advanced-controlnet crystools
+    ];
   };
 
   cadquery-editor = python311Packages.callPackage ./cadquery/cq-editor.nix {};

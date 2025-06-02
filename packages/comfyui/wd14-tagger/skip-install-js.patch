@@ -1,0 +1,12 @@
+diff --git a/pysssss.py b/pysssss.py
+index 621da8e..61c08bb 100644
+--- a/pysssss.py
++++ b/pysssss.py
+@@ -156,7 +156,6 @@ def init(check_imports):
+                 log(f"{imp} is required, please check requirements are installed.", type="ERROR", always=True)
+                 return False
+ 
+-    install_js()
+     return True
+ 
+ 
