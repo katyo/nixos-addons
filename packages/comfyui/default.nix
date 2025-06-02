@@ -85,7 +85,7 @@ stdenv.mkDerivation rec {
   };
 
   patches = [
-    ./wd14-tagger-add-model-path.patch
+    ./add-paths.patch
   ];
 
   postInstall = ''

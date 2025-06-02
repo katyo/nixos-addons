@@ -24,11 +24,11 @@ buildPythonPackage rec {
     hash = "sha256-I95Wr0mLfNzAJOsQYvwxeePMTazZKtv7YlCXBlN3cA8=";
   };
 
-  nativeBuildInputs = [
+  build-system = [
     poetry-core
   ];
 
-  propagatedBuildInputs = [
+  dependencies = [
     torch
     torchvision
     transformers

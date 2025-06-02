@@ -23,7 +23,7 @@ buildPythonPackage rec {
     hash = "sha256-7Qyfb7B7vvnGI4pwKKE8gnLxumtjBcpz4+BkJmUDc2s=";
   };
 
-  propagatedBuildInputs = [
+  dependencies = [
     numpy
     matplotlib
     pycocotools

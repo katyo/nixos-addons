@@ -35,7 +35,7 @@ buildPythonPackage rec {
 
   build-system = [ setuptools ];
 
-  buildInputs = [
+  dependencies = [
     myTorch
     torchvision
     safetensors

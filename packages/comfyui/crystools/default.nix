@@ -18,6 +18,6 @@ in buildCustomNode {
         inherit owner repo rev hash;
     };
     dependencies = [
-      deepdiff torch numpy pillow pynvml py-cpuinfo piexif #jetson-stats
+        deepdiff torch numpy pillow pynvml py-cpuinfo piexif #jetson-stats
     ];
 }

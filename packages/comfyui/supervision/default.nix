@@ -27,12 +27,12 @@ buildPythonPackage rec {
     hash = "sha256-Qo8BraEJwRmhwF3Zxy7sYD0OS1Hl4ChaNNQNtodp/z0=";
   };
 
-  nativeBuildInputs = [
+  build-system = [
     setuptools
     poetry-core
   ];
 
-  propagatedBuildInputs = [
+  dependencies = [
     numpy
     scipy
     contourpy

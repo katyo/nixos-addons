@@ -14,7 +14,7 @@ buildPythonPackage rec {
     hash = "sha256-eFf01ZbKL6CxqaPCBnWIpCV1Vgd7etYU0Asre49Xzd4=";
   };
 
-  propagatedBuildInputs = [
+  dependencies = [
     pycocotools
   ];
 

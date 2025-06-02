@@ -26,7 +26,7 @@ buildPythonPackage rec {
     hash = "sha256-KAFOzgrlt3YPfBIjGEDbP1rRtJOWjQ19vOSgeeIG36Y=";
   };
 
-  propagatedBuildInputs = [
+  dependencies = [
     torch
     torchvision
     opencv-python
