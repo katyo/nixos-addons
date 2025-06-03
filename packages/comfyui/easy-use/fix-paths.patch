@@ -63,3 +63,25 @@ index 542bd67..be604b4 100644
  print(f'\033[34m[ComfyUI-Easy-Use] server: \033[0mv{__version__} \033[92mLoaded\033[0m')
 -print(f'\033[34m[ComfyUI-Easy-Use] web root: \033[0m{os.path.join(cwd_path, directory)} \033[92mLoaded\033[0m')
 +print(f'\033[34m[ComfyUI-Easy-Use] web root: \033[0m{os.path.join(easy_use_path, directory)} \033[92mLoaded\033[0m')
+diff --git a/py/config.py b/py/config.py
+index d2930ad..71405ca 100644
+--- a/py/config.py
++++ b/py/config.py
+@@ -37,12 +37,16 @@ BASE_RESOLUTIONS = [
+ ]
+ MAX_SEED_NUM = 1125899906842624
+ 
++if "easy_use" in folder_paths.folder_names_and_paths:
++    easy_use_path = folder_paths.get_folder_paths("easy_use")[0]
++else:
++    easy_use_path = Path(__file__).parent.parent
+ 
+ RESOURCES_DIR = os.path.join(Path(__file__).parent.parent, "resources")
+ 
+ # inpaint
+ INPAINT_DIR = os.path.join(folder_paths.models_dir, "inpaint")
+-FOOOCUS_STYLES_DIR = os.path.join(Path(__file__).parent.parent, "styles")
++FOOOCUS_STYLES_DIR = os.path.join(easy_use_path, "styles")
+ FOOOCUS_STYLES_SAMPLES = 'https://raw.githubusercontent.com/lllyasviel/Fooocus/main/sdxl_styles/samples/'
+ FOOOCUS_INPAINT_HEAD = {
+     "fooocus_inpaint_head": {
