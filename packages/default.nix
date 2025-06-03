@@ -49,6 +49,8 @@ self: super: with self; {
       supervision_06 = callPackage ./comfyui/supervision/0.6.nix {};
       mediapipe = callPackage ./comfyui/mediapipe {};
       clip-interrogator = callPackage ./comfyui/clip-interrogator {};
+      colour-science = callPackage ./comfyui/colour-science {};
+      pixeloe = callPackage ./comfyui/pixeloe {};
 
       comfyui-frontend-package = callPackage ./comfyui/frontend {};
       comfyui-workflow-templates = callPackage ./comfyui/workflows {};
@@ -114,12 +116,16 @@ self: super: with self; {
     ipadapter-plus = import ./comfyui/ipadapter-plus;
     ipadapter-plus-fork = import ./comfyui/ipadapter-plus/fork.nix;
     easy-use = import ./comfyui/easy-use;
+    essentials = import ./comfyui/essentials;
+    essentials-mb = import ./comfyui/essentials/mb.nix;
+    kolors-mz = import ./comfyui/kolors-mz;
   };
   comfyui-with-nodes = callPackage ./comfyui {
     comfyuiCustomNodes = with comfyui-nodes; [
       art-venture custom-scripts supir rmbg rgthree comfyroll
       wd14-tagger controlnet-aux advanced-controlnet crystools
       ipadapter-plus ipadapter-plus-fork easy-use
+      essentials essentials-mb kolors-mz
     ];
   };
 
