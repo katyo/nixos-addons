@@ -7,6 +7,7 @@
   - [x] [bluer-tools](https://github.com/bluez/bluer) A tools for GATT services, L2CAP and RFCOMM sockets on Linux
   - [x] [frugen](https://codeberg.org/IPMITool/frugen) A tool to parse and generate FRU binaries
   - [x] [godap](https://github.com/Macmod/godap) A complete TUI for LDAP
+  - [x] [git-find-worktree](https://github.com/deribaucourt/git-find-worktree/) A tool to identify the original git commit corresponding to a working tree
 - [x] Services
   - [x] [easytier](https://easytier.top/en) A simple, secure, decentralized VPN mesh network solution (needs [<oxalica/rust-overlay>](https://github.com/oxalica/rust-overlay))
   - [x] [ukvm](https://github.com/katyo/ukvm) A network KVM solution in Rust (WIP)

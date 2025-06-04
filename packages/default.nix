@@ -9,6 +9,8 @@ self: super: with self; {
   xonv = callPackage ./xonv {};
   ubmsc = callPackage ./ubmsc {};
 
+  git-find-worktree = callPackage ./git-extras/find-worktree.nix {};
+
   bluer-tools = callPackage ./bluer-tools {};
   espflash_latest = callPackage ./espflash { inherit (darwin.apple_sdk.frameworks) CoreServices Security SystemConfiguration; };
 
