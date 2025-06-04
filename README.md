@@ -11,6 +11,7 @@
 - [x] Services
   - [x] [easytier](https://easytier.top/en) A simple, secure, decentralized VPN mesh network solution (needs [<oxalica/rust-overlay>](https://github.com/oxalica/rust-overlay))
   - [x] [ukvm](https://github.com/katyo/ukvm) A network KVM solution in Rust (WIP)
+  - [x] [x11vnc](https://github.com/LibVNC/x11vnc/) A VNC server for real X displays
   - [x] [NextCloud](https://nextcloud.com/) extra appications packages
     - [x] [memories](https://apps.nextcloud.com/apps/memories)
     - [x] [music](https://apps.nextcloud.com/apps/music)
