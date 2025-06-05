@@ -137,6 +137,11 @@ self: super: with self; {
     ];
   };
 
+  koboldcpp-latest = callPackage ./koboldcpp {};
+  koboldcpp-bin = callPackage ./koboldcpp/binary.nix {};
+  koboldcpp-bin-cpu = callPackage ./koboldcpp/binary.nix { cudaSupport = false; };
+  koboldcpp-bin-cuda = callPackage ./koboldcpp/binary.nix { cudaSupport = true; };
+
   cadquery-editor = python311Packages.callPackage ./cadquery/cq-editor.nix {};
 
   frugen = callPackage ./frugen {};

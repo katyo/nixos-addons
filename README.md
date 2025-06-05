@@ -51,6 +51,7 @@
     - [x] [MCP OpenAPI Schema](https://github.com/hannesj/mcp-openapi-schema) MCP Server to work with OpenAPI Schemas
     - [x] [MCP Inspector](https://github.com/modelcontextprotocol/inspector) Visual testing tool for MCP servers
   - [x] [ComfyUI](https://www.comfy.org/) The most powerful open source node-based application for generative AI
+  - [x] [KoboldCpp](https://koboldai.com/KoboldCpp/) KoboldCpp is an easy-to-use AI server software for GGML and GGUF LLM models
 
 ## Installation
 
