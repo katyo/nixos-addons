@@ -70,6 +70,9 @@ self: super: with self; {
       comfyui-frontend-package = callPackage ./comfyui/frontend {};
       comfyui-workflow-templates = callPackage ./comfyui/workflows {};
 
+      uroman = callPackage ./python/uroman {};
+      outetts = callPackage ./python/outetts {};
+
       nlopt = callPackage ./cadquery/nlopt.nix {};
       casadi = callPackage ./cadquery/casadi-whl.nix {};
       ezdxf1 = callPackage ./cadquery/ezdxf.nix {};
