@@ -1,0 +1,57 @@
+diff --git a/sox/__init__.py b/sox/__init__.py
+index b76faec..209eb81 100644
+--- a/sox/__init__.py
++++ b/sox/__init__.py
+@@ -5,7 +5,7 @@ import os
+ 
+ # Check that SoX is installed and callable
+ NO_SOX = False
+-stream_handler = os.popen('sox -h')
++stream_handler = os.popen('{{SOX_EXECUTABLE_PATH}} -h')
+ if not len(stream_handler.readlines()):
+     logger.warning("""SoX could not be found!
+ 
+diff --git a/sox/core.py b/sox/core.py
+index e2358c6..bb3dfa7 100644
+--- a/sox/core.py
++++ b/sox/core.py
+@@ -61,6 +61,8 @@ def sox(args: Iterable[str],
+     else:
+         args[0] = "sox"
+ 
++    arg[0] = "{{SOX_EXECUTABLE_PATH}}"
++
+     try:
+         logger.info("Executing: %s", ' '.join(args))
+ 
+@@ -121,7 +123,7 @@ def _get_valid_formats() -> List[str]:
+     if NO_SOX:
+         return []
+ 
+-    so = subprocess.check_output(['sox', '-h'])
++    so = subprocess.check_output(['{{SOX_EXECUTABLE_PATH}}', '-h'])
+     if type(so) is not str:
+         so = str(so, encoding='UTF-8')
+     so = so.split('\n')
+@@ -155,7 +157,7 @@ def soxi(filepath: Union[str, Path], argument: str) -> str:
+     if argument not in SOXI_ARGS:
+         raise ValueError(f"Invalid argument '{argument}' to SoXI")
+ 
+-    args = ['sox', '--i']
++    args = ['{{SOX_EXECUTABLE_PATH}}', '--i']
+     args.append(f"-{argument}")
+     args.append(filepath)
+ 
+diff --git a/sox/file_info.py b/sox/file_info.py
+index 3fb48f9..fc71686 100644
+--- a/sox/file_info.py
++++ b/sox/file_info.py
+@@ -404,7 +404,7 @@ def _stat_call(filepath: Union[str, Path]) -> str:
+         Sox output from stderr.
+     '''
+     validate_input_file(filepath)
+-    args = ['sox', filepath, '-n', 'stat']
++    args = ['{{SOX_EXECUTABLE_PATH}}', filepath, '-n', 'stat']
+     _, _, stat_output = sox(args)
+     return stat_output
+ 

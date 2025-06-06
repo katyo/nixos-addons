@@ -55,6 +55,16 @@ self: super: with self; {
       pixeloe = callPackage ./comfyui/pixeloe {};
       color-matcher = callPackage ./comfyui/color-matcher {};
       blend-modes = callPackage ./comfyui/blend-modes {};
+      argbind = callPackage ./comfyui/argbind {};
+      randomname = callPackage ./comfyui/randomname {};
+      pyloudnorm = callPackage ./comfyui/pyloudnorm {};
+      pystoi = callPackage ./comfyui/pystoi {};
+      torch-stoi = callPackage ./comfyui/torch-stoi {};
+      descript-audiotools = callPackage ./comfyui/descript-audiotools {};
+      descript-audio-codec = callPackage ./comfyui/descript-audio-codec {};
+      pysox = callPackage ./comfyui/pysox {};
+      silentcipher = callPackage ./comfyui/silentcipher {};
+      torch-complex = callPackage ./comfyui/torch-complex {};
       pymatting = pySuper.pymatting.overrideAttrs (old: { disabledTests = ["test_foreground"]; });
 
       comfyui-frontend-package = callPackage ./comfyui/frontend {};
@@ -127,6 +137,9 @@ self: super: with self; {
     kolors-mz = import ./comfyui/kolors-mz;
     xiser-nodes = import ./comfyui/xiser-nodes;
     kj-nodes = import ./comfyui/kj-nodes;
+    audiotools = import ./comfyui/audiotools;
+    outetts = import ./comfyui/outetts;
+    audio-quality-enhancer = import ./comfyui/audio-quality-enhancer;
   };
   comfyui-with-nodes = callPackage ./comfyui {
     comfyuiCustomNodes = with comfyui-nodes; [
@@ -134,6 +147,7 @@ self: super: with self; {
       wd14-tagger controlnet-aux advanced-controlnet crystools
       ipadapter-plus ipadapter-plus-fork easy-use layer-style
       essentials essentials-mb kolors-mz xiser-nodes kj-nodes
+      audiotools outetts audio-quality-enhancer
     ];
   };
 
