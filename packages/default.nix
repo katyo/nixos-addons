@@ -65,6 +65,14 @@ self: super: with self; {
       pysox = callPackage ./comfyui/pysox {};
       silentcipher = callPackage ./comfyui/silentcipher {};
       torch-complex = callPackage ./comfyui/torch-complex {};
+      pilgram = callPackage ./comfyui/pilgram {};
+      chkpkg = callPackage ./comfyui/chkpkg {};
+      cstr = callPackage ./comfyui/cstr {};
+      img2texture = callPackage ./comfyui/img2texture {};
+      blind-watermark = callPackage ./comfyui/blind-watermark {};
+      typer-config = callPackage ./comfyui/typer-config {};
+      poetry-plugin-pypi-mirror = callPackage ./comfyui/poetry-plugin-pypi-mirror {};
+      zhipuai = callPackage ./comfyui/zhipuai {};
       pymatting = pySuper.pymatting.overrideAttrs (old: { disabledTests = ["test_foreground"]; });
 
       comfyui-frontend-package = callPackage ./comfyui/frontend {};
@@ -136,6 +144,7 @@ self: super: with self; {
     ipadapter-plus-fork = import ./comfyui/ipadapter-plus/fork.nix;
     easy-use = import ./comfyui/easy-use;
     layer-style = import ./comfyui/layer-style;
+    layer-style-advance = import ./comfyui/layer-style-advance;
     essentials = import ./comfyui/essentials;
     essentials-mb = import ./comfyui/essentials/mb.nix;
     kolors-mz = import ./comfyui/kolors-mz;
@@ -146,6 +155,12 @@ self: super: with self; {
     impact-subpack = import ./comfyui/impact-subpack;
     prompt-reader-node = import ./comfyui/prompt-reader-node;
     ultimate-sd-upscale = import ./comfyui/ultimate-sd-upscale;
+    lopi999-nodes = import ./comfyui/lopi999-nodes;
+    was-node-suite = import ./comfyui/was-node-suite;
+    image-saver = import ./comfyui/image-saver;
+    gguf = import ./comfyui/gguf;
+    video-helper-suite = import ./comfyui/video-helper-suite;
+    florence2 = import ./comfyui/florence2;
     audiotools = import ./comfyui/audiotools;
     outetts = import ./comfyui/outetts;
     audio-quality-enhancer = import ./comfyui/audio-quality-enhancer;
@@ -157,7 +172,9 @@ self: super: with self; {
       crystools ipadapter-plus ipadapter-plus-fork easy-use
       layer-style essentials essentials-mb kolors-mz xiser-nodes
       kj-nodes cg-use-everywhere impact-pack impact-subpack
-      prompt-reader-node ultimate-sd-upscale
+      prompt-reader-node ultimate-sd-upscale lopi999-nodes
+      was-node-suite image-saver gguf video-helper-suite
+      florence2 layer-style-advance
       audiotools outetts audio-quality-enhancer
     ];
   };
