@@ -127,6 +127,7 @@ self: super: with self; {
     rmbg = import ./comfyui/rmbg;
     rgthree = import ./comfyui/rgthree;
     comfyroll = import ./comfyui/comfyroll;
+    comfymath = import ./comfyui/comfymath;
     wd14-tagger = import ./comfyui/wd14-tagger;
     controlnet-aux = import ./comfyui/controlnet-aux;
     advanced-controlnet = import ./comfyui/advanced-controlnet;
@@ -140,6 +141,11 @@ self: super: with self; {
     kolors-mz = import ./comfyui/kolors-mz;
     xiser-nodes = import ./comfyui/xiser-nodes;
     kj-nodes = import ./comfyui/kj-nodes;
+    cg-use-everywhere = import ./comfyui/cg-use-everywhere;
+    impact-pack = import ./comfyui/impact-pack;
+    impact-subpack = import ./comfyui/impact-subpack;
+    prompt-reader-node = import ./comfyui/prompt-reader-node;
+    ultimate-sd-upscale = import ./comfyui/ultimate-sd-upscale;
     audiotools = import ./comfyui/audiotools;
     outetts = import ./comfyui/outetts;
     audio-quality-enhancer = import ./comfyui/audio-quality-enhancer;
@@ -147,9 +153,11 @@ self: super: with self; {
   comfyui-with-nodes = callPackage ./comfyui {
     comfyuiCustomNodes = with comfyui-nodes; [
       art-venture custom-scripts supir rmbg rgthree comfyroll
-      wd14-tagger controlnet-aux advanced-controlnet crystools
-      ipadapter-plus ipadapter-plus-fork easy-use layer-style
-      essentials essentials-mb kolors-mz xiser-nodes kj-nodes
+      comfymath wd14-tagger controlnet-aux advanced-controlnet
+      crystools ipadapter-plus ipadapter-plus-fork easy-use
+      layer-style essentials essentials-mb kolors-mz xiser-nodes
+      kj-nodes cg-use-everywhere impact-pack impact-subpack
+      prompt-reader-node ultimate-sd-upscale
       audiotools outetts audio-quality-enhancer
     ];
   };
