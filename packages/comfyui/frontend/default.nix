@@ -7,7 +7,7 @@
 }:
 buildPythonPackage rec {
   pname = "comfyui-frontend-package";
-  version = "1.17.11";
+  version = "1.22.1";
   pyproject = true;
 
   build-system = [ setuptools ];
@@ -15,7 +15,7 @@ buildPythonPackage rec {
   src = fetchPypi {
     inherit version;
     pname = "comfyui_frontend_package";
-    hash = "sha256-v2Yfl730hvGEV+kFXva3lAJFDecVplvl+L5XY3PJdNU=";
+    hash = "sha256-LclcP0vos6vHG/apvfxxI3EFG7kYrove57ZHwpUFp5E=";
   };
 
   pythonImportsCheck = [ "comfyui_frontend_package" ];

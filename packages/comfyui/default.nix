@@ -10,6 +10,11 @@
 }:
 
 let
+  pname = "comfyui";
+  version = "0.3.40";
+  rev = "v${version}";
+  hash = "sha256-mi+evE0gf6MfpYKVaZIze5NDagkaukGGpjcOhem1vU4=";
+
   customNodesPkgs = builtins.map (node: python3.pkgs.callPackage node {
     buildCustomNode = args: stdenv.mkDerivation ({
       configurePhase = "true";
@@ -30,6 +35,7 @@ let
           comfyuiWebExtensions = customNodesPkgs;
       };
       comfyui-workflow-templates = callPackage ./workflows {};
+      comfyui-embedded-docs = callPackage ./docs {};
   };
 
   pythonEnv = python3.withPackages (ps: with ps; [
@@ -53,7 +59,8 @@ let
 
       kornia
       spandrel
-      av
+      soundfile
+      av-latest
       pydantic
   ] ++ (lib.attrValues (builtinPkgs ps))
   ++ (builtins.concatMap (node: node.dependencies) customNodesPkgs));
@@ -74,14 +81,12 @@ let
   );
 in
 stdenv.mkDerivation rec {
-  pname = "comfyui";
-  version = "0-unstable-2025-04-26";
+  inherit pname version;
 
   src = fetchFromGitHub {
     owner = "comfyanonymous";
     repo = "ComfyUI";
-    rev = "b685b8a4e098237919adae580eb29e8d861b738f";
-    hash = "sha256-OtTvyqiz2Ba7HViW2MxC1hFulSWPuQaCADeQflr80Ik=";
+    inherit rev hash;
   };
 
   patches = [
@@ -102,7 +107,7 @@ stdenv.mkDerivation rec {
     # very future-proof.  This can lead to errors such as "ModuleNotFoundError:
     # No module named 'app'" when new directories get added (which has happened
     # at least once).  Investigate if we can just copy everything.
-    cp -r app api_server comfy comfy_api_nodes comfy_extras comfy_execution utils $out/
+    cp -r app api_server comfy comfy_api comfy_api_nodes comfy_config comfy_extras comfy_execution utils $out/
     cp *.py $out/
     cp requirements.txt $out/
     mv $out/main.py $out/comfyui

@@ -72,12 +72,10 @@ self: super: with self; {
       blind-watermark = callPackage ./comfyui/blind-watermark {};
       typer-config = callPackage ./comfyui/typer-config {};
       evalidate = callPackage ./comfyui/evalidate {};
+      av-latest = callPackage ./comfyui/av {};
       poetry-plugin-pypi-mirror = callPackage ./comfyui/poetry-plugin-pypi-mirror {};
       zhipuai = callPackage ./comfyui/zhipuai {};
       pymatting = pySuper.pymatting.overrideAttrs (old: { disabledTests = ["test_foreground"]; });
-
-      comfyui-frontend-package = callPackage ./comfyui/frontend {};
-      comfyui-workflow-templates = callPackage ./comfyui/workflows {};
 
       uroman = callPackage ./python/uroman {};
       outetts = callPackage ./python/outetts {};
