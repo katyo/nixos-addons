@@ -2,12 +2,18 @@ diff --git a/folder_paths.py b/folder_paths.py
 index f0b3fd10..99cb613c 100644
 --- a/folder_paths.py
 +++ b/folder_paths.py
-@@ -46,6 +46,9 @@ folder_names_and_paths["photomaker"] = ([os.path.join(models_dir, "photomaker")]
+@@ -46,6 +46,15 @@ folder_names_and_paths["photomaker"] = ([os.path.join(models_dir, "photomaker")]
  
  folder_names_and_paths["classifiers"] = ([os.path.join(models_dir, "classifiers")], {""})
- 
+
++configs_path = os.path.join(base_path, "configs")
++if not os.path.exists(configs_path):
++    os.mkdir(configs_path)
++
 +folder_names_and_paths["wd14_tagger"] = ([os.path.join(models_dir, "wd14_tagger")], supported_pt_extensions)
-+folder_names_and_paths["easy_use"] = ([os.path.join(models_dir, "easy_use")], supported_pt_extensions)
++folder_names_and_paths["easy_use"] = ([os.path.join(configs_path, "easy_use")], supported_pt_extensions)
++folder_names_and_paths["dream_project"] = ([os.path.join(configs_path, "dream_project")], supported_pt_extensions)
++folder_names_and_paths["was_suite"] = ([os.path.join(configs_path, "was_suite")], supported_pt_extensions)
 +
  output_directory = os.path.join(base_path, "output")
  temp_directory = os.path.join(base_path, "temp")

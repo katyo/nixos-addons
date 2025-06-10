@@ -71,6 +71,7 @@ self: super: with self; {
       img2texture = callPackage ./comfyui/img2texture {};
       blind-watermark = callPackage ./comfyui/blind-watermark {};
       typer-config = callPackage ./comfyui/typer-config {};
+      evalidate = callPackage ./comfyui/evalidate {};
       poetry-plugin-pypi-mirror = callPackage ./comfyui/poetry-plugin-pypi-mirror {};
       zhipuai = callPackage ./comfyui/zhipuai {};
       pymatting = pySuper.pymatting.overrideAttrs (old: { disabledTests = ["test_foreground"]; });
@@ -160,7 +161,11 @@ self: super: with self; {
     image-saver = import ./comfyui/image-saver;
     gguf = import ./comfyui/gguf;
     video-helper-suite = import ./comfyui/video-helper-suite;
+    ppm = import ./comfyui/ppm;
     florence2 = import ./comfyui/florence2;
+    dream-project = import ./comfyui/dream-project;
+    scene-composer = import ./comfyui/scene-composer;
+    ollama = import ./comfyui/ollama;
     audiotools = import ./comfyui/audiotools;
     outetts = import ./comfyui/outetts;
     audio-quality-enhancer = import ./comfyui/audio-quality-enhancer;
@@ -173,9 +178,9 @@ self: super: with self; {
       layer-style essentials essentials-mb kolors-mz xiser-nodes
       kj-nodes cg-use-everywhere impact-pack impact-subpack
       prompt-reader-node ultimate-sd-upscale lopi999-nodes
-      was-node-suite image-saver gguf video-helper-suite
-      florence2 layer-style-advance
-      audiotools outetts audio-quality-enhancer
+      was-node-suite image-saver gguf video-helper-suite ppm
+      florence2 layer-style-advance dream-project scene-composer
+      ollama audiotools outetts audio-quality-enhancer
     ];
   };
 

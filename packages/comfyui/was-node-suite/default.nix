@@ -19,6 +19,8 @@
   timm,
   tqdm,
   transformers,
+  ffmpeg,
+  pip,
 }:
 
 let
@@ -35,6 +37,9 @@ in buildCustomNode {
     src = fetchFromGitHub {
         inherit owner repo rev hash;
     };
+    patches = [
+        ./fix-config-path.patch
+    ];
     dependencies = [
         #cmake
         #fairscale
@@ -56,5 +61,7 @@ in buildCustomNode {
         timm
         tqdm
         transformers
+        ffmpeg
+        pip
     ];
 }

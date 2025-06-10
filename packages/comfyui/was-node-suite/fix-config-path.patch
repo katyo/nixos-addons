@@ -1,0 +1,18 @@
+diff --git a/WAS_Node_Suite.py b/WAS_Node_Suite.py
+index 0c0c2c0..fb9bdb0 100644
+--- a/WAS_Node_Suite.py
++++ b/WAS_Node_Suite.py
+@@ -149,7 +149,12 @@ MODELS_DIR =  comfy_paths.models_dir
+ if args.just_ui:
+     MODELS_DIR = os.path.join(os.path.dirname(args.data_dir), 'models')
+ WAS_SUITE_ROOT = os.path.dirname(NODE_FILE)
+-WAS_CONFIG_DIR = os.environ.get('WAS_CONFIG_DIR', WAS_SUITE_ROOT)
++if "was_suite" in comfy_paths.folder_names_and_paths:
++    WAS_CONFIG_DIR = comfy_paths.get_folder_paths("was_suite")[0]
++else:
++    WAS_CONFIG_DIR = WAS_CONFIG_DIR = os.environ.get('WAS_CONFIG_DIR', WAS_SUITE_ROOT)
++if not os.path.exists(WAS_CONFIG_DIR):
++    os.mkdir(WAS_CONFIG_DIR)
+ WAS_DATABASE = os.path.join(WAS_CONFIG_DIR, 'was_suite_settings.json')
+ WAS_HISTORY_DATABASE = os.path.join(WAS_CONFIG_DIR, 'was_history.json')
+ WAS_CONFIG_FILE = os.path.join(WAS_CONFIG_DIR, 'was_suite_config.json')

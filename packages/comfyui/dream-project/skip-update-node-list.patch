@@ -1,0 +1,11 @@
+diff --git a/__init__.py b/__init__.py
+index 92daa9d..c3b3384 100644
+--- a/__init__.py
++++ b/__init__.py
+@@ -106,6 +106,3 @@ def update_node_index():
+     if updated or True:
+         with open(node_list_path, "w") as f:
+             f.write(json.dumps(node_list, indent=2, sort_keys=True))
+-
+-
+-update_node_index()
