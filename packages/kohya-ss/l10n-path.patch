@@ -1,0 +1,30 @@
+diff --git a/kohya_gui/localization.py b/kohya_gui/localization.py
+index 5c91772..413b523 100644
+--- a/kohya_gui/localization.py
++++ b/kohya_gui/localization.py
+@@ -7,7 +7,7 @@ localizationMap = {}
+
+ def load_localizations():
+     localizationMap.clear()
+-    dirname = "./localizations"
++    dirname = os.path.join(os.path.dirname(os.path.abspath(__file__)), "../localizations")
+     for file in os.listdir(dirname):
+         fn, ext = os.path.splitext(file)
+         if ext.lower() != ".json":
+diff --git a/kohya_gui/localization_ext.py b/kohya_gui/localization_ext.py
+index 0a58752..62ebedb 100644
+--- a/kohya_gui/localization_ext.py
++++ b/kohya_gui/localization_ext.py
+@@ -8,11 +8,12 @@ def file_path(fn):
+
+
+ def js_html_str(language):
++    basedir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
+     head = f'<script type="text/javascript">{localization.load_language_js(language)}</script>\n'
+     head += (
+-        f'<script type="text/javascript">{open("./assets/js/script.js", "r", encoding="utf-8").read()}</script>\n'
++        f'<script type="text/javascript">{open(basedir + "/assets/js/script.js", "r", encoding="utf-8").read()}</script>\n'
+     )
+-    head += f'<script type="text/javascript">{open("./assets/js/localization.js", "r", encoding="utf-8").read()}</script>\n'
++    head += f'<script type="text/javascript">{open(basedir + "/assets/js/localization.js", "r", encoding="utf-8").read()}</script>\n'
+     return head

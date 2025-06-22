@@ -39,7 +39,7 @@ self: super: with self; {
 
   pythonPackagesExtensions = super.pythonPackagesExtensions ++ [
     (pySelf: pySuper: with { inherit (pySelf) callPackage; }; {
-      uv-dynamic-versioning = callPackage ./mcp-servers/uv-dynamic-versioning {};
+      #uv-dynamic-versioning = callPackage ./mcp-servers/uv-dynamic-versioning {};
       mcp = callPackage ./mcp-servers/mcp {};
 
       spandrel = callPackage ./comfyui/spandrel {};
@@ -79,6 +79,14 @@ self: super: with self; {
 
       uroman = callPackage ./python/uroman {};
       outetts = callPackage ./python/outetts {};
+
+      dadaptation = callPackage ./kohya-ss/dadaptation {};
+      lycoris-lora = callPackage ./kohya-ss/lycoris-lora {};
+      prodigyopt = callPackage ./kohya-ss/prodigyopt {};
+      prodigy-plus-schedule-free = callPackage ./kohya-ss/prodigy-plus-schedule-free {};
+      pytorch-optimizer = callPackage ./kohya-ss/pytorch-optimizer {};
+      schedulefree = callPackage ./kohya-ss/schedulefree {};
+      tk = callPackage ./kohya-ss/tk {};
 
       nlopt = callPackage ./cadquery/nlopt.nix {};
       casadi = callPackage ./cadquery/casadi-whl.nix {};
@@ -181,6 +189,7 @@ self: super: with self; {
       ollama audiotools outetts audio-quality-enhancer
     ];
   };
+  kohya-ss = callPackage ./kohya-ss {};
 
   koboldcpp-latest = callPackage ./koboldcpp {};
   koboldcpp-bin = callPackage ./koboldcpp/binary.nix {};
