@@ -80,6 +80,13 @@ self: super: with self; {
       uroman = callPackage ./python/uroman {};
       outetts = callPackage ./python/outetts {};
 
+      demucs = callPackage ./python/demucs {};
+      dora-search = callPackage ./python/dora-search {};
+      lameenc = callPackage ./python/lameenc {};
+      openunmix = callPackage ./python/openunmix {};
+      treetable = callPackage ./python/treetable {};
+      pedalboard = callPackage ./python/pedalboard {};
+
       dadaptation = callPackage ./kohya-ss/dadaptation {};
       lycoris-lora = callPackage ./kohya-ss/lycoris-lora {};
       prodigyopt = callPackage ./kohya-ss/prodigyopt {};
