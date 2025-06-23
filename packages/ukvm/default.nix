@@ -1,4 +1,4 @@
-{ lib, rustPlatform, fetchFromGitHub, pname ? "ukvm" }:
+{ lib, rustPlatform, fetchFromGitHub, ghostscript_headless, pname ? "ukvm" }:
 
 let
   cargoPkgs = if pname == "ukvm" then ["ukvm" "ukvmc"] else
@@ -18,6 +18,8 @@ in rustPlatform.buildRustPackage {
 
   cargoHash = package.cargoHash.${pname};
   cargoBuildFlags = map (cargoPkg: "--package ${cargoPkg}") cargoPkgs;
+
+  nativeBuildInputs = [ghostscript_headless];
 
   postInstall = rec {
     ukvms = ''
