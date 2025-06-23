@@ -1,13 +1,13 @@
 { lib, rustPlatform, fetchFromGitHub, pkg-config, dbus }:
 let
   pname = "bluer-tools";
-  version = "0.17.3";
+  version = "0.17.4";
+  hash = "sha256-H5vl20f7ufW3jD4YjH1bIqDyoWd893LcTFLNTpJsvtU=";
+  cargoHash = "sha256-Tx0vsYJD3SZn62r/gkodzrqYvuKsDKEQb1oanLchXo0=";
 
   owner = "bluez";
   repo = "bluer";
   rev = "v${version}";
-  hash = "sha256-+EI7tchRrkhz8s0plJqs9jj+VF0SVnMv/Mm6Rm5j3/0=";
-  cargoHash = "sha256-o8YmS9P5Wa2BuPkXbEjdvhGf+N4uTrZADs4b034jfJ4=";
 
 in rustPlatform.buildRustPackage {
   inherit pname version cargoHash;
