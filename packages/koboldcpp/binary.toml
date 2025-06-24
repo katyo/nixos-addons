@@ -1,4 +1,4 @@
 # This file was generated using make. Do not etit it manually.
-["1.92.1"]
-"linux-x64-nocuda" = "sha256-AOTEKXnWu89IG8yTMuHQlpBInotZZH39OX2pMbCAQqg="
-"linux-x64-cuda1210" = "sha256-YDKL1D8iRc+5avLEZ75NhFtnQG6GMu0shx3cnE6Or0c="
+["1.94.1"]
+"linux-x64-nocuda" = "sha256-Di8y5/6zhib/GHu882UyEg1ng5uQclZZ1gSteR/4ayI="
+"linux-x64" = "sha256-nSGNZPcym+TJ8F+c03BKr2m221/73R2oIuE5macZ0XA="

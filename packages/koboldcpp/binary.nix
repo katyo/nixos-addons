@@ -9,8 +9,8 @@ let
         x86_64 = {
           name = "x64";
           cuda = {
-            yes = "cuda1210";
-            no = "nocuda";
+            yes = "";
+            no = "-nocuda";
           };
         };
       };
@@ -46,7 +46,7 @@ let
     then let os_spec = platforms.${os}; in
       if hasAttr arch os_spec.arch
       then let arch_spec = os_spec.arch.${arch};
-        accel_sfx = if hasAttr "cuda" arch_spec then "-${if cudaSupport then arch_spec.cuda.yes else arch_spec.cuda.no}" else "";
+        accel_sfx = if hasAttr "cuda" arch_spec then (if cudaSupport then arch_spec.cuda.yes else arch_spec.cuda.no) else "";
         in "${os_spec.name}-${arch_spec.name}${accel_sfx}"
       else throw "ARCH ${arch} is not supported"
     else throw "OS ${os} is not supported";

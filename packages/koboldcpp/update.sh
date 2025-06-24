@@ -2,7 +2,7 @@
 
 pkgs=koboldcpp-latest
 pkgsFile=default.toml
-pkgsVersions=("1.92.1")
+pkgsVersions=("1.94.1")
 
 declare -A hash
 
