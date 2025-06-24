@@ -87,6 +87,8 @@ self: super: with self; {
       treetable = callPackage ./python/treetable {};
       pedalboard = callPackage ./python/pedalboard {};
 
+      starlette-compress = callPackage ./python/starlette-compress {};
+
       dadaptation = callPackage ./kohya-ss/dadaptation {};
       lycoris-lora = callPackage ./kohya-ss/lycoris-lora {};
       prodigyopt = callPackage ./kohya-ss/prodigyopt {};
@@ -197,6 +199,11 @@ self: super: with self; {
     ];
   };
   kohya-ss = callPackage ./kohya-ss {};
+
+  ollama-latest = callPackage ./ollama {};
+  ollama-rocm-latest = callPackage ./ollama { acceleration = "rocm"; };
+  ollama-cuda-latest = callPackage ./ollama { acceleration = "cuda"; };
+  open-webui-latest = callPackage ./open-webui {};
 
   koboldcpp-latest = callPackage ./koboldcpp {};
   koboldcpp-bin = callPackage ./koboldcpp/binary.nix {};

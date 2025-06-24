@@ -53,6 +53,8 @@
   - [x] [ComfyUI](https://www.comfy.org/) The most powerful open source node-based application for generative AI
   - [x] [KoboldCpp](https://koboldai.com/KoboldCpp/) KoboldCpp is an easy-to-use AI server software for GGML and GGUF LLM models
   - [x] [Demucs](https://github.com/adefossez/demucs) Demucs is a state-of-the-art music source separation model, currently capable of separating drums, bass, and vocals from the rest of the accompaniment
+  - [x] [ollama](https://ollama.com) Get up and running with large language models (latest version)
+  - [x] [OpenWebUI](https://openwebui.com) Open WebUI is an extensible, self-hosted AI interface that adapts to your workflow, all while operating entirely offline (latest version)
 
 ## Installation
 
