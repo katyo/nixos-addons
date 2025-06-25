@@ -75,6 +75,7 @@ self: super: with self; {
       av-latest = callPackage ./comfyui/av {};
       poetry-plugin-pypi-mirror = callPackage ./comfyui/poetry-plugin-pypi-mirror {};
       zhipuai = callPackage ./comfyui/zhipuai {};
+      came-pytorch = callPackage ./comfyui/came-pytorch {};
       pymatting = pySuper.pymatting.overrideAttrs (old: { disabledTests = ["test_foreground"]; });
 
       uroman = callPackage ./python/uroman {};
@@ -180,6 +181,7 @@ self: super: with self; {
     florence2 = import ./comfyui/florence2;
     dream-project = import ./comfyui/dream-project;
     scene-composer = import ./comfyui/scene-composer;
+    flux-trainer = import ./comfyui/flux-trainer;
     ollama = import ./comfyui/ollama;
     audiotools = import ./comfyui/audiotools;
     outetts = import ./comfyui/outetts;
@@ -195,7 +197,7 @@ self: super: with self; {
       prompt-reader-node ultimate-sd-upscale lopi999-nodes
       was-node-suite image-saver gguf video-helper-suite ppm
       florence2 layer-style-advance dream-project scene-composer
-      ollama audiotools outetts audio-quality-enhancer
+      flux-trainer ollama audiotools outetts audio-quality-enhancer
     ];
   };
   kohya-ss = callPackage ./kohya-ss {};
