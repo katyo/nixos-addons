@@ -50,6 +50,7 @@
     - [x] [MCP Servers](https://github.com/modelcontextprotocol/servers) Collection of servers which supports Model Context Protocol
     - [x] [MCP OpenAPI Schema](https://github.com/hannesj/mcp-openapi-schema) MCP Server to work with OpenAPI Schemas
     - [x] [MCP Inspector](https://github.com/modelcontextprotocol/inspector) Visual testing tool for MCP servers
+    - [x] [Crate docs MCP](https://github.com/d6e/cratedocs-mcp) An MCP server for rust crate docs
   - [x] [ComfyUI](https://www.comfy.org/) The most powerful open source node-based application for generative AI
   - [x] [KoboldCpp](https://koboldai.com/KoboldCpp/) KoboldCpp is an easy-to-use AI server software for GGML and GGUF LLM models
   - [x] [Demucs](https://github.com/adefossez/demucs) Demucs is a state-of-the-art music source separation model, currently capable of separating drums, bass, and vocals from the rest of the accompaniment
