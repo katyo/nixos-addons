@@ -244,6 +244,7 @@ self: super: with self; {
   piper-voices = callPackage ./piper-voices {};
 
   mcp-servers = callPackage ./mcp-servers {};
+  rust-docs-mcp = callPackage ./rust-docs-mcp {};
   cratedocs-mcp = callPackage ./cratedocs-mcp {};
 
   gost-fonts = callPackage ./gost-fonts {};
