@@ -173,6 +173,8 @@ self: super: with self; {
     prompt-reader-node = import ./comfyui/prompt-reader-node;
     propainter-nodes = import ./comfyui/propainter-nodes;
     segment-anything-nodes = import ./comfyui/segment-anything-nodes;
+    inpaint-nodes = import ./comfyui/inpaint-nodes;
+    efficiency-nodes = import ./comfyui/efficiency-nodes;
     ultimate-sd-upscale = import ./comfyui/ultimate-sd-upscale;
     lopi999-nodes = import ./comfyui/lopi999-nodes;
     was-node-suite = import ./comfyui/was-node-suite;
@@ -197,8 +199,9 @@ self: super: with self; {
       layer-style essentials essentials-mb kolors-mz xiser-nodes
       kj-nodes cg-use-everywhere impact-pack impact-subpack
       prompt-reader-node propainter-nodes segment-anything-nodes
-      ultimate-sd-upscale lopi999-nodes was-node-suite image-saver
-      gguf video-helper-suite ppm florence2 layer-style-advance
+      inpaint-nodes efficiency-nodes ultimate-sd-upscale
+      lopi999-nodes was-node-suite image-saver gguf
+      video-helper-suite ppm florence2 layer-style-advance
       dream-project scene-composer flux-trainer
       ollama audiotools outetts audio-quality-enhancer
     ];
