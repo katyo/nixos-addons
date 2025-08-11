@@ -76,6 +76,7 @@ self: super: with self; {
       poetry-plugin-pypi-mirror = callPackage ./comfyui/poetry-plugin-pypi-mirror {};
       zhipuai = callPackage ./comfyui/zhipuai {};
       came-pytorch = callPackage ./comfyui/came-pytorch {};
+      xformers = callPackage ./comfyui/xformers {};
       pymatting = pySuper.pymatting.overrideAttrs (old: { disabledTests = ["test_foreground"]; });
 
       uroman = callPackage ./python/uroman {};
@@ -179,6 +180,7 @@ self: super: with self; {
     lopi999-nodes = import ./comfyui/lopi999-nodes;
     was-node-suite = import ./comfyui/was-node-suite;
     image-saver = import ./comfyui/image-saver;
+    fbcnn = import ./comfyui/fbcnn;
     gguf = import ./comfyui/gguf;
     video-helper-suite = import ./comfyui/video-helper-suite;
     ppm = import ./comfyui/ppm;
@@ -200,7 +202,7 @@ self: super: with self; {
       kj-nodes cg-use-everywhere impact-pack impact-subpack
       prompt-reader-node propainter-nodes segment-anything-nodes
       inpaint-nodes efficiency-nodes ultimate-sd-upscale
-      lopi999-nodes was-node-suite image-saver gguf
+      lopi999-nodes was-node-suite image-saver fbcnn gguf
       video-helper-suite ppm florence2 layer-style-advance
       dream-project scene-composer flux-trainer
       ollama audiotools outetts audio-quality-enhancer
