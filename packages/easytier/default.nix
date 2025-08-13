@@ -14,7 +14,6 @@ in rustPlatform.buildRustPackage {
     hash = pkgInfo.${version}.hash;
   };
 
-  useFetchCargoVendor = true;
   cargoHash = pkgInfo.${version}.cargoHash;
   cargoFlags = ["-p easytier"];
 
