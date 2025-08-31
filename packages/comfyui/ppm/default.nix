@@ -3,11 +3,11 @@
 let
     owner = "pamparamm";
     repo = "ComfyUI-ppm";
-    rev = "49b79fe";
-    hash = "sha256-GxTJNt8m7cbcoiW1Gv71pfdv12TS8rJ5sI3PH0n4jhg=";
+    rev = "ebb35c7";
+    hash = "sha256-MbCDVyAZ+AKtl45eyO8j9KuC0DcguHSOXAtxSeDuVHM=";
 
     pname = lib.strings.replaceStrings ["_"] ["-"] (lib.strings.toLower repo);
-    version = "1.0.39-git${rev}";
+    version = "1.0.42-git${rev}";
 
 in buildCustomNode {
     inherit pname version;

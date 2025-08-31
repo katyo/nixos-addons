@@ -5,8 +5,8 @@
   setuptools,
 }:
 buildPythonPackage rec {
-  pname = "comfyui-embedded-socs";
-  version = "0.2.0";
+  pname = "comfyui-embedded-docs";
+  version = "0.2.6";
   pyproject = true;
 
   build-system = [ setuptools ];
@@ -14,7 +14,7 @@ buildPythonPackage rec {
   src = fetchPypi {
     inherit version;
     pname = "comfyui_embedded_docs";
-    hash = "sha256-z5OSbWkDO8KZPFzCG4HmrY55VTrFPu9+Yz8Xixtcj9k=";
+    hash = "sha256-ild/PuIWvo3NbAjpZYxvJX/7np6B9A8NNt6bSZJJdWo=";
   };
 
   pythonImportsCheck = [ "comfyui_embedded_docs" ];

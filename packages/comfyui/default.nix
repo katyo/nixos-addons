@@ -11,9 +11,9 @@
 
 let
   pname = "comfyui";
-  version = "0.3.40";
+  version = "0.3.56";
   rev = "v${version}";
-  hash = "sha256-mi+evE0gf6MfpYKVaZIze5NDagkaukGGpjcOhem1vU4=";
+  hash = "sha256-pBfvBV4P1HOrEPGLtWXn7YamrW/ZM3fgMNWbgfjFSgc=";
 
   customNodesPkgs = builtins.map (node: python3.pkgs.callPackage node {
     buildCustomNode = args: stdenv.mkDerivation ({
@@ -39,6 +39,7 @@ let
   };
 
   pythonEnv = python3.withPackages (ps: with ps; [
+      alembic
       torch
       torchsde
       torchvision
@@ -62,6 +63,7 @@ let
       soundfile
       av-latest
       pydantic
+      pydantic-settings
   ] ++ (lib.attrValues (builtinPkgs ps))
   ++ (builtins.concatMap (node: node.dependencies) customNodesPkgs));
 

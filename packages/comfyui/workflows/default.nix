@@ -6,7 +6,7 @@
 }:
 buildPythonPackage rec {
   pname = "comfyui-workflow-templates";
-  version = "0.1.26";
+  version = "0.1.70";
   pyproject = true;
 
   build-system = [ setuptools ];
@@ -14,7 +14,7 @@ buildPythonPackage rec {
   src = fetchPypi {
     inherit version;
     pname = "comfyui_workflow_templates";
-    hash = "sha256-Upi+YGlsJdJofwxX0VVawwexaC6q2P3qwUldSIWrw74=";
+    hash = "sha256-Uf5cx6NzO/sYGXQICOx7CQyF8W3LVSgHVz7oHrBjnCQ=";
   };
 
   pythonImportsCheck = [ "comfyui_workflow_templates" ];
