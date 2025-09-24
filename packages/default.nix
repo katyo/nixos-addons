@@ -187,6 +187,9 @@ self: super: with self; {
     florence2 = import ./comfyui/florence2;
     dream-project = import ./comfyui/dream-project;
     scene-composer = import ./comfyui/scene-composer;
+    reactor = import ./comfyui/reactor;
+    mxtoolkit = import ./comfyui/mxtoolkit;
+    ergouzi-nodes = import ./comfyui/ergouzi-nodes;
     flux-trainer = import ./comfyui/flux-trainer;
     ollama = import ./comfyui/ollama;
     audiotools = import ./comfyui/audiotools;
@@ -204,7 +207,8 @@ self: super: with self; {
       inpaint-nodes efficiency-nodes ultimate-sd-upscale
       lopi999-nodes was-node-suite image-saver fbcnn gguf
       video-helper-suite ppm florence2 layer-style-advance
-      dream-project scene-composer flux-trainer
+      dream-project scene-composer reactor mxtoolkit
+      ergouzi-nodes flux-trainer
       ollama audiotools outetts audio-quality-enhancer
     ];
   };
