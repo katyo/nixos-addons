@@ -1,23 +1,19 @@
 {
-  lib
-, rustPlatform
-, fetchFromGitHub
-, pkg-config
-, installShellFiles
-, udev
-, stdenv
-, CoreServices
-, Security
-, nix-update-script
-, openssl
-, SystemConfiguration
+  lib,
+  rustPlatform,
+  fetchFromGitHub,
+  pkg-config,
+  installShellFiles,
+  stdenv,
+  nix-update-script,
+  openssl,
 }:
 
 with (builtins.fromTOML (lib.readFile ./default.toml));
 
 let
   pname = "espflash";
-  version = "3.2.0";
+  version = "4.1.0";
 
   owner = "esp-rs";
   repo = pname;
@@ -36,14 +32,13 @@ in rustPlatform.buildRustPackage {
   ];
 
   # Needed to get openssl-sys to use pkg-config.
-  OPENSSL_NO_VENDOR = 1;
+  env.OPENSSL_NO_VENDOR = 1;
 
-  buildInputs = [ openssl ] ++ lib.optionals stdenv.hostPlatform.isLinux [
-    udev
-  ] ++ lib.optionals stdenv.hostPlatform.isDarwin [
-    CoreServices
-    Security
-    SystemConfiguration
+  buildInputs = [ openssl ];
+
+  cargoBuildFlags = [
+    "--exclude xtask"
+    "--workspace"
   ];
 
   postInstall = lib.optionalString (stdenv.buildPlatform.canExecute stdenv.hostPlatform) ''
@@ -55,12 +50,15 @@ in rustPlatform.buildRustPackage {
 
   passthru.updateScript = nix-update-script { };
 
-  meta = with lib; {
+  meta = {
     description = "Serial flasher utility for Espressif SoCs and modules based on esptool.py";
-    homepage = "https://github.com/${owner}/${repo}";
-    changelog = "https://github.com/${owner}/${repo}/blob/${rev}/CHANGELOG.md";
-    mainProgram = pname;
-    license = with licenses; [ mit /* or */ asl20 ];
-    maintainers = with maintainers; [ matthiasbeyer ];
+    homepage = "https://github.com/esp-rs/espflash";
+    changelog = "https://github.com/esp-rs/espflash/blob/v${version}/CHANGELOG.md";
+    mainProgram = "espflash";
+    license = with lib.licenses; [
+      mit # or
+      asl20
+    ];
+    maintainers = with lib.maintainers; [ matthiasbeyer ];
   };
 }

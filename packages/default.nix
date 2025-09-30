@@ -12,7 +12,7 @@ self: super: with self; {
   git-find-worktree = callPackage ./git-extras/find-worktree.nix {};
 
   bluer-tools = callPackage ./bluer-tools {};
-  espflash_latest = callPackage ./espflash { inherit (darwin.apple_sdk.frameworks) CoreServices Security SystemConfiguration; };
+  espflash-latest = callPackage ./espflash {};
 
   fdt-viewer = qt6.callPackage ./fdt-viewer {};
   openocd-svd = libsForQt5.callPackage ./openocd-svd {};

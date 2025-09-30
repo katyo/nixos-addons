@@ -2,7 +2,7 @@
 
 set -x
 
-pkgName=espflash_latest
+pkgName=espflash-latest
 pkgsFile=default.toml
 
 function getHash() {
