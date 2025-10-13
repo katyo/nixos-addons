@@ -1,4 +1,4 @@
 # This file was generated using make. Do not etit it manually.
-["0.205.8".linux]
-x86_64 = "sha256-UFqz0S3TiX3YqHXR8xl1lMd+JeUEHvLLUjdKjkAPO44="
-aarch64 = "sha256-CdzqUFl6V/L3lH2BRA1qyR5dSvqeGI7vhjWVw00s7C0="
+["0.207.4".linux]
+x86_64 = "sha256-maCJcN10gstetNdD4E8qxmlI5btgHhhKCpDCP5FV6xw="
+aarch64 = "sha256-6eatHtcyq+VBwZleDgPKLDaDZoVfSqyZq0hFEk1eVOk="
