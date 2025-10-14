@@ -237,6 +237,8 @@ self: super: with self; {
     yt-dlp = yt-dlp-latest;
   };
 
+  ntsc-rs-bin = callPackage ./ntsc-rs/binary.nix {};
+
   mayo = libsForQt5.callPackage ./mayo {};
   mayo-bin = callPackage ./mayo/binary.nix {};
   cura-bin = callPackage ./cura/binary.nix {};
