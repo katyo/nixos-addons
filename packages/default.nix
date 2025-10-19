@@ -183,6 +183,7 @@ self: super: with self; {
     fbcnn = import ./comfyui/fbcnn;
     gguf = import ./comfyui/gguf;
     video-helper-suite = import ./comfyui/video-helper-suite;
+    video-upscale-with-model = import ./comfyui/video-upscale-with-model;
     ppm = import ./comfyui/ppm;
     florence2 = import ./comfyui/florence2;
     dream-project = import ./comfyui/dream-project;
@@ -206,9 +207,9 @@ self: super: with self; {
       prompt-reader-node propainter-nodes segment-anything-nodes
       inpaint-nodes efficiency-nodes ultimate-sd-upscale
       lopi999-nodes was-node-suite image-saver fbcnn gguf
-      video-helper-suite ppm florence2 layer-style-advance
-      dream-project scene-composer reactor mxtoolkit
-      ergouzi-nodes flux-trainer
+      video-helper-suite video-upscale-with-model ppm florence2
+      layer-style-advance dream-project scene-composer reactor
+      mxtoolkit ergouzi-nodes flux-trainer
       ollama audiotools outetts audio-quality-enhancer
     ];
   };
