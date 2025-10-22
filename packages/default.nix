@@ -7,6 +7,7 @@ self: super: with self; {
 
   jsonst = callPackage ./jsonst {};
   xonv = callPackage ./xonv {};
+  clog = callPackage ./clog {};
   ubmsc = callPackage ./ubmsc {};
 
   git-find-worktree = callPackage ./git-extras/find-worktree.nix {};

@@ -3,6 +3,7 @@
 - [x] Command-line tools
   - [x] [jsonst](https://github.com/katyo/jsonschema) JSON Schema hacking toolset
   - [x] [xonv](https://github.com/katyo/xonv) Ultimate data formats exchange commandline tool
+  - [x] [clog](https://github.com/clog-tool/clog-cli) Generate beautiful changelogs from your Git commit history
   - [x] [ubmsc](https://github.com/katyo/ubmsc-rs) BMS monitoring tool
   - [x] [bluer-tools](https://github.com/bluez/bluer) A tools for GATT services, L2CAP and RFCOMM sockets on Linux
   - [x] [frugen](https://codeberg.org/IPMITool/frugen) A tool to parse and generate FRU binaries
