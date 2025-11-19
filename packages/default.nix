@@ -32,6 +32,9 @@ self: super: with self; {
 
   bottom-latest = callPackage ./bottom {};
 
+  typos-latest = callPackage ./typos {};
+  typos-bin = callPackage ./typos/binary.nix {};
+
   tty0tty = callPackage ./tty0tty {};
   tty0tty-module = linuxPackages.callPackage ./tty0tty {};
 
