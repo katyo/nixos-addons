@@ -1,7 +1,7 @@
 { lib, pkgs, config, ... }:
 with lib;
 let
-  cfg = config.services.easytier;
+  cfg = config.services.easytier-mod;
 
   mkEnableOptionDefEn = name: (mkEnableOption name) // { default = true; };
 
@@ -266,7 +266,7 @@ let
       }));
 
 in {
-  options.services.easytier = opts;
+  options.services.easytier-mod = opts;
 
   config = mkIf enabled {
     environment.systemPackages = [ cfg.package ];
