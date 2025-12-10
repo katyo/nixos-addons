@@ -1,9 +1,9 @@
 { lib, config, pkgs, ... }:
 with lib;
 let
-  cfg = config.services.libretranslate;
+  cfg = config.services.libretranslate-mod;
 in {
-  options.services.libretranslate = {
+  options.services.libretranslate-mod = {
     enable = mkEnableOption "LibreTranslate server";
 
     package = mkPackageOption pkgs "libretranslate" {};
@@ -80,7 +80,7 @@ in {
   };
 
   config = mkIf cfg.enable {
-    systemd.services.libretranslate = {
+    systemd.services.libretranslate-mod = {
       description = "LibreTranslate service";
       after = [ "network.target" ];
       wantedBy = [ "multi-user.target" ];
