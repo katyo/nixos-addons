@@ -61,6 +61,8 @@
   - [x] [OpenWebUI](https://openwebui.com) Open WebUI is an extensible, self-hosted AI interface that adapts to your workflow, all while operating entirely offline (latest version)
 - [x] Multimedia tools
   - [x] [ntsc-rs](https://ntsc.rs/) Video effect which emulates NTSC and VHS video artifacts. It can be used as an After Effects, Premiere, or OpenFX plugin, or as a standalone application
+- [x] Virtualization
+  - [x] [WayDroid](https://waydro.id/) A container-based approach to boot a full Android system on regular GNU/Linux systems running Wayland based desktop environments.
 
 ## Installation
 

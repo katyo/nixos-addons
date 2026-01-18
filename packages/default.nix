@@ -41,6 +41,9 @@ self: super: with self; {
   victoriametrics-datasource-bin = grafanaPlugins.callPackage ./grafana-plugins/victoriametrics-datasource/binary.nix {};
   nvidia-gpu-exporter-bin = callPackage ./nvidia-gpu-exporter/binary.nix {};
 
+  waydroid-latest = callPackage ./waydroid {};
+  waydroid-nft-latest = callPackage ./waydroid { withNftables = true; };
+
   pythonPackagesExtensions = super.pythonPackagesExtensions ++ [
     (pySelf: pySuper: with { inherit (pySelf) callPackage; }; {
       #uv-dynamic-versioning = callPackage ./mcp-servers/uv-dynamic-versioning {};
