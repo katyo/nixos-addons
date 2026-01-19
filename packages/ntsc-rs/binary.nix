@@ -32,12 +32,14 @@ in stdenv.mkDerivation {
   nativeBuildInputs = [unzip autoPatchelfHook makeWrapper];
   buildInputs = (with xorg; [libGL libX11 libxcb libXcursor libXi libxkbcommon]) ++
     (with gst_all_1; [gstreamer gst-plugins-base gst-plugins-good gst-plugins-bad gst-plugins-ugly gst-libav gst-vaapi]);
+  propagatedBuildInputs = with gst_all_1; [gstreamer];
 
   postFixup = ''
     for bin in $out/bin/${pname}-{standalone,cli}; do
       wrapProgram $bin \
+        --prefix PATH : ${gst_all_1.gstreamer}/bin \
         --prefix LD_LIBRARY_PATH : ${lib.makeLibraryPath (with xorg; [libGL libX11 libxcb libXcursor libXi libxkbcommon vulkan-loader])} \
-        --prefix GST_PLUGIN_SYSTEM_PATH_1_0 : ${lib.concatMapStringsSep ":" (pkg: "${pkg}/lib/gstreamer-1.0") (with gst_all_1; [gstreamer gst-plugins-base gst-plugins-good gst-plugins-bad gst-plugins-ugly gst-libav gst-vaapi])}
+        --prefix GST_PLUGIN_SYSTEM_PATH_1_0 : ${lib.concatMapStringsSep ":" (pkg: "${pkg}/lib/gstreamer-1.0") (with gst_all_1; [gst-plugins-base gst-plugins-good gst-plugins-bad gst-plugins-ugly gst-libav gst-vaapi])}
     done
   '';
 
