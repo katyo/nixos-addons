@@ -1,9 +1,9 @@
-{ lib, grafanaPlugin, fetchurl, git, targetPlatform, version ? "0.9.0" }:
+{ lib, stdenv, grafanaPlugin, fetchurl, git, version ? "0.9.0" }:
 
 let pname = "victoriametrics-datasource";
     srcs = builtins.fromTOML (lib.readFile ./binary.toml);
 
-    system = lib.split "-" targetPlatform.system;
+    system = lib.split "-" stdenv.targetPlatform.system;
     arch = lib.elemAt system 0;
     os = lib.elemAt system 2;
 

@@ -1,6 +1,6 @@
-{ lib, appimageTools, fetchurl, targetPlatform, version ? "0.8.0" }:
+{ lib, stdenv, appimageTools, fetchurl, version ? "0.8.0" }:
 let
-  system = lib.split "-" targetPlatform.system;
+  system = lib.split "-" stdenv.targetPlatform.system;
   arch = lib.elemAt system 0;
   os = lib.elemAt system 2;
   platform = { linux = { x86_64 = "x86_64"; }; windows = { x86_64 = "win64"; }; }.${os}.${arch};

@@ -1,9 +1,9 @@
-{ lib, stdenv, fetchurl, unzip, autoPatchelfHook, targetPlatform, version ? "1.2.1" }:
+{ lib, stdenv, fetchurl, unzip, autoPatchelfHook, version ? "1.2.1" }:
 
 let
   pname = "nvidia_gpu_exporter";
 
-  system = lib.split "-" targetPlatform.system;
+  system = lib.split "-" stdenv.targetPlatform.system;
   arch = lib.elemAt system 0;
   os = lib.elemAt system 2;
 

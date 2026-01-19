@@ -1,4 +1,4 @@
-{ lib, targetPlatform, fetchurl, buildPythonPackage, autoPatchelfHook, callPackage, python, xorg, libglvnd, version ? "9.2.6" }:
+{ lib, stdenv, fetchurl, buildPythonPackage, autoPatchelfHook, callPackage, python, xorg, libglvnd, version ? "9.2.6" }:
 
 let
   pname = "cadquery-vtk";
@@ -14,7 +14,7 @@ let
     aarch64-linux = "manylinux_2_35_aarch64";
     x86_64-darwin = "macosx_10_9_x86_64";
     aarch64-darwin = "macosx_11_0_arm64";
-  }.${targetPlatform.system};
+  }.${stdenv.targetPlatform.system};
 
   cpyPkg = (builtins.fromTOML (lib.readFile ./cadquery_vtk-whl.toml)).${version}.${cpyVer}.${cpyVer}.${cpySys};
 

@@ -29,7 +29,7 @@ let
   pkgInfo = fromTOML (readFile ./binary.toml);
 
   defaultVersion = latestVersion (attrNames pkgInfo);
-in { lib, stdenv, fetchurl, targetPlatform, autoPatchelfHook, makeWrapper,
+in { lib, stdenv, fetchurl, autoPatchelfHook, makeWrapper,
      xorg, addDriverRunpath,
      config, cudaSupport ? config.cudaSupport, version ? defaultVersion }:
 
@@ -38,7 +38,7 @@ let
   owner =  "LostRuins";
   repo = name;
 
-  system = split "-" targetPlatform.system;
+  system = split "-" stdenv.targetPlatform.system;
   arch = elemAt system 0;
   os = elemAt system 2;
 

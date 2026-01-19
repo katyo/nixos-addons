@@ -1,11 +1,11 @@
 { lib, stdenv, fetchurl, unzip, autoPatchelfHook, makeWrapper,
   xorg, libxkbcommon, vulkan-loader, libbsd, zlib, alsa-lib,
-  targetPlatform, version ? null }:
+  version ? null }:
 
 let
   pname = "zed-editor";
 
-  system = lib.split "-" targetPlatform.system;
+  system = lib.split "-" stdenv.targetPlatform.system;
   arch = lib.elemAt system 0;
   os = lib.elemAt system 2;
 

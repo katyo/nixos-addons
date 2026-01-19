@@ -1,9 +1,9 @@
-{ lib, stdenv, fetchurl, unzip, autoPatchelfHook, targetPlatform, version ? "2.7.5" }:
+{ lib, stdenv, fetchurl, unzip, autoPatchelfHook, version ? "2.7.5" }:
 
 let
   pname = "godap";
 
-  system = lib.split "-" targetPlatform.system;
+  system = lib.split "-" stdenv.targetPlatform.system;
   arch = lib.elemAt system 0;
   os = lib.elemAt system 2;
 

@@ -1,4 +1,4 @@
-{ lib, targetPlatform, fetchurl, buildPythonPackage, callPackage, python, version ? "3.6.7" }:
+{ lib, stdenv, fetchurl, buildPythonPackage, callPackage, python, version ? "3.6.7" }:
 
 let
   pname = "casadi";
@@ -13,7 +13,7 @@ let
     aarch64-linux = "manylinux2014_aarch64";
     x86_64-darwin = "macosx_10_13_x86_64.macosx_10_13_intel";
     aarch64-darwin = "macosx_11_0_arm64";
-  }.${targetPlatform.system};
+  }.${stdenv.targetPlatform.system};
 
   cpyPkg = (builtins.fromTOML (lib.readFile ./casadi-whl.toml)).${version}.${cpyVer}.none.${cpySys};
 

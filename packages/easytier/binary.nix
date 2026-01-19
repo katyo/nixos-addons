@@ -1,9 +1,9 @@
-{ lib, stdenv, fetchurl, unzip, targetPlatform, version ? "2.2.2" }:
+{ lib, stdenv, fetchurl, unzip, version ? "2.2.2" }:
 
 let
   name = "easytier";
 
-  system = lib.split "-" targetPlatform.system;
+  system = lib.split "-" stdenv.targetPlatform.system;
   arch = lib.elemAt system 0;
   os = lib.elemAt system 2;
   srcs = builtins.fromTOML (lib.readFile ./binary.toml);
