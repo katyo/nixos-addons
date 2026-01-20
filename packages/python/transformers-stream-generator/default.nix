@@ -1,6 +1,7 @@
 {
   buildPythonPackage,
   fetchPypi,
+  torch,
   transformers,
 }:
 
@@ -14,7 +15,12 @@ buildPythonPackage rec {
     hash = "sha256-Jx3qzgq/nA+Ds220csi6Yf3HsE0b+J2EVkSsrCeV7Vc=";
   };
 
+  patches = [
+    ./transformers.patch
+  ];
+
   dependencies = [
+    torch
     transformers
   ];
 
