@@ -101,7 +101,8 @@ self: super: with self; {
       rjieba = callPackage ./python/rjieba {};
       transformers-stream-generator = callPackage ./python/transformers-stream-generator {};
       vocos = callPackage ./python/vocos {};
-      f5-tts = callPackage ./python/f5-tts {};
+      ruaccent = callPackage ./python/ruaccent {};
+      f5-tts = callPackage ./python/f5-tts { gradio = pySelf.gradio-6; };
 
       dadaptation = callPackage ./kohya-ss/dadaptation {};
       lycoris-lora = callPackage ./kohya-ss/lycoris-lora {};
@@ -124,6 +125,13 @@ self: super: with self; {
          "test_tool_selection_via_query_params"
          "test_download_if_url_correct_parse"
       ]; });
+      mcp-1_25 = callPackage ./python/mcp {};
+      gradio-6-client = callPackage ./python/gradio/client.nix { gradio = pySelf.gradio-6; };
+      gradio-6 = callPackage ./python/gradio (with pySelf; {
+        gradio = gradio-6;
+        gradio-client = gradio-6-client;
+        mcp = mcp-1_25;
+      });
 
       nlopt = callPackage ./cadquery/nlopt.nix {};
       casadi = callPackage ./cadquery/casadi-whl.nix {};

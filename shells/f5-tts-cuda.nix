@@ -11,7 +11,7 @@
 with pkgs;
 mkShell {
   buildInputs = [
-    (python313.withPackages (py: with py; [ f5-tts ]))
+    (python313.withPackages (py: with py; [ f5-tts ruaccent ]))
   ];
   shellHook = ''
     echo

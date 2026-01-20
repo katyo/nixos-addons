@@ -2,6 +2,7 @@
   buildPythonPackage,
   fetchPypi,
   ffmpeg,
+  setuptools-scm,
   accelerate,
   bitsandbytes, # platform_machine!='arm64' and platform_system!='Darwin'",
   cached-path, ##
@@ -43,9 +44,16 @@ buildPythonPackage rec {
     hash = "sha256-NszEIpKy60IFroSWRVIOjtNmBltDEAiDnkrpIv07v9Y=";
   };
 
+  postPatch = ''
+    substituteInPlace pyproject.toml \
+      --replace-fail 'pydantic<=2.10.6' 'pydantic'
+  '';
+
   propagatedBuildInputs = [
     ffmpeg
   ];
+
+  build-system = [setuptools-scm];
 
   dependencies = [
     accelerate

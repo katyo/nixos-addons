@@ -1,6 +1,6 @@
 {
   buildPythonPackage,
-  fetchPypi,
+  fetchFromGitHub,
   torch,
   torchaudio,
   numpy,
@@ -16,9 +16,11 @@ buildPythonPackage rec {
   version = "0.1.0";
   format = "setuptools";
 
-  src = fetchPypi {
-    inherit pname version;
-    hash = "sha256-tIgiTb45j/fUeQoCetZZR4tLwC5GXbmSxiwSsyygQ9g=";
+  src = fetchFromGitHub {
+    owner = "gemelo-ai";
+    repo = pname;
+    rev = "v${version}";
+    hash = "sha256-K1ontwueJm42j8m8lkn+Xto031dZ3D9mG6FeVyJeHDo=";
   };
 
   dependencies = [
