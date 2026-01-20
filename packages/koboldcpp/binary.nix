@@ -10,7 +10,7 @@ let
           name = "x64";
           cuda = {
             yes = "";
-            no = "-nocuda";
+            no = "-oldpc";
           };
         };
       };

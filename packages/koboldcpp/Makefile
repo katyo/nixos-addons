@@ -1,9 +1,9 @@
 owner := LostRuins
 name := koboldcpp
 repo := $(name)
-versions := 1.94.1
+versions := 1.105.3
 oses := linux #mac
-linux.archs := x64-nocuda x64
+linux.archs := x64-oldpc x64
 darwin.archs := arm64
 
 # version system arch
