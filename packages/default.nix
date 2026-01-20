@@ -96,6 +96,13 @@ self: super: with self; {
 
       starlette-compress = callPackage ./python/starlette-compress {};
 
+      cached-path = callPackage ./python/cached-path {};
+      ema-pytorch = callPackage ./python/ema-pytorch {};
+      rjieba = callPackage ./python/rjieba {};
+      transformers-stream-generator = callPackage ./python/transformers-stream-generator {};
+      vocos = callPackage ./python/vocos {};
+      f5-tts = callPackage ./python/f5-tts {};
+
       dadaptation = callPackage ./kohya-ss/dadaptation {};
       lycoris-lora = callPackage ./kohya-ss/lycoris-lora {};
       prodigyopt = callPackage ./kohya-ss/prodigyopt {};
