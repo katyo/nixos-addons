@@ -1,10 +1,10 @@
 { lib, rustPlatform, fetchFromGitHub, pkg-config, openssl, version ? "0.1.0" }:
 
-let owner = "d6e";
+let owner = "lnay";
     repo = "cratedocs-mcp";
     pname = repo;
     revs = {
-        "0.1.0" = "dca96d2";
+        "0.1.0" = "ec7ac7b";
     };
     #rev = "v${version}";
     rev = revs.${version};
