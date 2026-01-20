@@ -1,4 +1,4 @@
-{ lib, buildCustomNode, fetchFromGitHub, pytorch, numpy }:
+{ lib, buildCustomNode, fetchFromGitHub, torch, numpy }:
 
 let
     owner = "Miosp";
@@ -14,5 +14,5 @@ in buildCustomNode {
     src = fetchFromGitHub {
         inherit owner repo rev hash;
     };
-    dependencies = [pytorch numpy];
+    dependencies = [torch numpy];
 }

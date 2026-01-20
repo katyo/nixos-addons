@@ -2,16 +2,16 @@
 , python, absl-py, attrs, matplotlib, numpy, opencv4, protobuf, six, wheel
 , unzip, zip, fetchurl }:
 
-let pyInterpreterVersion = "cp${builtins.replaceStrings [ "." ] [ "" ] python.pythonVersion}";
+let #pyInterpreterVersion = "cp${builtins.replaceStrings [ "." ] [ "" ] python.pythonVersion}";
 
     pkgInfo = builtins.fromTOML (lib.readFile ./default.toml);
 
 in buildPythonPackage rec {
   pname = "mediapipe";
-  version = "0.10.21";
+  version = "0.10.31";
   format = "wheel";
 
-  src = fetchurl pkgInfo.${stdenv.system}.${pyInterpreterVersion};
+  src = fetchurl pkgInfo.${stdenv.system}; #.${pyInterpreterVersion};
 
   nativeBuildInputs = [ unzip zip autoPatchelfHook ];
 
@@ -19,8 +19,8 @@ in buildPythonPackage rec {
     # Patch out requirement for static opencv so we can substitute it with the nix version
     METADATA=mediapipe-${version}.dist-info/METADATA
     unzip $src $METADATA
-    substituteInPlace $METADATA \
-      --replace-fail "Requires-Dist: opencv-contrib-python" ""
+    #substituteInPlace $METADATA \
+    #  --replace-fail "Requires-Dist: opencv-contrib-python" ""
     chmod +w dist/*.whl
     zip -r dist/*.whl $METADATA
   '';

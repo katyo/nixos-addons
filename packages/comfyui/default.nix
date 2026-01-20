@@ -61,7 +61,7 @@ let
       kornia
       spandrel
       soundfile
-      av-latest
+      av
       pydantic
       pydantic-settings
   ] ++ (lib.attrValues (builtinPkgs ps))

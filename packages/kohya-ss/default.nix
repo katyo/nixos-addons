@@ -24,7 +24,7 @@ let
     einops
     fairscale
     ftfy
-    gradio
+    gradio-fixed
     huggingface-hub
     imagesize
     invisible-watermark

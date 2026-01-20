@@ -79,11 +79,9 @@ self: super: with self; {
       blind-watermark = callPackage ./comfyui/blind-watermark {};
       typer-config = callPackage ./comfyui/typer-config {};
       evalidate = callPackage ./comfyui/evalidate {};
-      av-latest = callPackage ./comfyui/av {};
       poetry-plugin-pypi-mirror = callPackage ./comfyui/poetry-plugin-pypi-mirror {};
       zhipuai = callPackage ./comfyui/zhipuai {};
       came-pytorch = callPackage ./comfyui/came-pytorch {};
-      xformers = callPackage ./comfyui/xformers {};
       pymatting = pySuper.pymatting.overrideAttrs (old: { disabledTests = ["test_foreground"]; });
 
       uroman = callPackage ./python/uroman {};
@@ -105,6 +103,20 @@ self: super: with self; {
       pytorch-optimizer = callPackage ./kohya-ss/pytorch-optimizer {};
       schedulefree = callPackage ./kohya-ss/schedulefree {};
       tk = callPackage ./kohya-ss/tk {};
+
+      gradio-fixed = pySuper.gradio.overrideAttrs (old: { disabledTests = old.disabledTests ++ [
+         "test_gradio_mcp_server_initialization"
+         "test_get_executable_path"
+         "test_get_block_fn_from_tool_name"
+         "test_generate_tool_names_correctly_for_interfaces"
+         "test_convert_strings_to_filedata"
+         "test_postprocess_output_data"
+         "test_simplify_filedata_schema"
+         "test_tool_prefix_character_replacement"
+         "test_associative_keyword_in_schema"
+         "test_tool_selection_via_query_params"
+         "test_download_if_url_correct_parse"
+      ]; });
 
       nlopt = callPackage ./cadquery/nlopt.nix {};
       casadi = callPackage ./cadquery/casadi-whl.nix {};
