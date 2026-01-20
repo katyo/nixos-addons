@@ -18,6 +18,7 @@ let lame = fetchurl {
 in buildPythonPackage rec {
   pname = "lameenc";
   version = "1.8.1";
+  format = "cmake";
   #format = "pyproject";
 
   src = fetchFromGitHub {
@@ -27,17 +28,19 @@ in buildPythonPackage rec {
     hash = "sha256-/GV18mPcru1raFfFQGSAHgNwpmwN4oVFKcBL4JjZkC8=";
   };
 
-  #dontUseCmakeConfigure = true;
-
   postPatch = ''
     substituteInPlace CMakeLists.txt --replace-fail \
       'https://sourceforge.net/projects/lame/files/lame/3.100/lame-3.100.tar.gz/download' \
       'file://${lame}'
     substituteInPlace CMakeLists.txt --replace-fail \
       '-m build -w' '-m build -w -n'
+    substituteInPlace CMakeLists.txt --replace-fail \
+      'cmake_minimum_required(VERSION 3.1)' 'cmake_minimum_required(VERSION 3.5)'
   '';
 
   SETUPTOOLS_SCM_PRETEND_VERSION = version;
+
+  pypaBuildPhase = "true";
 
   buildPhase = ''
     make LDFLAGS=-lmvec
