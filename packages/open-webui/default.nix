@@ -135,7 +135,7 @@ python3Packages.buildPythonApplication rec {
       loguru
       markdown
       msoffcrypto-tool
-      mcp
+      mcp-1_25
       nltk
       onnxruntime
       openai
