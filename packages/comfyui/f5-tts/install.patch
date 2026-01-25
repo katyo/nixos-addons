@@ -1,0 +1,66 @@
+diff --git a/F5TTS.py b/F5TTS.py
+index 861beeb..8ca5f3c 100644
+--- a/F5TTS.py
++++ b/F5TTS.py
+@@ -1,6 +1,5 @@
+ from pathlib import Path
+ import os.path
+-from .Install import Install
+ import math
+ import torch
+ import torchaudio
+@@ -16,11 +15,6 @@ from comfy.utils import ProgressBar
+ import comfy
+ from cached_path import cached_path
+ 
+-# check_install will download the f5-tts if the submodule wasn't downloaded.
+-Install.check_install()
+-
+-f5tts_path = os.path.join(Install.f5TTSPath, "src")
+-sys.path.insert(0, f5tts_path)
+ from f5_tts.model import DiT, UNetT  # noqa: E402
+ from f5_tts.infer.utils_infer import (  # noqa: E402
+     load_model,
+@@ -28,8 +22,8 @@ from f5_tts.infer.utils_infer import (  # noqa: E402
+     preprocess_ref_audio_text,
+     infer_process,
+ )
+-sys.path.remove(f5tts_path)
+-
++import f5_tts.model
++f5_tts_path = os.path.dirname(os.path.dirname(f5_tts.model.__file__))
+ 
+ class F5TTSCreate:
+     voice_reg = re.compile(r"\{([^\}]+)\}")
+@@ -144,9 +138,9 @@ class F5TTSCreate:
+ 
+     def get_vocoder(self, vocoder_name):
+         if vocoder_name == "vocos":
+-            os.path.join(Install.f5TTSPath, "checkpoints/vocos-mel-24khz")
++            os.path.join(f5_tts_path, "checkpoints/vocos-mel-24khz")
+         elif vocoder_name == "bigvgan":
+-            os.path.join(Install.f5TTSPath, "checkpoints/bigvgan_v2_24khz_100band_256x")  # noqa: E501
++            os.path.join(f5_tts_path, "checkpoints/bigvgan_v2_24khz_100band_256x")  # noqa: E501
+ 
+     def load_vocoder(self,  vocoder_name):
+         sys.path.insert(0, f5tts_path)
+@@ -191,7 +185,7 @@ class F5TTSCreate:
+ 
+     def get_vocab_file(self):
+         return os.path.join(
+-            Install.f5TTSPath, "data/Emilia_ZH_EN_pinyin/vocab.txt"
++            f5_tts_ath, "data/Emilia_ZH_EN_pinyin/vocab.txt"
+             )
+ 
+     def load_e2_model(self, vocoder):
+@@ -500,8 +494,8 @@ class F5TTSCreate:
+     @staticmethod
+     def get_config_path():
+         return os.path.join(
+-            Install.f5TTSPath,
+-            'src/f5_tts/configs'
++            f5_tts_path,
++            'configs'
+             )
+ 
+     @staticmethod

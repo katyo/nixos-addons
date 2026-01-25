@@ -1,0 +1,14 @@
+diff --git a/setup.py b/setup.py
+index e20ec50..5d440ee 100644
+--- a/setup.py
++++ b/setup.py
+@@ -8,8 +8,7 @@ with open("readme.md", "r") as f:
+ with open("requirements.txt", "r") as f:
+     requirements = f.read().split("\n")
+ 
+-versionName = sys.argv[1].replace("refs/tags/v", "")
+-del sys.argv[1]
++versionName = "{{VERSION}}"
+ 
+ setuptools.setup(
+     name="torch_time_stretch",

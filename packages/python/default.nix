@@ -54,6 +54,8 @@ pySelf: pySuper: with { inherit (pySelf) callPackage; }; {
   transformers-stream-generator = callPackage ./transformers-stream-generator {};
   vocos = callPackage ./vocos {};
   ruaccent = callPackage ./ruaccent {};
+  audiostretchy = callPackage ./audiostretchy {};
+  torch-time-stretch = callPackage ./torch-time-stretch {};
   f5-tts = callPackage ./f5-tts { gradio = pySelf.gradio-6; };
 
   dadaptation = callPackage ./dadaptation {};

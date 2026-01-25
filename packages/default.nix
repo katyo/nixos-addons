@@ -102,6 +102,7 @@ self: super: with self; {
     audiotools = import ./comfyui/audiotools;
     outetts = import ./comfyui/outetts;
     audio-quality-enhancer = import ./comfyui/audio-quality-enhancer;
+    f5-tts = import ./comfyui/f5-tts;
   };
   comfyui-with-nodes = callPackage ./comfyui {
     comfyuiCustomNodes = with comfyui-nodes; [
@@ -116,7 +117,7 @@ self: super: with self; {
       video-helper-suite video-upscale-with-model ppm florence2
       layer-style-advance dream-project scene-composer reactor
       mxtoolkit ergouzi-nodes flux-trainer
-      ollama audiotools outetts audio-quality-enhancer
+      ollama audiotools outetts audio-quality-enhancer f5-tts
     ];
   };
   kohya-ss = callPackage ./kohya-ss {};
