@@ -1,6 +1,6 @@
 { lib, buildCustomNode, fetchFromGitHub,
   torch, numpy, soundfile, scipy, librosa,
-  #demucs, pedalboard
+  demucs, pedalboard
 }:
 
 let
@@ -18,6 +18,6 @@ in buildCustomNode {
         inherit owner repo rev hash;
     };
     dependencies = [
-        torch numpy soundfile scipy librosa #demucs pedalboard
+        torch numpy soundfile scipy librosa demucs pedalboard
     ];
 }
