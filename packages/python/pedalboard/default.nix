@@ -15,7 +15,7 @@
 
 buildPythonPackage rec {
   pname = "pedalboard";
-  version = "0.9.17";
+  version = "0.9.21";
   format = "pyproject";
 
   #src = fetchPypi {
@@ -27,8 +27,8 @@ buildPythonPackage rec {
     owner = "katyo";
     repo = pname;
     #rev = "v${version}";
-    rev = "1ff9605";
-    hash = "sha256-dMBbwfNLNfQslFxSH2JcgIfu0urOktKT5ZEdX2qNOsg=";
+    rev = "8a19d6a";
+    hash = "sha256-jMeMYqDQnQDF4zPXSKv3NkPbTDiqWO+Lg+C5DBBK2sM=";
     fetchSubmodules = true;
   };
 
@@ -62,6 +62,10 @@ buildPythonPackage rec {
   pythonImportsCheck = [
     "pedalboard"
   ];
+
+  env = {
+    USE_PORTABLE_SIMD = "1";
+  };
 
   # has no tests
   doCheck = false;
