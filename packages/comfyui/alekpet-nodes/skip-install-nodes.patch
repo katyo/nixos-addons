@@ -1,0 +1,13 @@
+diff --git a/__init__.py b/__init__.py
+index 7a339f0..5611a48 100644
+--- a/__init__.py
++++ b/__init__.py
+@@ -279,7 +279,7 @@ WEB_DIRECTORY = f"./{extension_dirs[0]}"
+ 
+ 
+ # Install nodes
+-installNodes()
++#installNodes()
+ 
+ # Import classes nodes and add in mappings
+ # ArgosTranslateNode

@@ -102,6 +102,7 @@ self: super: with self; {
     mxtoolkit = import ./comfyui/mxtoolkit;
     ergouzi-nodes = import ./comfyui/ergouzi-nodes;
     flux-trainer = import ./comfyui/flux-trainer;
+    alekpet-nodes = import ./comfyui/alekpet-nodes;
     ollama = import ./comfyui/ollama;
     audiotools = import ./comfyui/audiotools;
     outetts = import ./comfyui/outetts;
@@ -120,7 +121,7 @@ self: super: with self; {
       lopi999-nodes was-node-suite image-saver fbcnn gguf
       video-helper-suite video-upscale-with-model ppm florence2
       layer-style-advance dream-project scene-composer reactor
-      mxtoolkit ergouzi-nodes flux-trainer
+      mxtoolkit ergouzi-nodes flux-trainer alekpet-nodes
       ollama audiotools outetts audio-quality-enhancer f5-tts
     ];
   };
