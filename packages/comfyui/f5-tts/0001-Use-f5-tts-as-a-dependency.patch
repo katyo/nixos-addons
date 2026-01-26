@@ -1,3 +1,12 @@
+From a517e7a4fd0125b85fdfbcc9776b1db81d083c8d Mon Sep 17 00:00:00 2001
+From: "K." <kayo@illumium.org>
+Date: Mon, 26 Jan 2026 15:28:12 +0500
+Subject: [PATCH 1/2] Use f5-tts as a dependency
+
+---
+ F5TTS.py | 20 +++++++-------------
+ 1 file changed, 7 insertions(+), 13 deletions(-)
+
 diff --git a/F5TTS.py b/F5TTS.py
 index 861beeb..8ca5f3c 100644
 --- a/F5TTS.py
@@ -64,3 +73,6 @@ index 861beeb..8ca5f3c 100644
              )
  
      @staticmethod
+-- 
+2.51.2
+

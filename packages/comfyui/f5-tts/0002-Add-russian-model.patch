@@ -1,0 +1,35 @@
+From 36d1d543df1a43b1befb728933786c2bb525beb1 Mon Sep 17 00:00:00 2001
+From: "K." <kayo@illumium.org>
+Date: Mon, 26 Jan 2026 15:32:07 +0500
+Subject: [PATCH 2/2] Add russian model
+
+---
+ F5TTS.py | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+diff --git a/F5TTS.py b/F5TTS.py
+index 8ca5f3c..cf4af57 100644
+--- a/F5TTS.py
++++ b/F5TTS.py
+@@ -38,6 +38,7 @@ class F5TTSCreate:
+         "F5-IT",
+         "F5-JP",
+         "F5-TH",
++        "F5-RU",
+         "E2",
+     ]
+     vocoder_types = ["auto", "vocos", "bigvgan"]
+@@ -133,6 +134,10 @@ class F5TTSCreate:
+                 "model": "hf://VIZINTZOR/F5-TTS-THAI/model_600000.pt",  # noqa: E501
+                 "vocab": "hf://VIZINTZOR/F5-TTS-THAI/vocab.txt",
+             },
++            "F5-RU": {
++                "model": "hf://hotstone228/F5-TTS-Russian/model_last.safetensors",
++                "vocab": "hf://hotstone228/F5-TTS-Russian/vocab.txt",
++            },
+             "E2": self.load_e2_model,
+         }
+ 
+-- 
+2.51.2
+

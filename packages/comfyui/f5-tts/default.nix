@@ -16,7 +16,8 @@ in buildCustomNode {
         inherit owner repo rev hash;
     };
     patches = [
-        ./install.patch
+        ./0001-Use-f5-tts-as-a-dependency.patch
+        ./0002-Add-russian-model.patch
     ];
     dependencies = [
         f5-tts
