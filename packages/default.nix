@@ -28,6 +28,8 @@ self: super: with self; {
 
   godap-bin = callPackage ./godap/binary.nix {};
 
+  zed-editor-latest = callPackage ./zed-editor {};
+  zed-editor-fhs-latest = self.zed-editor-latest.fhs;
   zed-editor-bin = callPackage ./zed-editor/binary.nix {};
 
   bottom-latest = callPackage ./bottom {};
