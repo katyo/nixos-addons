@@ -10,6 +10,7 @@
   - [x] [godap](https://github.com/Macmod/godap) A complete TUI for LDAP
   - [x] [git-find-worktree](https://github.com/deribaucourt/git-find-worktree/) A tool to identify the original git commit corresponding to a working tree
   - [x] [typos](https://github.com/crate-ci/typos) A source code spell checker
+  - [x] [amd-epp-tool](https://github.com/jayv/amd-epp-tool) Configures linux amd_pstate_epp driver performance profiles
 - [x] Services
   - [x] [easytier](https://easytier.top/en) A simple, secure, decentralized VPN mesh network solution (needs [<oxalica/rust-overlay>](https://github.com/oxalica/rust-overlay))
   - [x] [ukvm](https://github.com/katyo/ukvm) A network KVM solution in Rust (WIP)

@@ -142,6 +142,8 @@ self: super: with self; {
   frugen = callPackage ./frugen {};
   fru-tool = python312Packages.callPackage ./fru-tool {};
 
+  amd-epp-tool = callPackage ./amd-epp-tool {};
+
   freetube-latest = callPackage ./freetube {};
   yt-dlp-latest = python3Packages.callPackage ./yt-dlp {
     inherit python3Packages;
