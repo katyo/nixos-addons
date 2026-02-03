@@ -34,6 +34,8 @@ self: super: with self; {
 
   bottom-latest = callPackage ./bottom {};
 
+  code-assistant = callPackage ./code-assistant {};
+
   typos-latest = callPackage ./typos {};
   typos-bin = callPackage ./typos/binary.nix {};
 

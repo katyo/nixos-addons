@@ -60,6 +60,7 @@
   - [x] [F5-TTS](https://github.com/SWivid/F5-TTS) A Fairytaler that Fakes Fluent and Faithful Speech with Flow Matching
   - [x] [ollama](https://ollama.com) Get up and running with large language models (latest version)
   - [x] [OpenWebUI](https://openwebui.com) Open WebUI is an extensible, self-hosted AI interface that adapts to your workflow, all while operating entirely offline (latest version)
+  - [x] [code-assistant](https://github.com/stippi/code-assistant) An AI coding assistant built in Rust that provides both command-line and graphical interfaces for autonomous code analysis and modification
 - [x] Multimedia tools
   - [x] [ntsc-rs](https://ntsc.rs/) Video effect which emulates NTSC and VHS video artifacts. It can be used as an After Effects, Premiere, or OpenFX plugin, or as a standalone application
 - [x] Virtualization

@@ -1,0 +1,36 @@
+From a5d493d520fed4de1a3825c878a4f33110e788d4 Mon Sep 17 00:00:00 2001
+From: widat <widat.it@gmail.com>
+Date: Fri, 30 Jan 2026 21:30:14 +0700
+Subject: [PATCH] fix: error build on windows
+
+---
+ crates/code_assistant/Cargo.toml | 9 ++++++---
+ 1 file changed, 6 insertions(+), 3 deletions(-)
+
+diff --git a/crates/code_assistant/Cargo.toml b/crates/code_assistant/Cargo.toml
+index b0b10bee..f11e4244 100644
+--- a/crates/code_assistant/Cargo.toml
++++ b/crates/code_assistant/Cargo.toml
+@@ -30,9 +30,6 @@ tui-markdown = "=0.3.6"
+ # GPUI related
+ gpui = "0.2.2"
+ gpui-component = "0.4.0"
+-# Pin core-text to avoid version conflict with zed-font-kit
+-# See: https://github.com/zed-industries/zed/issues/46966
+-core-text = "=21.0.0"
+ smallvec = "1.15"
+ rust-embed = { version = "8.9", features = ["include-exclude"] }
+ 
+@@ -78,6 +75,12 @@ image = "0.25"
+ agent-client-protocol = { version = "0.9", features = ["unstable"] }
+ tokio-util = { version = "0.7", features = ["compat"] }
+ 
++# macOS-specific dependencies
++# Pin core-text to avoid version conflict with zed-font-kit
++# See: https://github.com/zed-industries/zed/issues/46966
++[target.'cfg(target_os = "macos")'.dependencies]
++core-text = "=21.0.0"
++
+ [dev-dependencies]
+ axum = "0.7"
+ bytes = "1.10"
