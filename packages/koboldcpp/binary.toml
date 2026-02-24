@@ -1,4 +1,4 @@
 # This file was generated using make. Do not etit it manually.
-["1.105.3"]
-"linux-x64-oldpc" = "sha256-2rBz6bo1BcKrBt7sniw4JhgHWlwM2+yjyUV5X1SHxLI="
-"linux-x64" = "sha256-sAv+1373txVBmZTiiWEC01aczzEl/RC9vHxNIoJkIq8="
+["1.108.2"]
+"linux-x64-nocuda" = "sha256-X3345IjxmFAvSS4yVNe8IknTP2OJ/PBWUfaoLI1GevA="
+"linux-x64" = "sha256-j8DC1r6fo+Bf5u/CMlG905a3OhzOHqmH0rmngGni3f0="
