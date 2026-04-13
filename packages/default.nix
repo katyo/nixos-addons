@@ -9,6 +9,7 @@ self: super: with self; {
   xonv = callPackage ./xonv {};
   clog = callPackage ./clog {};
   ubmsc = callPackage ./ubmsc {};
+  fanctl-ng = callPackage ./fanctl {};
 
   git-find-worktree = callPackage ./git-extras/find-worktree.nix {};
 
