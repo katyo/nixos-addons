@@ -15,6 +15,7 @@
   sqlite,
   zlib,
   zstd,
+  glib,
   alsa-lib,
   libxkbcommon,
   wayland,
@@ -172,6 +173,7 @@ rustPlatform.buildRustPackage (finalAttrs: {
     zstd
   ]
   ++ lib.optionals stdenv.hostPlatform.isLinux [
+    glib
     alsa-lib
     libxkbcommon
     wayland
