@@ -39,6 +39,8 @@ self: super: with self; {
 
   code-assistant = callPackage ./code-assistant {};
 
+  cargo-downgrade = callPackage ./cargo-downgrade {};
+
   typos-latest = callPackage ./typos {};
   typos-bin = callPackage ./typos/binary.nix {};
 
