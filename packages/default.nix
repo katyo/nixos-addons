@@ -1,4 +1,6 @@
 self: super: with self; {
+  rustPlatform-latest = let rust = rust-bin.stable.latest.minimal; in makeRustPlatform { cargo = rust; rustc = rust; };
+
   makeYarnOfflineCache = callPackage ./helpers/yarn-offline-cache.nix {};
 
   ukvm = callPackage ./ukvm { pname = "ukvm"; };
@@ -24,12 +26,12 @@ self: super: with self; {
   qucsator-rf = callPackage ./qucsator-rf {};
   qucs-s-latest = qt6.callPackage ./qucs-s {};
 
-  easytier = callPackage ./easytier { rustPlatform = let rust = rust-bin.stable.latest.minimal; in makeRustPlatform { cargo = rust; rustc = rust; }; };
+  easytier = callPackage ./easytier { rustPlatform = self.rustPlatform-latest; };
   easytier-bin = callPackage ./easytier/binary.nix {};
 
   godap-bin = callPackage ./godap/binary.nix {};
 
-  zed-editor-latest = callPackage ./zed-editor {};
+  zed-editor-latest = callPackage ./zed-editor { rustPlatform = self.rustPlatform-latest; };
   zed-editor-fhs-latest = self.zed-editor-latest.fhs;
   zed-editor-bin = callPackage ./zed-editor/binary.nix {};
 
