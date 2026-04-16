@@ -6,7 +6,7 @@
 }:
 
 let
-  owner = "obraunsdorf";
+  owner = "xoviat";
   pname = "cargo-downgrade";
   repo = pname;
 
@@ -18,6 +18,7 @@ let
   #rev = "v${version}";
   rev = {
     "0.1.0" = "da286ff";
+    "0.1.1" = "0f1b3a8";
   }.${version};
 
 in rustPlatform.buildRustPackage {
@@ -29,14 +30,6 @@ in rustPlatform.buildRustPackage {
   };
 
   inherit (pkgInfo.${version}) cargoHash;
-
-  postUnpack = ''
-    cp ${./Cargo.lock} source/Cargo.lock
-  '';
-
-  postInstall = ''
-    mv $out/bin/downgrade $out/bin/cargo-downgrade
-  '';
 
   doCheck = false;
 

@@ -2,7 +2,7 @@
 
 pkg=cargo-downgrade
 pkgFile=default.toml
-pkgVersions=("0.1.0")
+pkgVersions=("0.1.1")
 
 declare -A hash
 declare -A cargoHash
