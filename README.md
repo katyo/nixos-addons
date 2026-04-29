@@ -15,6 +15,7 @@
   - [x] [easytier](https://easytier.top/en) A simple, secure, decentralized VPN mesh network solution (needs [<oxalica/rust-overlay>](https://github.com/oxalica/rust-overlay))
   - [x] [ukvm](https://github.com/katyo/ukvm) A network KVM solution in Rust (WIP)
   - [x] [fanctl](https://github.com/katyo/fanctl) Control system fans based on temperature sensor readings
+  - [x] [tg-ws-proxy-rs](https://github.com/valnesfjord/tg-ws-proxy-rs) Telegram MTProto WebSocket Bridge Proxy — a Rust vibecoded port of Flowseal/tg-ws-proxy
   - [x] [x11vnc](https://github.com/LibVNC/x11vnc/) A VNC server for real X displays
   - [x] [libretranslate](https://libretranslate.com/) Free and Open Source Machine Translation API. Self-hosted, offline capable and easy to setup
   - [x] [NextCloud](https://nextcloud.com/) extra appications packages

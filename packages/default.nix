@@ -181,6 +181,8 @@ self: super: with self; {
   rust-docs-mcp = callPackage ./rust-docs-mcp {};
   cratedocs-mcp = callPackage ./cratedocs-mcp {};
 
+  tg-ws-proxy-rs = callPackage ./tg-ws-proxy-rs {};
+
   gost-fonts = callPackage ./gost-fonts {};
 
   russian-trusted-ca = callPackage ./extra-certs/russian-trusted-ca.nix {};
