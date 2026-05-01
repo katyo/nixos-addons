@@ -2,7 +2,9 @@
 
 pkg=zed-editor-latest
 pkgFile=default.toml
-pkgVersions=("0.229.0")
+pkgVersions=("1.0.0")
+
+set -x
 
 declare -A hash
 declare -A cargoHash
