@@ -1,5 +1,5 @@
 { lib, stdenv, fetchurl, unzip, autoPatchelfHook, makeWrapper,
-  xorg, libxkbcommon, vulkan-loader, libbsd, zlib, alsa-lib,
+  xorg, libxkbcommon, vulkan-loader, libbsd, zlib, alsa-lib, glib,
   version ? null }:
 
 let
@@ -30,7 +30,7 @@ in stdenv.mkDerivation {
   };
 
   nativeBuildInputs = [unzip autoPatchelfHook makeWrapper];
-  buildInputs = with xorg; [stdenv.cc.cc libX11 libxcb libXau libXdmcp libxkbcommon libbsd zlib alsa-lib];
+  buildInputs = with xorg; [stdenv.cc.cc libX11 libxcb libXau libXdmcp libxkbcommon libbsd zlib alsa-lib glib];
   #propagatedBuildInputs = [vulkan-loader];
 
   postFixup = ''
