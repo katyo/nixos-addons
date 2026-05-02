@@ -1,5 +1,7 @@
 self: super: with self; {
-  rustPlatform-latest = let rust = rust-bin.stable.latest.minimal; in makeRustPlatform { cargo = rust; rustc = rust; };
+  rustPlatform-latest = if builtins.hasAttr "rust-bin" self then
+    (let rust = rust-bin.stable.latest.minimal; in makeRustPlatform { cargo = rust; rustc = rust; })
+  else rustPlatform;
 
   makeYarnOfflineCache = callPackage ./helpers/yarn-offline-cache.nix {};
 
