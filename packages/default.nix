@@ -151,6 +151,14 @@ self: super: with self; {
 
   amd-epp-tool = callPackage ./amd-epp-tool {};
 
+  lutris-latest-unwrapped = callPackage ./lutris/unwrapped.nix {};
+  lutris-latest = callPackage ./lutris {
+    lutris-unwrapped = lutris-latest-unwrapped;
+  };
+  lutris-latest-free = lutris-latest.override {
+    steamSupport = false;
+  };
+
   freetube-latest = callPackage ./freetube {};
   yt-dlp-latest = python3Packages.callPackage ./yt-dlp {
     inherit python3Packages;
