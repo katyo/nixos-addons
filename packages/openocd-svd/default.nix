@@ -5,8 +5,8 @@ let
 
   owner = "katyo";
   repo = pname;
-  rev = "177618e";
-  hash = "sha256-60iT1GPbU/Mi/tG800lv9hL+XRnZAdqy9Nme1sc+7k0=";
+  rev = "911caa9";
+  hash = "sha256-lbcYiSaqOEdJ8v1s8x92jsbfZSqJMr18A/0UUInGeac=";
 
   pyapp = "openocd_svd";
   python3Packages = python312Packages;
