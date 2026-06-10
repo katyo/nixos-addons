@@ -14,6 +14,7 @@ in {
 
   config = mkIf cfg.enable {
     environment.systemPackages = [ cfg.package ];
-    #services.udev.packages = [ cfg.package ];
+    services.udev.packages = [ cfg.package ];
+    users.extraGroups.plugdev = { };
   };
 }
