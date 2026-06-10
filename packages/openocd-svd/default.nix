@@ -1,14 +1,15 @@
-{ lib, fetchFromGitHub, python3Packages, wrapQtAppsHook, makeDesktopItem, copyDesktopItems }:
+{ lib, fetchFromGitHub, python312Packages, wrapQtAppsHook, makeDesktopItem, copyDesktopItems }:
 let
   pname = "openocd-svd";
   version = "1.0";
 
-  owner = "esynr3z";
+  owner = "katyo";
   repo = pname;
-  rev = "28bfab1";
-  hash = "sha256-SHbqQwQgdFQY76gLvww1kDurpT3jOyLSeX3ls8GhBCc=";
+  rev = "177618e";
+  hash = "sha256-60iT1GPbU/Mi/tG800lv9hL+XRnZAdqy9Nme1sc+7k0=";
 
   pyapp = "openocd_svd";
+  python3Packages = python312Packages;
   pypkgs = python3Packages;
 
   desktopEntry = makeDesktopItem {
@@ -30,7 +31,7 @@ in pypkgs.buildPythonApplication {
   format = "pyproject";
 
   nativeBuildInputs = [wrapQtAppsHook copyDesktopItems];
-  propagatedBuildInputs = with pypkgs; [setuptools cmsis-svd pyqt5];
+  propagatedBuildInputs = with pypkgs; [setuptools cmsis-svd-ng pyqt5];
   desktopItems = [desktopEntry];
 
   doCheck = false;
@@ -40,7 +41,7 @@ in pypkgs.buildPythonApplication {
     (cd source && \
      mv app src && \
      substituteInPlace src/${pyapp}.py \
-       --replace-fail "if __name__ == '__main__':" "def main():" && \
+       --replace-fail 'if __name__ == "__main__":' 'def main():' && \
      cp ${./pyproject.toml} pyproject.toml)
   '';
 
