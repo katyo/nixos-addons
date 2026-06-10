@@ -1,0 +1,27 @@
+From 66a52b8ef1cb36182fb3171cb25d0db85a4ab734 Mon Sep 17 00:00:00 2001
+From: Vitaly Miniakhmetov <kayo@artzilla.ru>
+Date: Wed, 10 Jun 2026 14:54:48 +0300
+Subject: [PATCH] Add support for octal and binary integers to parser
+
+---
+ python/cmsis_svd/parser.py | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/python/cmsis_svd/parser.py b/python/cmsis_svd/parser.py
+index 16eaa89..ba16551 100644
+--- a/python/cmsis_svd/parser.py
++++ b/python/cmsis_svd/parser.py
+@@ -184,6 +184,10 @@ def _get_int(node: Element, tag: str, default: Any = None) -> Union[int, Any]:
+ 
+             if text_value.startswith('0x'):
+                 ret_value = int(text_value[2:], 16)  # hexadecimal
++            elif text_value.startswith('0o'):
++                ret_value = int(text_value[2:], 8)   # octal
++            elif text_value.startswith('0b'):
++                ret_value = int(text_value[2:], 2)   # binary
+             elif text_value.startswith('#'):
+                 # TODO(posborne): Deal with strange #1xx case better
+                 #
+-- 
+2.51.2
+

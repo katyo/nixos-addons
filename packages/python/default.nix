@@ -129,4 +129,10 @@ pySelf: pySuper: with { inherit (pySelf) callPackage; }; {
   jupyter-cadquery = callPackage ./cadquery/jupyter-cadquery.nix {};
 
   ocp-vscode = callPackage ./cadquery/ocp-vscode.nix {};
+
+  cmsis-svd-ng = pySuper.cmsis-svd.overrideAttrs (old: {
+    patches = [
+      ./cmsis-svd/0001-Add-support-for-octal-and-binary-integers-to-parser.patch
+    ];
+  });
 }
