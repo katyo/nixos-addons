@@ -1,15 +1,14 @@
-{ lib, fetchFromGitHub, python312Packages, wrapQtAppsHook, makeDesktopItem, copyDesktopItems }:
+{ lib, fetchFromGitHub, python3Packages, wrapQtAppsHook, makeDesktopItem, copyDesktopItems }:
 let
   pname = "openocd-svd";
   version = "1.0";
 
   owner = "katyo";
   repo = pname;
-  rev = "911caa9";
-  hash = "sha256-lbcYiSaqOEdJ8v1s8x92jsbfZSqJMr18A/0UUInGeac=";
+  rev = "82a9f83";
+  hash = "sha256-6qRylqx8fxTK9+ztrDfHmVlA2lkhR5Dj51xmFEU4RSE=";
 
   pyapp = "openocd_svd";
-  python3Packages = python312Packages;
   pypkgs = python3Packages;
 
   desktopEntry = makeDesktopItem {
@@ -31,7 +30,7 @@ in pypkgs.buildPythonApplication {
   format = "pyproject";
 
   nativeBuildInputs = [wrapQtAppsHook copyDesktopItems];
-  propagatedBuildInputs = with pypkgs; [setuptools cmsis-svd-ng pyqt5];
+  propagatedBuildInputs = with pypkgs; [setuptools cmsis-svd-ng pyqt5 telnetlib3];
   desktopItems = [desktopEntry];
 
   doCheck = false;
