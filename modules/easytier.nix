@@ -128,7 +128,7 @@ let
   opts = {
     enable = mkEnableOption "EasyTier VPN";
 
-    package = mkPackageOption pkgs "easytier" {};
+    package = mkPackageOption pkgs "easytier-latest" {};
 
     ipPackage = mkPackageOption pkgs "iproute2" {};
 

@@ -1,20 +1,22 @@
-{ lib, fetchFromGitHub, rustPlatform, protobuf, version ? "2.2.4" }:
+{ lib, fetchFromGitHub, rustPlatform, protobuf }:
 
 let
   pkgInfo = builtins.fromTOML (lib.readFile ./default.toml);
+  latestVersion = versions: lib.elemAt (lib.sort (a: b: a > b) versions) 0;
+  pkgVersion = latestVersion (lib.attrNames pkgInfo);
 
-in rustPlatform.buildRustPackage {
+in rustPlatform.buildRustPackage (attrs: {
   pname = "easytier";
-  inherit version;
+  version = pkgVersion;
 
   src = fetchFromGitHub {
     owner = "EasyTier";
     repo = "EasyTier";
-    rev = "v${version}";
-    hash = pkgInfo.${version}.hash;
+    rev = "v${attrs.version}";
+    hash = pkgInfo.${attrs.version}.hash;
   };
 
-  cargoHash = pkgInfo.${version}.cargoHash;
+  cargoHash = pkgInfo.${attrs.version}.cargoHash;
   cargoFlags = ["-p easytier"];
 
   postPatch = "rm -rf .cargo";
@@ -29,4 +31,4 @@ in rustPlatform.buildRustPackage {
     license = licenses.apsl20;
     maintainers = [];
   };
-}
+})

@@ -1,4 +1,4 @@
-{ lib, stdenv, fetchurl, unzip, version ? "2.2.2" }:
+{ lib, stdenv, fetchurl, unzip }:
 
 let
   name = "easytier";
@@ -6,11 +6,15 @@ let
   system = lib.split "-" stdenv.targetPlatform.system;
   arch = lib.elemAt system 0;
   os = lib.elemAt system 2;
-  srcs = builtins.fromTOML (lib.readFile ./binary.toml);
 
-in stdenv.mkDerivation {
+  pkgInfo = builtins.fromTOML (lib.readFile ./binary.toml);
+
+  latestVersion = versions: lib.elemAt (lib.sort (a: b: a > b) versions) 0;
+  pkgVersion = latestVersion (lib.attrNames pkgInfo);
+
+in stdenv.mkDerivation (attrs: {
   pname = "${name}-bin";
-  inherit version;
+  version = pkgVersion;
 
   nativeBuildInputs = [unzip];
 
@@ -21,8 +25,8 @@ in stdenv.mkDerivation {
 
   src = fetchurl {
     url = "https://github.com/EasyTier/EasyTier/releases/download/"
-      + "v${version}/${name}-${os}-${arch}-v${version}.zip";
-    hash = srcs.${version}.${os}.${arch};
+      + "v${attrs.version}/${name}-${os}-${arch}-v${attrs.version}.zip";
+    hash = pkgInfo.${attrs.version}.${os}.${arch};
   };
 
   meta = with lib; {
@@ -31,4 +35,4 @@ in stdenv.mkDerivation {
     license = licenses.apsl20;
     maintainers = [];
   };
-}
+})

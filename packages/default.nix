@@ -28,7 +28,7 @@ self: super: with self; {
   qucsator-rf = callPackage ./qucsator-rf {};
   qucs-s-latest = qt6.callPackage ./qucs-s {};
 
-  easytier = callPackage ./easytier { rustPlatform = self.rustPlatform-latest; };
+  easytier-latest = callPackage ./easytier { rustPlatform = self.rustPlatform-latest; };
   easytier-bin = callPackage ./easytier/binary.nix {};
 
   godap-bin = callPackage ./godap/binary.nix {};
