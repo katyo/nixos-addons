@@ -24,6 +24,7 @@ self: super: with self; {
   openocd-svd = libsForQt5.callPackage ./openocd-svd {};
   probe-rs-latest = callPackage ./probe-rs {};
   probe-rs-0_22 = callPackage ./probe-rs/v0_22.nix {};
+  mik32-upload = callPackage ./mik32-upload {};
 
   qucsator-rf = callPackage ./qucsator-rf {};
   qucs-s-latest = qt6.callPackage ./qucs-s {};

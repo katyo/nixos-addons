@@ -1,0 +1,1498 @@
+From 0a127b714f27538ffdfa9f44a5193ea821c85d21 Mon Sep 17 00:00:00 2001
+From: "K." <kayo@illumium.org>
+Date: Tue, 28 Jul 2026 15:04:48 +0300
+Subject: [PATCH 1/2] Various bug fixes
+
+---
+ flash_drivers/generic_flash.py | 286 +++++++++++++++++---------
+ mik32_check.py                 | 236 +++++++++++----------
+ mik32_upload.py                | 360 ++++++++++++++++++---------------
+ 3 files changed, 520 insertions(+), 362 deletions(-)
+
+diff --git a/flash_drivers/generic_flash.py b/flash_drivers/generic_flash.py
+index 31e4a6a..25c1c73 100644
+--- a/flash_drivers/generic_flash.py
++++ b/flash_drivers/generic_flash.py
+@@ -1,16 +1,17 @@
+-from enum import Enum
+ import os
+ import pathlib
+ import sys
+ import time
++from enum import Enum
+ from typing import Dict, List, Union
+-from tclrpc import OpenOcdTclRpc
+-from mik32_debug_hal.spifi import SPIFI
++
+ # import mik32_debug_hal.spifi as spifi
+ import mik32_debug_hal.dma as dma
++from mik32_debug_hal.spifi import SPIFI
++from tclrpc import OpenOcdTclRpc
+ 
+ 
+-class GenericFlash():
++class GenericFlash:
+     # --------------------------
+     # Commands
+     # --------------------------
+@@ -39,7 +40,7 @@ class GenericFlash():
+     WRITE_SREG_COMMAND = 0x01
+ 
+     SREG2_QUAD_ENABLE = 9
+-    SREG2_QUAD_ENABLE_S = (SREG2_QUAD_ENABLE-8)
++    SREG2_QUAD_ENABLE_S = SREG2_QUAD_ENABLE - 8
+     SREG2_QUAD_ENABLE_M = 1 << SREG2_QUAD_ENABLE_S
+ 
+     PAGE_PROGRAM_COMMAND = 0x02
+@@ -53,7 +54,7 @@ class GenericFlash():
+             self.value = value
+ 
+         def __str__(self):
+-            return ("ERROR: " + repr(self.value))
++            return "ERROR: " + repr(self.value)
+ 
+     class SREG_Num(Enum):
+         SREG1 = 0x00
+@@ -69,15 +70,18 @@ class GenericFlash():
+         # self.init()
+ 
+     def write_enable(self):
+-        self.spifi.send_command(self.WRITE_ENABLE_COMMAND,
+-                                self.spifi.Frameform.OPCODE_NOADDR, self.spifi.Fieldform.ALL_SERIAL)
++        self.spifi.send_command(
++            self.WRITE_ENABLE_COMMAND,
++            self.spifi.Frameform.OPCODE_NOADDR,
++            self.spifi.Fieldform.ALL_SERIAL,
++        )
+ 
+     def read_sreg(self, sreg: SREG_Num) -> int:
+         return self.spifi.send_command(
+             self.READ_SREG1_COMMAND | sreg.value,
+             self.spifi.Frameform.OPCODE_NOADDR,
+             self.spifi.Fieldform.ALL_SERIAL,
+-            byte_count=1
++            byte_count=1,
+         )[0]
+ 
+     def write_sreg(self, sreg1: int, sreg2: int):
+@@ -88,7 +92,7 @@ class GenericFlash():
+             self.spifi.Fieldform.ALL_SERIAL,
+             byte_count=2,
+             direction=self.spifi.Direction.WRITE,
+-            data=[sreg1, sreg2]
++            data=[sreg1, sreg2],
+         )
+         self.wait_busy()
+ 
+@@ -101,72 +105,123 @@ class GenericFlash():
+     RESET_DELAY = 0.001
+ 
+     def chip_reset(self):
+-        self.spifi.send_command(self.ENABLE_RESET_COMMAND,
+-                                self.spifi.Frameform.OPCODE_NOADDR, self.spifi.Fieldform.ALL_SERIAL)
+-        self.spifi.send_command(self.RESET_COMMAND,
+-                                self.spifi.Frameform.OPCODE_NOADDR, self.spifi.Fieldform.ALL_SERIAL)
++        self.spifi.send_command(
++            self.ENABLE_RESET_COMMAND,
++            self.spifi.Frameform.OPCODE_NOADDR,
++            self.spifi.Fieldform.ALL_SERIAL,
++        )
++        self.spifi.send_command(
++            self.RESET_COMMAND,
++            self.spifi.Frameform.OPCODE_NOADDR,
++            self.spifi.Fieldform.ALL_SERIAL,
++        )
+         time.sleep(self.RESET_DELAY)
+ 
+     def chip_reset_qpi(self):
+-        self.spifi.send_command(self.ENABLE_RESET_COMMAND,
+-                                self.spifi.Frameform.OPCODE_NOADDR, self.spifi.Fieldform.ALL_PARALLEL)
+-        self.spifi.send_command(self.RESET_COMMAND,
+-                                self.spifi.Frameform.OPCODE_NOADDR, self.spifi.Fieldform.ALL_PARALLEL)
++        self.spifi.send_command(
++            self.ENABLE_RESET_COMMAND,
++            self.spifi.Frameform.OPCODE_NOADDR,
++            self.spifi.Fieldform.ALL_PARALLEL,
++        )
++        self.spifi.send_command(
++            self.RESET_COMMAND,
++            self.spifi.Frameform.OPCODE_NOADDR,
++            self.spifi.Fieldform.ALL_PARALLEL,
++        )
+         time.sleep(self.RESET_DELAY)
+ 
+     def chip_erase(self):
+         print("Chip erase...", flush=True)
+-        self.spifi.send_command(self.CHIP_ERASE_COMMAND,
+-                                self.spifi.Frameform.OPCODE_NOADDR, self.spifi.Fieldform.ALL_SERIAL)
++        self.spifi.send_command(
++            self.CHIP_ERASE_COMMAND,
++            self.spifi.Frameform.OPCODE_NOADDR,
++            self.spifi.Fieldform.ALL_SERIAL,
++        )
+ 
+     def sector_erase(self, address: int):
+         print(f"Erase sector {address:#010x}...", flush=True)
+-        self.spifi.send_command(self.SECTOR_ERASE_COMMAND,
+-                                self.spifi.Frameform.OPCODE_3ADDR, self.spifi.Fieldform.ALL_SERIAL, address=address)
++        self.spifi.send_command(
++            self.SECTOR_ERASE_COMMAND,
++            self.spifi.Frameform.OPCODE_3ADDR,
++            self.spifi.Fieldform.ALL_SERIAL,
++            address=address,
++        )
+ 
+-    def read_data(self, address: int, byte_count: int, bin_data: List[int], dma: Union[dma.DMA, None] = None, use_quad_spi=False) -> int:
++    def read_data(
++        self,
++        address: int,
++        byte_count: int,
++        bin_data: List[int],
++        dma: Union[dma.DMA, None] = None,
++        use_quad_spi=False,
++    ) -> int:
+         read_data: List[int] = []
+ 
+-        if (use_quad_spi):
+-            read_data = self.spifi.send_command(self.FAST_READ_QUAD_OUTPUT_COMMAND, self.spifi.Frameform.OPCODE_3ADDR,
+-                                                self.spifi.Fieldform.DATA_PARALLEL, byte_count=byte_count, address=address, idata_length=1, dma=dma)
++        if use_quad_spi:
++            read_data = self.spifi.send_command(
++                self.FAST_READ_QUAD_OUTPUT_COMMAND,
++                self.spifi.Frameform.OPCODE_3ADDR,
++                self.spifi.Fieldform.DATA_PARALLEL,
++                byte_count=byte_count,
++                address=address,
++                idata_length=1,
++                dma=dma,
++            )
+         else:
+-            read_data = self.spifi.send_command(self.READ_DATA_COMMAND, self.spifi.Frameform.OPCODE_3ADDR,
+-                                                self.spifi.Fieldform.ALL_SERIAL, byte_count=byte_count, address=address, dma=dma)
++            read_data = self.spifi.send_command(
++                self.READ_DATA_COMMAND,
++                self.spifi.Frameform.OPCODE_3ADDR,
++                self.spifi.Fieldform.ALL_SERIAL,
++                byte_count=byte_count,
++                address=address,
++                dma=dma,
++            )
+ 
+         for i in range(byte_count):
+             if read_data[i] != bin_data[i]:
+                 print(
+-                    f"DATA[{i+address}] = {read_data[i]:#0x} expect {bin_data[i]:#0x}", flush=True)
++                    f"DATA[{i + address}] = {read_data[i]:#0x} expect {bin_data[i]:#0x}",
++                    flush=True,
++                )
+ 
+                 return 1
+ 
+         return 0
+ 
+     def page_program(
+-            self,
+-            ByteAddress: int,
+-            data: List[int],
+-            byte_count: int,
+-            progress: str = "",
+-            dma: Union[dma.DMA, None] = None
++        self,
++        ByteAddress: int,
++        data: List[int],
++        byte_count: int,
++        progress: str = "",
++        dma: Union[dma.DMA, None] = None,
+     ):
+-        print(
+-            f"Writing Flash page {ByteAddress:#010x}... {progress}", flush=True)
++        print(f"Writing Flash page {ByteAddress:#010x}... {progress}", flush=True)
+         if byte_count > 256:
+             raise self.FlashError("Byte count more than 256")
+ 
+         self.write_enable()
+-        self.spifi.send_command(self.PAGE_PROGRAM_COMMAND, self.spifi.Frameform.OPCODE_3ADDR,
+-                                self.spifi.Fieldform.ALL_SERIAL, byte_count=byte_count, address=ByteAddress,
+-                                idata=0, cache_limit=0, direction=self.spifi.Direction.WRITE, data=data, dma=dma)
++        self.spifi.send_command(
++            self.PAGE_PROGRAM_COMMAND,
++            self.spifi.Frameform.OPCODE_3ADDR,
++            self.spifi.Fieldform.ALL_SERIAL,
++            byte_count=byte_count,
++            address=ByteAddress,
++            idata=0,
++            cache_limit=0,
++            direction=self.spifi.Direction.WRITE,
++            data=data,
++            dma=dma,
++        )
+         self.wait_busy()
+ 
+     class EraseType(Enum):
+         CHIP_ERASE = 0
+         SECTOR_ERASE = 1
+ 
+-    def erase(self, erase_type: EraseType = EraseType.CHIP_ERASE, sectors: List[int] = []):
++    def erase(
++        self, erase_type: EraseType = EraseType.CHIP_ERASE, sectors: List[int] = []
++    ):
+         if erase_type == self.EraseType.CHIP_ERASE:
+             self.write_enable()
+             self.chip_erase()
+@@ -183,29 +238,40 @@ class GenericFlash():
+         data: List[int],
+         byte_count: int,
+         progress: str = "",
+-        dma: Union[dma.DMA, None] = None
++        dma: Union[dma.DMA, None] = None,
+     ):
+         print(f"Writing page {ByteAddress:#010x}... {progress}", flush=True)
+         if byte_count > 256:
+             raise self.FlashError("Byte count more than 256")
+ 
+         self.write_enable()
+-        self.spifi.send_command(self.QUAD_PAGE_PROGRAM_COMMAND, self.spifi.Frameform.OPCODE_3ADDR,
+-                                self.spifi.Fieldform.DATA_PARALLEL, byte_count=byte_count, address=ByteAddress,
+-                                idata=0, cache_limit=0, direction=self.spifi.Direction.WRITE, data=data, dma=dma)
++        self.spifi.send_command(
++            self.QUAD_PAGE_PROGRAM_COMMAND,
++            self.spifi.Frameform.OPCODE_3ADDR,
++            self.spifi.Fieldform.DATA_PARALLEL,
++            byte_count=byte_count,
++            address=ByteAddress,
++            idata=0,
++            cache_limit=0,
++            direction=self.spifi.Direction.WRITE,
++            data=data,
++            dma=dma,
++        )
+         self.wait_busy()
+ 
+     def quad_enable(self):
+-        if (self.check_quad_enable(self.openocd) != True):
++        if self.check_quad_enable() != True:
+             self.write_sreg(
+                 self.read_sreg(self.SREG_Num.SREG1),
+-                self.read_sreg(self.SREG_Num.SREG2) | self.SREG2_QUAD_ENABLE_M
++                self.read_sreg(self.SREG_Num.SREG2) | self.SREG2_QUAD_ENABLE_M,
+             )
+ 
+     def check_quad_enable(self):
+         return (self.read_sreg(self.SREG_Num.SREG2) & self.SREG2_QUAD_ENABLE_M) != 0
+ 
+-    def check_pages(self, pages: Dict[int, List[int]], use_quad_spi=False, use_chip_erase=False):
++    def check_pages(
++        self, pages: Dict[int, List[int]], use_quad_spi=False, use_chip_erase=False
++    ):
+         result = 0
+ 
+         self.openocd.halt()
+@@ -217,17 +283,20 @@ class GenericFlash():
+         # Сбрасываем микросхему в режиме SPI из всех состояний в нормальный SPI режим.
+         self.chip_reset()
+ 
+-        JEDEC_ID = self.spifi.send_command(self.JEDEC_ID_COMMAND,
+-                                     self.spifi.Frameform.OPCODE_NOADDR, self.spifi.Fieldform.ALL_SERIAL, 3)
++        JEDEC_ID = self.spifi.send_command(
++            self.JEDEC_ID_COMMAND,
++            self.spifi.Frameform.OPCODE_NOADDR,
++            self.spifi.Fieldform.ALL_SERIAL,
++            3,
++        )
+ 
+-        print(
+-            f"JEDEC ID = {JEDEC_ID[0]:02x} {JEDEC_ID[1]:02x} {JEDEC_ID[2]:02x}")
++        print(f"JEDEC ID = {JEDEC_ID[0]:02x} {JEDEC_ID[1]:02x} {JEDEC_ID[2]:02x}")
+ 
+         dma_instance = self.spifi.dma_config()
+ 
+-        if (use_quad_spi):
++        if use_quad_spi:
+             print("Using Quad SPI")
+-            self.quad_enable(self.openocd)
++            self.quad_enable()
+         else:
+             print("Using Single SPI")
+         #    spifi_quad_disable(openocd)
+@@ -236,11 +305,18 @@ class GenericFlash():
+ 
+         for index, page_offset in enumerate(pages_offsets):
+             print(
+-                f"Check page {page_offset:#010x}... {(index*100)//pages_offsets.__len__()}%", flush=True)
++                f"Check page {page_offset:#010x}... {(index * 100) // pages_offsets.__len__()}%",
++                flush=True,
++            )
+             page_bytes = pages[page_offset]
+ 
+             result = self.read_data(
+-                self.openocd, page_offset, 256, page_bytes, dma=dma_instance, use_quad_spi=use_quad_spi)
++                page_offset,
++                256,
++                page_bytes,
++                dma=dma_instance,
++                use_quad_spi=use_quad_spi,
++            )
+ 
+             if result == 1:
+                 print("Data error")
+@@ -252,7 +328,9 @@ class GenericFlash():
+             print("SPIFI pages checking completed", flush=True)
+         return 0
+ 
+-    def write_pages(self, pages: Dict[int, List[int]], use_quad_spi=False, use_chip_erase=False):
++    def write_pages(
++        self, pages: Dict[int, List[int]], use_quad_spi=False, use_chip_erase=False
++    ):
+         result = 0
+ 
+         self.openocd.halt()
+@@ -264,26 +342,30 @@ class GenericFlash():
+         # Сбрасываем микросхему в режиме SPI из всех состояний в нормальный SPI режим.
+         self.chip_reset()
+ 
+-        JEDEC_ID = self.spifi.send_command(self.JEDEC_ID_COMMAND,
+-                                     self.spifi.Frameform.OPCODE_NOADDR, self.spifi.Fieldform.ALL_SERIAL, 3)
++        JEDEC_ID = self.spifi.send_command(
++            self.JEDEC_ID_COMMAND,
++            self.spifi.Frameform.OPCODE_NOADDR,
++            self.spifi.Fieldform.ALL_SERIAL,
++            3,
++        )
+ 
+-        print(
+-            f"JEDEC ID = {JEDEC_ID[0]:02x} {JEDEC_ID[1]:02x} {JEDEC_ID[2]:02x}")
++        print(f"JEDEC ID = {JEDEC_ID[0]:02x} {JEDEC_ID[1]:02x} {JEDEC_ID[2]:02x}")
+ 
+         dma_instance = self.spifi.dma_config()
+ 
+         if use_chip_erase:
+-            self.erase(
+-                self.openocd, self.EraseType.CHIP_ERASE)
++            self.erase(self.EraseType.CHIP_ERASE)
+         else:
+-            self.erase(self.openocd, self.EraseType.SECTOR_ERASE,
+-                       self.get_segments_list(list(pages), 4*1024))
++            self.erase(
++                self.EraseType.SECTOR_ERASE,
++                self.get_segments_list(list(pages), 4 * 1024),
++            )
+ 
+-        print("Quad Enable", self.check_quad_enable(self.openocd))
++        print("Quad Enable", self.check_quad_enable())
+ 
+-        if (use_quad_spi):
++        if use_quad_spi:
+             print("Using Quad SPI")
+-            self.quad_enable(self.openocd)
++            self.quad_enable()
+         else:
+             print("Using Single SPI")
+             # spifi_quad_disable(openocd)
+@@ -296,15 +378,30 @@ class GenericFlash():
+         for index, page_offset in enumerate(pages_offsets):
+             page_bytes = pages[page_offset]
+ 
+-            if (use_quad_spi):
++            if use_quad_spi:
+                 self.quad_page_program(
+-                    self.openocd, page_offset, page_bytes, 256, f"{(index*100)//pages_offsets.__len__()}%", dma=dma_instance)
++                    page_offset,
++                    page_bytes,
++                    256,
++                    f"{(index * 100) // pages_offsets.__len__()}%",
++                    dma=dma_instance,
++                )
+             else:
+-                self.page_program(self.openocd, page_offset, page_bytes,
+-                                  256, f"{(index*100)//pages_offsets.__len__()}%", dma=dma_instance)
++                self.page_program(
++                    page_offset,
++                    page_bytes,
++                    256,
++                    f"{(index * 100) // pages_offsets.__len__()}%",
++                    dma=dma_instance,
++                )
+ 
+             result = self.read_data(
+-                self.openocd, page_offset, 256, page_bytes, dma=dma_instance, use_quad_spi=use_quad_spi)
++                page_offset,
++                256,
++                page_bytes,
++                dma=dma_instance,
++                use_quad_spi=use_quad_spi,
++            )
+ 
+             if result == 1:
+                 print("Data error")
+@@ -313,17 +410,21 @@ class GenericFlash():
+         if result == 0:
+             # Прошивка страниц флеш памяти по SPIFI была завершена
+             print(
+-                "Flashing of flash memory pages via SPIFI has been completed", flush=True)
++                "Flashing of flash memory pages via SPIFI has been completed",
++                flush=True,
++            )
+         return 0
+ 
+     def wait_halted(self, timeout_seconds: float = 2):
+-        self.openocd.run(f'wait_halt {int(timeout_seconds * 1000)}')
++        self.openocd.run(f"wait_halt {int(timeout_seconds * 1000)}")
+ 
+-    def write_pages_by_sectors(self, pages: Dict[int, List[int]],
+-                               driver_path: str,
+-                               use_quad_spi=False,
+-                               use_chip_erase=False,
+-                               ):
++    def write_pages_by_sectors(
++        self,
++        pages: Dict[int, List[int]],
++        driver_path: str,
++        use_quad_spi=False,
++        use_chip_erase=False,
++    ):
+         result = 0
+ 
+         self.openocd.halt()
+@@ -340,11 +441,11 @@ class GenericFlash():
+         self.chip_reset()
+ 
+         JEDEC_ID = self.spifi.send_command(
+-            0x9F, self.spifi.Frameform.OPCODE_NOADDR, self.spifi.Fieldform.ALL_SERIAL, 3)
+-        print(
+-            f"JEDEC_ID {JEDEC_ID[0]:02x} {JEDEC_ID[1]:02x} {JEDEC_ID[2]:02x}")
++            0x9F, self.spifi.Frameform.OPCODE_NOADDR, self.spifi.Fieldform.ALL_SERIAL, 3
++        )
++        print(f"JEDEC_ID {JEDEC_ID[0]:02x} {JEDEC_ID[1]:02x} {JEDEC_ID[2]:02x}")
+ 
+-        sectors_list = self.get_segments_list(list(pages), 4*1024)
++        sectors_list = self.get_segments_list(list(pages), 4 * 1024)
+ 
+         self.openocd.halt()
+         pathname = os.path.dirname(sys.argv[0])
+@@ -362,7 +463,7 @@ class GenericFlash():
+ 
+         for i, sector in enumerate(sectors_list):
+             ByteAddress = sector
+-            progress = f"{(i*100)//len(sectors_list)}%"
++            progress = f"{(i * 100) // len(sectors_list)}%"
+             print(f"  {ByteAddress:#010x} {progress:>4}", end="", flush=True)
+             bytes_list: List[int] = []
+             for page in range(16):
+@@ -370,7 +471,7 @@ class GenericFlash():
+                 if page is not None:
+                     bytes_list.extend(page)
+                 else:
+-                    bytes_list.extend([0]*256)
++                    bytes_list.extend([0] * 256)
+ 
+             result = self.openocd.write_memory(0x02002000, 8, bytes_list)
+             if result:
+@@ -381,7 +482,7 @@ class GenericFlash():
+ 
+             self.openocd.run(f"set_reg {{t6 {sector}}}")
+             self.openocd.resume()
+-            self.wait_halted(10)    # ждем, когда watchpoint сработает
++            self.wait_halted(10)  # ждем, когда watchpoint сработает
+             # watchpoint ловит до изменения слова
+             # делаем шаг, чтобы прочитать новое слово
+             self.openocd.run("step")
+@@ -413,7 +514,7 @@ class GenericFlash():
+         if data_len > 256:
+             raise self.SpifiError("Byte count more than 256")
+ 
+-        self.page_program(self.openocd, address, data, data_len)
++        self.page_program(address, data, data_len)
+ 
+         print("written")
+ 
+@@ -428,7 +529,7 @@ class GenericFlash():
+         address = 0
+ 
+         for address in range(0, len(bytes), 256):
+-            if ((address + 256) > len(bytes)):
++            if (address + 256) > len(bytes):
+                 break
+             print("address = ", address)
+             self.write(address, bytes, 256)
+@@ -437,7 +538,8 @@ class GenericFlash():
+ 
+         if (len(bytes) % 256) != 0:
+             print(
+-                f"address = {address}, +{len(bytes) - address-1}[{address + len(bytes) - address-1}]")
++                f"address = {address}, +{len(bytes) - address - 1}[{address + len(bytes) - address - 1}]"
++            )
+             self.write(address, bytes, len(bytes) - address)
+             if self.read_data(address, len(bytes) - address, bytes) == 1:
+                 return 1
+@@ -445,7 +547,9 @@ class GenericFlash():
+ 
+         return 0
+ 
+-    def get_segments_list(self, pages_offsets: List[int], segment_size: int) -> List[int]:
++    def get_segments_list(
++        self, pages_offsets: List[int], segment_size: int
++    ) -> List[int]:
+         segments = set()
+         for offset in pages_offsets:
+             segments.add(offset & ~(segment_size - 1))
+diff --git a/mik32_check.py b/mik32_check.py
+index 3af2c68..3f086b8 100644
+--- a/mik32_check.py
++++ b/mik32_check.py
+@@ -6,33 +6,50 @@ import sys
+ import time
+ from typing import List, Union
+ 
+-from mik32_debug_hal.power_manager import pm_init
+-from mik32_upload import BootMode, Pages, form_pages, openocd_exec_path, openocd_scripts_path, openocd_interface_path, openocd_target_path, adapter_default_speed, run_openocd, default_post_action, default_log_path, default_openocd_host, mik32_sections, OpenOCDError, adapter_speed_not_supported, memory_page_size
+-from mik32_debug_hal.gpio import MIK32_Version, gpio_init, gpio_deinit
+ import mik32_debug_hal.ram as ram
++from flash_drivers.generic_flash import GenericFlash
+ from hex_parser import FirmwareFile, MemoryType, Segment
+-from tclrpc import OpenOcdTclRpc, TclException
+ from mik32_debug_hal.eeprom import EEPROM
++from mik32_debug_hal.gpio import MIK32_Version, gpio_deinit, gpio_init
++from mik32_debug_hal.power_manager import pm_init
+ from mik32_debug_hal.spifi import SPIFI
+-from flash_drivers.generic_flash import GenericFlash
++from mik32_upload import (
++    BootMode,
++    OpenOCDError,
++    Pages,
++    adapter_default_speed,
++    adapter_speed_not_supported,
++    default_log_path,
++    default_openocd_host,
++    default_post_action,
++    form_pages,
++    memory_page_size,
++    mik32_sections,
++    openocd_exec_path,
++    openocd_interface_path,
++    openocd_scripts_path,
++    openocd_target_path,
++    run_openocd,
++)
++from tclrpc import OpenOcdTclRpc, TclException
+ 
+ 
+ def upload_file(
+-        filename: str,
+-        host: str = '127.0.0.1',
+-        port: int = OpenOcdTclRpc.DEFAULT_PORT,
+-        is_run_openocd=False,
+-        use_quad_spi=False,
+-        openocd_exec=openocd_exec_path,
+-        openocd_scripts=openocd_scripts_path,
+-        openocd_interface=openocd_interface_path,
+-        openocd_target=openocd_target_path,
+-        adapter_speed=adapter_default_speed,
+-        is_open_console=False,
+-        boot_mode=BootMode.UNDEFINED,
+-        log_path=default_log_path,
+-        post_action=default_post_action,
+-        mik_version=MIK32_Version.MIK32V2
++    filename: str,
++    host: str = "127.0.0.1",
++    port: int = OpenOcdTclRpc.DEFAULT_PORT,
++    is_run_openocd=False,
++    use_quad_spi=False,
++    openocd_exec=openocd_exec_path,
++    openocd_scripts=openocd_scripts_path,
++    openocd_interface=openocd_interface_path,
++    openocd_target=openocd_target_path,
++    adapter_speed=adapter_default_speed,
++    is_open_console=False,
++    boot_mode=BootMode.UNDEFINED,
++    log_path=default_log_path,
++    post_action=default_post_action,
++    mik_version=MIK32_Version.MIK32V2,
+ ) -> int:
+     """
+     Write ihex or binary file into MIK32 EEPROM or external flash memory
+@@ -58,8 +75,13 @@ def upload_file(
+         try:
+             logging.debug("OpenOCD try start!")
+ 
+-            proc = run_openocd(openocd_exec, openocd_scripts,
+-                               openocd_interface, openocd_target, is_open_console)
++            proc = run_openocd(
++                openocd_exec,
++                openocd_scripts,
++                openocd_interface,
++                openocd_target,
++                is_open_console,
++            )
+ 
+             logging.debug("OpenOCD started!")
+ 
+@@ -67,9 +89,11 @@ def upload_file(
+             raise OpenOCDError(e)
+     try:
+         with OpenOcdTclRpc(host, port) as openocd:
+-            if (all(openocd_interface.find(i) == -1 for i in adapter_speed_not_supported)):
++            if all(
++                openocd_interface.find(i) == -1 for i in adapter_speed_not_supported
++            ):
+                 openocd.run(f"adapter speed {adapter_speed}")
+-            openocd.run(f"log_output \"{log_path}\"")
++            openocd.run(f'log_output "{log_path}"')
+             openocd.run(f"debug_level 1")
+ 
+             logging.debug("OpenOCD configured!")
+@@ -78,44 +102,55 @@ def upload_file(
+ 
+             logging.debug("PM configured!")
+ 
+-            if (pages.pages_eeprom.__len__() > 0):
++            if pages.pages_eeprom.__len__() > 0:
+                 eeprom = EEPROM(openocd)
+ 
+                 start_time = time.perf_counter()
+ 
+-                result |= eeprom.check_pages(
+-                    pages.pages_eeprom, openocd)
++                result |= eeprom.check_pages(pages.pages_eeprom, openocd)
+ 
+                 write_time = time.perf_counter() - start_time
+-                write_size = pages.pages_eeprom.__len__(
+-                ) * memory_page_size[MemoryType.EEPROM]
++                write_size = (
++                    pages.pages_eeprom.__len__() * memory_page_size[MemoryType.EEPROM]
++                )
+                 print(
+-                    f"Check {write_size} bytes in {write_time:.2f} seconds (effective {(write_size/(write_time*1024)):.1f} kbyte/s)")
+-            if (pages.pages_spifi.__len__() > 0):
++                    f"Check {write_size} bytes in {write_time:.2f} seconds (effective {(write_size / (write_time * 1024)):.1f} kbyte/s)"
++                )
++            if pages.pages_spifi.__len__() > 0:
+                 gpio_init(openocd, mik_version)
+                 spifi = SPIFI(openocd)
+                 flash = GenericFlash(spifi)
+                 start_time = time.perf_counter()
+ 
+                 result |= flash.check_pages(
+-                    pages.pages_spifi, use_quad_spi=use_quad_spi)
++                    pages.pages_spifi, use_quad_spi=use_quad_spi
++                )
+ 
+                 write_time = time.perf_counter() - start_time
+-                write_size = pages.pages_spifi.__len__(
+-                ) * memory_page_size[MemoryType.SPIFI]
++                write_size = (
++                    pages.pages_spifi.__len__() * memory_page_size[MemoryType.SPIFI]
++                )
+                 print(
+-                    f"Check {write_size} bytes in {write_time:.2f} seconds (effective {(write_size/(write_time*1024)):.1f} kbyte/s)")
++                    f"Check {write_size} bytes in {write_time:.2f} seconds (effective {(write_size / (write_time * 1024)):.1f} kbyte/s)"
++                )
+                 gpio_deinit(openocd, mik_version)
+ 
+-            segments_ram = list(filter(
+-                lambda segment: (segment.memory is not None) and (segment.memory.type == MemoryType.RAM), segments))
+-            if (segments_ram.__len__() > 0):
++            segments_ram = list(
++                filter(
++                    lambda segment: (segment.memory is not None)
++                    and (segment.memory.type == MemoryType.RAM),
++                    segments,
++                )
++            )
++            if segments_ram.__len__() > 0:
+                 ram.check_segments(segments_ram, openocd)
+                 result |= 0
+ 
+             openocd.run(post_action)
+     except ConnectionRefusedError:
+-        print("ERROR: The connection to OpenOCD is not established. Check the settings and connection of the debugger")
++        print(
++            "ERROR: The connection to OpenOCD is not established. Check the settings and connection of the debugger"
++        )
+     except TclException as e:
+         print(f"ERROR: TclException {e.code} \n {e.msg}")
+     finally:
+@@ -127,96 +162,92 @@ def upload_file(
+ 
+ def createParser():
+     parser = argparse.ArgumentParser(
+-        prog='mik32_upload.py',
+-        description='''Скрипт предназначен для записи программы в ОЗУ, EEPROM и внешнюю flash память, 
+-        подключенную по интерфейсу SPIFI'''
+-    )
+-    parser.add_argument(
+-        'filepath',
+-        nargs='?',
+-        help='Путь к файлу прошивки'
++        prog="mik32_upload.py",
++        description="""Скрипт предназначен для записи программы в ОЗУ, EEPROM и внешнюю flash память,
++        подключенную по интерфейсу SPIFI""",
+     )
++    parser.add_argument("filepath", nargs="?", help="Путь к файлу прошивки")
+     parser.add_argument(
+-        '--run-openocd',
+-        dest='run_openocd',
+-        action='store_true',
++        "--run-openocd",
++        dest="run_openocd",
++        action="store_true",
+         default=False,
+-        help='Запуск openocd при прошивке МК'
++        help="Запуск openocd при прошивке МК",
+     )
+     parser.add_argument(
+-        '--use-quad-spi',
+-        dest='use_quad_spi',
+-        action='store_true',
++        "--use-quad-spi",
++        dest="use_quad_spi",
++        action="store_true",
+         default=False,
+-        help='Использование режима QuadSPI при программировании внешней флеш памяти'
++        help="Использование режима QuadSPI при программировании внешней флеш памяти",
+     )
+     parser.add_argument(
+-        '--openocd-host',
+-        dest='openocd_host',
++        "--openocd-host",
++        dest="openocd_host",
+         default=default_openocd_host,
+-        help=f"Адрес для подключения к openocd. По умолчанию: {default_openocd_host}"
++        help=f"Адрес для подключения к openocd. По умолчанию: {default_openocd_host}",
+     )
+     parser.add_argument(
+-        '--openocd-port',
+-        dest='openocd_port',
++        "--openocd-port",
++        dest="openocd_port",
+         default=OpenOcdTclRpc.DEFAULT_PORT,
+-        help=f"Порт tcl сервера openocd. По умолчанию: {OpenOcdTclRpc.DEFAULT_PORT}"
++        help=f"Порт tcl сервера openocd. По умолчанию: {OpenOcdTclRpc.DEFAULT_PORT}",
+     )
+     parser.add_argument(
+-        '--adapter-speed',
+-        dest='adapter_speed',
++        "--adapter-speed",
++        dest="adapter_speed",
+         default=adapter_default_speed,
+-        help=f"Скорость отладчика в кГц. По умолчанию: {adapter_default_speed}"
++        help=f"Скорость отладчика в кГц. По умолчанию: {adapter_default_speed}",
+     )
+     parser.add_argument(
+-        '--openocd-exec',
+-        dest='openocd_exec',
++        "--openocd-exec",
++        dest="openocd_exec",
+         default=openocd_exec_path,
+-        help=f"Путь к исполняемому файлу openocd. По умолчанию: {openocd_exec_path}"
++        help=f"Путь к исполняемому файлу openocd. По умолчанию: {openocd_exec_path}",
+     )
+     parser.add_argument(
+-        '--openocd-scripts',
+-        dest='openocd_scripts',
++        "--openocd-scripts",
++        dest="openocd_scripts",
+         default=openocd_scripts_path,
+-        help=f"Путь к папке scripts. По умолчанию: {openocd_scripts_path}"
++        help=f"Путь к папке scripts. По умолчанию: {openocd_scripts_path}",
+     )
+     parser.add_argument(
+-        '--openocd-interface',
+-        dest='openocd_interface',
++        "--openocd-interface",
++        dest="openocd_interface",
+         default=openocd_interface_path,
+-        help='Путь к файлу конфигурации отладчика относительно папки scripts или абсолютный путь. '
+-        f"По умолчанию: {openocd_interface_path}"
++        help="Путь к файлу конфигурации отладчика относительно папки scripts или абсолютный путь. "
++        f"По умолчанию: {openocd_interface_path}",
+     )
+     parser.add_argument(
+-        '--openocd-target',
+-        dest='openocd_target',
++        "--openocd-target",
++        dest="openocd_target",
+         default=openocd_target_path,
+-        help='Путь к файлу конфигурации целевого контроллера относительно папки scripts. '
+-        f"По умолчанию: {openocd_target_path}"
++        help="Путь к файлу конфигурации целевого контроллера относительно папки scripts. "
++        f"По умолчанию: {openocd_target_path}",
+     )
+     parser.add_argument(
+-        '--open-console',
+-        dest='open_console',
+-        action='store_true',
++        "--open-console",
++        dest="open_console",
++        action="store_true",
+         default=False,
+-        help='Открывать OpenOCD в отдельной консоли'
++        help="Открывать OpenOCD в отдельной консоли",
+     )
+     parser.add_argument(
+-        '-b',
+-        '--boot-mode',
+-        dest='boot_mode',
++        "-b",
++        "--boot-mode",
++        dest="boot_mode",
+         type=BootMode,
+         choices=list(BootMode),
+         default=BootMode.UNDEFINED,
+         help="Выбор типа памяти, который отображается на загрузочную область. "
+         "Если тип не выбран, данные, находящиеся в загрузочной области в hex файле отбрасываются. "
+-        f"По умолчанию: {BootMode.UNDEFINED}"
++        f"По умолчанию: {BootMode.UNDEFINED}",
+     )
+     parser.add_argument(
+-        '--log-path',
+-        dest='log_path',
++        "--log-path",
++        dest="log_path",
+         default=default_log_path,
+-        help=f"Путь к файлу журнала. По умолчанию: {default_log_path}"
++        help=f"Путь к файлу журнала. По умолчанию: {default_log_path}",
+     )
+     # parser.add_argument(
+     #     '--log-terminal',
+@@ -226,32 +257,31 @@ def createParser():
+     #     help='Вывод журнала в консоль'
+     # )
+     parser.add_argument(
+-        '--post-action',
+-        dest='post_action',
++        "--post-action",
++        dest="post_action",
+         default=default_post_action,
+-        help=f"Команды OpenOCD, запускаемые после прошивки. По умолчанию: {default_post_action}"
++        help=f"Команды OpenOCD, запускаемые после прошивки. По умолчанию: {default_post_action}",
+     )
+     parser.add_argument(
+-        '--no-color',
+-        dest='no_color',
+-        action='store_true',
++        "--no-color",
++        dest="no_color",
++        action="store_true",
+         default=False,
+-        help='Вывод без последовательностей управления терминалом. Временно не используется'
++        help="Вывод без последовательностей управления терминалом. Временно не используется",
+     )
+     parser.add_argument(
+-        '-t',
+-        '--mcu-type',
+-        dest='mcu_type',
++        "-t",
++        "--mcu-type",
++        dest="mcu_type",
+         type=MIK32_Version,
+         choices=list(MIK32_Version),
+         default=MIK32_Version.MIK32V2,
+-        help="Выбор микроконтроллера. "
+-        f"По умолчанию: {MIK32_Version.MIK32V2}"
++        help=f"Выбор микроконтроллера. По умолчанию: {MIK32_Version.MIK32V2}",
+     )
+     return parser
+ 
+ 
+-if __name__ == '__main__':
++if __name__ == "__main__":
+     logging.basicConfig(stream=sys.stderr, level=logging.INFO)
+ 
+     parser = createParser()
+@@ -273,7 +303,7 @@ if __name__ == '__main__':
+             boot_mode=namespace.boot_mode,
+             log_path=namespace.log_path,
+             post_action=namespace.post_action,
+-            mik_version=namespace.mcu_type
++            mik_version=namespace.mcu_type,
+         )
+     else:
+         print("Nothing to check")
+diff --git a/mik32_upload.py b/mik32_upload.py
+index fca1dac..915c4ef 100644
+--- a/mik32_upload.py
++++ b/mik32_upload.py
+@@ -1,33 +1,34 @@
+-import shlex
+ import argparse
++import logging
++import os
++import shlex
+ import socket
+ import subprocess
+-import os
++import sys
+ import time
+ from enum import Enum
+-from typing import List, Dict, NamedTuple, Union
++from pathlib import Path
++from sys import exit
++from typing import Dict, List, NamedTuple, Union
++
++import mik32_debug_hal.power_manager as power_manager
++import mik32_debug_hal.ram as ram
++from _version import applicaton_version
++from flash_drivers.generic_flash import GenericFlash
+ from hex_parser import FirmwareFile, MemorySection, MemoryType, Segment
+-from tclrpc import OpenOcdTclRpc, TclException, TclPortError
+-from mik32_debug_hal.gpio import MIK32_Version, gpio_init, gpio_deinit
+ from mik32_debug_hal.eeprom import EEPROM
++from mik32_debug_hal.gpio import MIK32_Version, gpio_deinit, gpio_init
+ from mik32_debug_hal.spifi import SPIFI
+-from flash_drivers.generic_flash import GenericFlash
+-import mik32_debug_hal.ram as ram
+-import mik32_debug_hal.power_manager as power_manager
+-from _version import applicaton_version
+ from parsers import *
+-import logging
+-import sys
+-from pathlib import Path
+-from sys import exit
++from tclrpc import OpenOcdTclRpc, TclException, TclPortError
+ 
+-program_name = f'mik32-uploader-{applicaton_version}'
++program_name = f"mik32-uploader-{applicaton_version}"
+ 
+ openocd_exec = "openocd"
+-if os.name == 'nt':
++if os.name == "nt":
+     openocd_exec = "openocd.exe"
+ 
+-default_openocd_host = '127.0.0.1'
++default_openocd_host = "127.0.0.1"
+ openocd_exec_path = os.path.join("openocd", "bin", openocd_exec)
+ openocd_scripts_path = os.path.join("openocd-scripts")
+ openocd_interface_path = os.path.join("interface", "ftdi", "mikron-link.cfg")
+@@ -35,46 +36,42 @@ openocd_target_path = os.path.join("target", "mik32.cfg")
+ default_post_action = "reset run"
+ 
+ default_drivers_path = os.path.dirname(os.path.realpath(__file__))
+-default_drivers_build_path = ''
++default_drivers_build_path = ""
+ 
+-if os.path.split(default_drivers_path)[-1] == '_internal':
++if os.path.split(default_drivers_path)[-1] == "_internal":
+     default_drivers_path = os.path.join(
+-        os.path.dirname(default_drivers_path),
+-        'upload-drivers'
++        os.path.dirname(default_drivers_path), "upload-drivers"
+     )
+ else:
+-    default_drivers_path = os.path.join(default_drivers_path, 'upload-drivers')
+-    default_drivers_build_path = os.path.join('.pio', 'build', 'mik32v2')
++    default_drivers_path = os.path.join(default_drivers_path, "upload-drivers")
++    default_drivers_build_path = os.path.join(".pio", "build", "mik32v2")
+ 
+ 
+ default_log_path = "/dev/null"
+-if os.name == 'nt':
++if os.name == "nt":
+     default_log_path = "nul"
+ 
+ adapter_default_speed = 500
+ 
+ 
+-memory_page_size = {
+-    MemoryType.EEPROM: 128,
+-    MemoryType.SPIFI: 256
+-}
++memory_page_size = {MemoryType.EEPROM: 128, MemoryType.SPIFI: 256}
+ 
+ 
+ class BootMode(Enum):
+-    UNDEFINED = 'undefined'
+-    EEPROM = 'eeprom'
+-    RAM = 'ram'
+-    SPIFI = 'spifi'
++    UNDEFINED = "undefined"
++    EEPROM = "eeprom"
++    RAM = "ram"
++    SPIFI = "spifi"
+ 
+     def __str__(self):
+         return self.value
+ 
+     def to_memory_type(self) -> MemoryType:
+-        if self.value == 'eeprom':
++        if self.value == "eeprom":
+             return MemoryType.EEPROM
+-        if self.value == 'ram':
++        if self.value == "ram":
+             return MemoryType.RAM
+-        if self.value == 'spifi':
++        if self.value == "spifi":
+             return MemoryType.SPIFI
+ 
+         return MemoryType.UNKNOWN
+@@ -88,7 +85,9 @@ mik32_sections: List[MemorySection] = [
+ ]
+ 
+ 
+-def fill_pages_from_segment(segment: Segment, page_size: int, pages: Dict[int, List[int]]):
++def fill_pages_from_segment(
++    segment: Segment, page_size: int, pages: Dict[int, List[int]]
++):
+     if segment.memory is None:
+         return
+ 
+@@ -127,18 +126,24 @@ def run_openocd(
+     openocd_scripts=openocd_scripts_path,
+     openocd_interface=openocd_interface_path,
+     openocd_target=openocd_target_path,
+-    is_open_console=False
++    is_open_console=False,
+ ) -> subprocess.Popen:
+-    cmd = [openocd_exec, "-s", openocd_scripts,
+-           "-f", openocd_interface, "-f", openocd_target]
+-
+-    if os.name == 'nt':
++    cmd = [
++        openocd_exec,
++        "-s",
++        openocd_scripts,
++        "-f",
++        openocd_interface,
++        "-f",
++        openocd_target,
++    ]
++
++    if os.name == "nt":
+         creation_flags = subprocess.SW_HIDE
+         if is_open_console:
+             creation_flags |= subprocess.CREATE_NEW_CONSOLE
+ 
+-        proc = subprocess.Popen(
+-            cmd, creationflags=creation_flags)
++        proc = subprocess.Popen(cmd, creationflags=creation_flags)
+     else:
+         proc = subprocess.Popen(cmd, stdout=subprocess.PIPE)
+ 
+@@ -150,29 +155,36 @@ class Pages(NamedTuple):
+     pages_spifi: Dict[int, List[int]]
+ 
+ 
+-def filter_segments(segments: List[Segment], memory_type: MemoryType, boot_type: MemoryType = MemoryType.UNKNOWN) -> List[Segment]:
++def filter_segments(
++    segments: List[Segment],
++    memory_type: MemoryType,
++    boot_type: MemoryType = MemoryType.UNKNOWN,
++) -> List[Segment]:
+     return list(
+         filter(
+-            lambda segment:
+-               (segment.memory is not None) and
+-               ((segment.memory.type == memory_type) or (
+-                   (segment.memory.type == MemoryType.BOOT) and
+-                   (boot_type == memory_type)
+-               )), segments
++            lambda segment: (
++                (segment.memory is not None)
++                and (
++                    (segment.memory.type == memory_type)
++                    or (
++                        (segment.memory.type == MemoryType.BOOT)
++                        and (boot_type == memory_type)
++                    )
++                )
++            ),
++            segments,
+         )
+     )
+ 
+ 
+ def form_pages(segments: List[Segment], boot_mode=BootMode.UNDEFINED) -> Pages:
+     pages_eeprom = segments_to_pages(
+-        filter_segments(segments, MemoryType.EEPROM,
+-                        boot_mode.to_memory_type()),
+-        memory_page_size[MemoryType.EEPROM]
++        filter_segments(segments, MemoryType.EEPROM, boot_mode.to_memory_type()),
++        memory_page_size[MemoryType.EEPROM],
+     )
+     pages_spifi = segments_to_pages(
+-        filter_segments(segments, MemoryType.SPIFI,
+-                        boot_mode.to_memory_type()),
+-        memory_page_size[MemoryType.SPIFI]
++        filter_segments(segments, MemoryType.SPIFI, boot_mode.to_memory_type()),
++        memory_page_size[MemoryType.SPIFI],
+     )
+ 
+     return Pages(pages_eeprom, pages_spifi)
+@@ -185,22 +197,22 @@ adapter_speed_not_supported = [
+ 
+ 
+ def upload_file(
+-        filename: str,
+-        host: str = '127.0.0.1',
+-        port: int = OpenOcdTclRpc.DEFAULT_PORT,
+-        is_run_openocd=False,
+-        use_quad_spi=False,
+-        openocd_exec=openocd_exec_path,
+-        openocd_scripts=openocd_scripts_path,
+-        openocd_interface=openocd_interface_path,
+-        openocd_target=openocd_target_path,
+-        adapter_speed=adapter_default_speed,
+-        is_open_console=False,
+-        boot_mode=BootMode.UNDEFINED,
+-        log_path=default_log_path,
+-        post_action=default_post_action,
+-        mik_version=MIK32_Version.MIK32V2,
+-        use_driver=True,
++    filename: str,
++    host: str = "127.0.0.1",
++    port: int = OpenOcdTclRpc.DEFAULT_PORT,
++    is_run_openocd=False,
++    use_quad_spi=False,
++    openocd_exec=openocd_exec_path,
++    openocd_scripts=openocd_scripts_path,
++    openocd_interface=openocd_interface_path,
++    openocd_target=openocd_target_path,
++    adapter_speed=adapter_default_speed,
++    is_open_console=False,
++    boot_mode=BootMode.UNDEFINED,
++    log_path=default_log_path,
++    post_action=default_post_action,
++    mik_version=MIK32_Version.MIK32V2,
++    use_driver=True,
+ ) -> int:
+     """
+     Запись прошивки в формате Intel HEX или бинарном в память MIK32.
+@@ -235,8 +247,13 @@ def upload_file(
+         try:
+             logging.debug("OpenOCD try start!")
+ 
+-            proc = run_openocd(openocd_exec, openocd_scripts,
+-                               openocd_interface, openocd_target, is_open_console)
++            proc = run_openocd(
++                openocd_exec,
++                openocd_scripts,
++                openocd_interface,
++                openocd_target,
++                is_open_console,
++            )
+ 
+             logging.debug("OpenOCD started!")
+ 
+@@ -246,18 +263,22 @@ def upload_file(
+         time.sleep(0.1)
+         with OpenOcdTclRpc(host, port) as openocd:
+             try:
+-                openocd.run(f"log_output \"{log_path}\"")
++                openocd.run(f'log_output "{log_path}"')
+                 openocd.run(f"debug_level 1")
+                 # Обратная совместимость со старым скриптом mik32.cfg
+-                openocd.run(f"if {{![info exists _TARGETNAME]}} \
+-                            {{ set _TARGETNAME riscv.cpu }}")
+-                openocd.run("capture \"$_TARGETNAME curstate\"")
++                openocd.run(
++                    f"if {{![info exists _TARGETNAME]}} \
++                            {{ set _TARGETNAME riscv.cpu }}"
++                )
++                openocd.run('capture "$_TARGETNAME curstate"')
+             except OSError as e:
+                 print("ERROR: Tcl port connection failed")
+                 print("Check connectivity and OpenOCD log")
+                 return 1
+ 
+-            if (all(openocd_interface.find(i) == -1 for i in adapter_speed_not_supported)):
++            if all(
++                openocd_interface.find(i) == -1 for i in adapter_speed_not_supported
++            ):
+                 openocd.run(f"adapter speed {adapter_speed}")
+ 
+             logging.debug("OpenOCD configured!")
+@@ -268,7 +289,7 @@ def upload_file(
+ 
+             logging.debug("PM configured!")
+ 
+-            if (pages.pages_eeprom.__len__() > 0):
++            if pages.pages_eeprom.__len__() > 0:
+                 eeprom = EEPROM(openocd)
+ 
+                 start_time = time.perf_counter()
+@@ -278,25 +299,25 @@ def upload_file(
+                         pages.pages_eeprom,
+                         os.path.join(
+                             default_drivers_path,
+-                            'jtag-eeprom',
++                            "jtag-eeprom",
+                             default_drivers_build_path,
+-                            'firmware.hex'
+-                        )
++                            "firmware.hex",
++                        ),
+                     )
+                 else:
+-                    result |= eeprom.write_pages(
+-                        pages.pages_eeprom
+-                    )
++                    result |= eeprom.write_pages(pages.pages_eeprom)
+ 
+                 write_time = time.perf_counter() - start_time
+-                write_size = pages.pages_eeprom.__len__(
+-                ) * memory_page_size[MemoryType.EEPROM]
++                write_size = (
++                    pages.pages_eeprom.__len__() * memory_page_size[MemoryType.EEPROM]
++                )
+                 t = time.localtime()
+                 current_time = time.strftime("%H:%M:%S", t)
+                 if result == 0:
+                     print(
+-                        f"[{current_time}] Wrote {write_size} bytes in {write_time:.2f} seconds (effective {(write_size/(write_time*1024)):.1f} kbyte/s)")
+-            if (pages.pages_spifi.__len__() > 0):
++                        f"[{current_time}] Wrote {write_size} bytes in {write_time:.2f} seconds (effective {(write_size / (write_time * 1024)):.1f} kbyte/s)"
++                    )
++            if pages.pages_spifi.__len__() > 0:
+                 gpio_init(openocd, mik_version)
+                 spifi = SPIFI(openocd)
+                 flash = GenericFlash(spifi)
+@@ -307,41 +328,49 @@ def upload_file(
+                         pages.pages_spifi,
+                         os.path.join(
+                             default_drivers_path,
+-                            'jtag-spifi',
++                            "jtag-spifi",
+                             default_drivers_build_path,
+-                            'firmware.hex'
+-                        )
++                            "firmware.hex",
++                        ),
+                     )
+                 else:
+                     result |= flash.write_pages(
+-                        pages.pages_spifi,
+-                        openocd,
+-                        use_quad_spi=use_quad_spi
++                        pages.pages_spifi, use_quad_spi=use_quad_spi
+                     )
+ 
+                 write_time = time.perf_counter() - start_time
+-                write_size = pages.pages_spifi.__len__(
+-                ) * memory_page_size[MemoryType.SPIFI]
++                write_size = (
++                    pages.pages_spifi.__len__() * memory_page_size[MemoryType.SPIFI]
++                )
+                 t = time.localtime()
+                 current_time = time.strftime("%H:%M:%S", t)
+                 if result == 0:
+                     print(
+-                        f"[{current_time}] Wrote {write_size} bytes in {write_time:.2f} seconds (effective {(write_size/(write_time*1024)):.1f} kbyte/s)")
++                        f"[{current_time}] Wrote {write_size} bytes in {write_time:.2f} seconds (effective {(write_size / (write_time * 1024)):.1f} kbyte/s)"
++                    )
+                 gpio_deinit(openocd, mik_version)
+ 
+-            segments_ram = list(filter(
+-                lambda segment: (segment.memory is not None) and
+-                (
+-                    (segment.memory.type == MemoryType.RAM) or
+-                    (segment.memory.type == MemoryType.BOOT)
+-                ), segments))
+-            if (segments_ram.__len__() > 0):
++            segments_ram = list(
++                filter(
++                    lambda segment: (
++                        (segment.memory is not None)
++                        and (
++                            (segment.memory.type == MemoryType.RAM)
++                            or (segment.memory.type == MemoryType.BOOT)
++                        )
++                    ),
++                    segments,
++                )
++            )
++            if segments_ram.__len__() > 0:
+                 ram.write_segments(segments_ram, openocd)
+                 result |= 0
+ 
+             openocd.run(post_action)
+     except ConnectionRefusedError:
+-        print("ERROR: The connection to OpenOCD is not established. Check the settings and connection of the debugger")
++        print(
++            "ERROR: The connection to OpenOCD is not established. Check the settings and connection of the debugger"
++        )
+     except (OpenOCDError, TclPortError, TclException) as e:
+         print(e)
+         exit(1)
+@@ -358,123 +387,118 @@ def upload_file(
+ 
+ def createParser():
+     parser = argparse.ArgumentParser(
+-        prog='mik32_upload.py',
+-        usage='python mik32_upload.py firmware_name.hex',
+-        description='''Скрипт предназначен для записи программы в ОЗУ, EEPROM и внешнюю flash память, 
+-        подключенную по интерфейсу SPIFI. Поддерживаемые форматы прошивок: *.hex, *.bin'''
+-    )
+-    parser.add_argument(
+-        'filepath',
+-        nargs='?',
+-        help='Путь к файлу прошивки'
++        prog="mik32_upload.py",
++        usage="python mik32_upload.py firmware_name.hex",
++        description="""Скрипт предназначен для записи программы в ОЗУ, EEPROM и внешнюю flash память,
++        подключенную по интерфейсу SPIFI. Поддерживаемые форматы прошивок: *.hex, *.bin""",
+     )
++    parser.add_argument("filepath", nargs="?", help="Путь к файлу прошивки")
+     parser.add_argument(
+-        '--run-openocd',
+-        dest='run_openocd',
+-        action='store_true',
++        "--run-openocd",
++        dest="run_openocd",
++        action="store_true",
+         default=False,
+-        help='Запуск openocd при прошивке МК'
++        help="Запуск openocd при прошивке МК",
+     )
+     parser.add_argument(
+-        '--use-quad-spi',
+-        dest='use_quad_spi',
+-        action='store_true',
++        "--use-quad-spi",
++        dest="use_quad_spi",
++        action="store_true",
+         default=False,
+-        help='Использование режима QuadSPI при программировании внешней флеш памяти'
++        help="Использование режима QuadSPI при программировании внешней флеш памяти",
+     )
+     parser.add_argument(
+-        '--openocd-host',
+-        dest='openocd_host',
++        "--openocd-host",
++        dest="openocd_host",
+         default=default_openocd_host,
+-        help=f"Адрес для подключения к openocd. По умолчанию: {default_openocd_host}"
++        help=f"Адрес для подключения к openocd. По умолчанию: {default_openocd_host}",
+     )
+     parser.add_argument(
+-        '--openocd-port',
+-        dest='openocd_port',
++        "--openocd-port",
++        dest="openocd_port",
+         default=OpenOcdTclRpc.DEFAULT_PORT,
+-        help=f"Порт tcl сервера openocd. По умолчанию: {OpenOcdTclRpc.DEFAULT_PORT}"
++        help=f"Порт tcl сервера openocd. По умолчанию: {OpenOcdTclRpc.DEFAULT_PORT}",
+     )
+     parser.add_argument(
+-        '--adapter-speed',
+-        dest='adapter_speed',
++        "--adapter-speed",
++        dest="adapter_speed",
+         default=adapter_default_speed,
+-        help=f"Скорость отладчика в кГц. По умолчанию: {adapter_default_speed}"
++        help=f"Скорость отладчика в кГц. По умолчанию: {adapter_default_speed}",
+     )
+     parser.add_argument(
+-        '--openocd-exec',
+-        dest='openocd_exec',
++        "--openocd-exec",
++        dest="openocd_exec",
+         default=openocd_exec_path,
+-        help=f"Путь к исполняемому файлу openocd. По умолчанию: {openocd_exec_path}"
++        help=f"Путь к исполняемому файлу openocd. По умолчанию: {openocd_exec_path}",
+     )
+     parser.add_argument(
+-        '--openocd-scripts',
+-        dest='openocd_scripts',
++        "--openocd-scripts",
++        dest="openocd_scripts",
+         default=openocd_scripts_path,
+-        help=f"Путь к папке scripts. По умолчанию: {openocd_scripts_path}"
++        help=f"Путь к папке scripts. По умолчанию: {openocd_scripts_path}",
+     )
+     parser.add_argument(
+-        '--openocd-interface',
+-        dest='openocd_interface',
++        "--openocd-interface",
++        dest="openocd_interface",
+         default=openocd_interface_path,
+-        help='Путь к файлу конфигурации отладчика относительно папки scripts или абсолютный путь. '
+-        f"По умолчанию: {openocd_interface_path}"
++        help="Путь к файлу конфигурации отладчика относительно папки scripts или абсолютный путь. "
++        f"По умолчанию: {openocd_interface_path}",
+     )
+     parser.add_argument(
+-        '--openocd-target',
+-        dest='openocd_target',
++        "--openocd-target",
++        dest="openocd_target",
+         default=openocd_target_path,
+-        help='Путь к файлу конфигурации целевого контроллера относительно папки scripts. '
+-        f"По умолчанию: {openocd_target_path}"
++        help="Путь к файлу конфигурации целевого контроллера относительно папки scripts. "
++        f"По умолчанию: {openocd_target_path}",
+     )
+     parser.add_argument(
+-        '--open-console',
+-        dest='open_console',
+-        action='store_true',
++        "--open-console",
++        dest="open_console",
++        action="store_true",
+         default=False,
+-        help='Открывать OpenOCD в отдельной консоли'
++        help="Открывать OpenOCD в отдельной консоли",
+     )
+     parser.add_argument(
+-        '--boot-mode',
+-        dest='boot_mode',
++        "--boot-mode",
++        dest="boot_mode",
+         type=BootMode,
+         choices=list(BootMode),
+         default=BootMode.UNDEFINED,
+         help="Выбор типа памяти, который отображается на загрузочную область. "
+         "Если тип не выбран, данные, находящиеся в загрузочной области в hex файле отбрасываются. "
+-        f"По умолчанию: {BootMode.UNDEFINED}"
++        f"По умолчанию: {BootMode.UNDEFINED}",
+     )
+     parser.add_argument(
+-        '--log-path',
+-        dest='log_path',
++        "--log-path",
++        dest="log_path",
+         default=default_log_path,
+-        help=f"Путь к файлу журнала. По умолчанию: {default_log_path}"
++        help=f"Путь к файлу журнала. По умолчанию: {default_log_path}",
+     )
+     parser.add_argument(
+-        '--post-action',
+-        dest='post_action',
++        "--post-action",
++        dest="post_action",
+         default=default_post_action,
+-        help=f"Команды OpenOCD, запускаемые после прошивки. По умолчанию: {default_post_action}"
++        help=f"Команды OpenOCD, запускаемые после прошивки. По умолчанию: {default_post_action}",
+     )
+     parser.add_argument(
+-        '--mcu-type',
+-        dest='mcu_type',
++        "--mcu-type",
++        dest="mcu_type",
+         type=MIK32_Version,
+         choices=list(MIK32_Version),
+         default=MIK32_Version.MIK32V2,
+-        help="Выбор микроконтроллера. "
+-        f"По умолчанию: {MIK32_Version.MIK32V2}"
++        help=f"Выбор микроконтроллера. По умолчанию: {MIK32_Version.MIK32V2}",
+     )
+     parser.add_argument(
+-        '--no-driver',
+-        dest='use_driver',
+-        action='store_false',
++        "--no-driver",
++        dest="use_driver",
++        action="store_false",
+         default=True,
+-        help='Отключает прошивку с использованием драйвера в ОЗУ'
++        help="Отключает прошивку с использованием драйвера в ОЗУ",
+     )
+     return parser
+ 
+ 
+-if __name__ == '__main__':
++if __name__ == "__main__":
+     logging.basicConfig(stream=sys.stderr, level=logging.INFO)
+ 
+     parser = createParser()
+-- 
+2.54.0
+
