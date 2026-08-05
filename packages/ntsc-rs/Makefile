@@ -1,6 +1,6 @@
 repository := valadaptive
 package := ntsc-rs
-versions := 0.9.3
+versions := 0.9.4
 #systems += darwin
 systems += linux
 linux.archs := x86_64
