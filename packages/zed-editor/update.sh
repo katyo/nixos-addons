@@ -2,7 +2,7 @@
 
 pkg=zed-editor-latest
 pkgFile=default.toml
-pkgVersions=("1.6.3")
+pkgVersions=("1.19.2")
 
 set -x
 
