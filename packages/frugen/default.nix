@@ -6,7 +6,7 @@
   pkg-config,
   json_c,
   fetchurl,
-  version ? "c99b4991e8" # "2.1"
+  version ? "3.1"
 }:
 
 let

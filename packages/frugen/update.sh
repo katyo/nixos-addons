@@ -2,7 +2,7 @@
 
 pkg=frugen
 pkgFile=default.toml
-pkgVersions=("2.1" "c99b4991e8")
+pkgVersions=("2.1" "3.1")
 
 declare -A hash
 
