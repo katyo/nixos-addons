@@ -1,0 +1,9 @@
+diff --git a/netlink.c b/netlink.c
+--- a/netlink.c
++++ b/netlink.c
+@@ -165 +165 @@
+-	strncpy(addr_str, prefix_str, slash - prefix_str);
++	memcpy(addr_str, prefix_str, slash - prefix_str);
+@@ -224 +224 @@
+-	strncpy(addr_str, prefix_str, slash - prefix_str);
++	memcpy(addr_str, prefix_str, slash - prefix_str);

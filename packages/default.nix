@@ -56,6 +56,9 @@ self: super: with self; {
   waydroid-latest = callPackage ./waydroid {};
   waydroid-nft-latest = callPackage ./waydroid { withNftables = true; };
 
+  amneziawg-module = callPackage ./amneziawg {};
+  networkmanager-amneziawg = callPackage ./networkmanager-amneziawg {};
+
   pythonPackagesExtensions = super.pythonPackagesExtensions ++ [
     (import ./python/default.nix)
     (pySelf: pySuper: import ./jupyterlab-language-packs { inherit lib callPackage; })
