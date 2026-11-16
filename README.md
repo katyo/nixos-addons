@@ -49,6 +49,7 @@
   - [x] [JupyterLab Language Packs](https://github.com/jupyterlab/language-packs) Language packs for JupyterLab ecosystem (`python3Packages.jupyterlab-language-pack-{lang-code}`)
   - [x] [Mayo](https://github.com/fougue/mayo) 3D CAD viewer and converter based on Qt + OpenCascade
   - [x] [Ultimaker Cura](https://github.com/Ultimaker/Cura) 3D printer / slicing GUI built on top of the Uranium framework
+  - [x] [GGEasy](https://github.com/XRay3D/GERBER_X3) Program for preparing G-code for milling of printed circuit boards on CNC
   - [x] gost-fonts Russian GOST fonts
 - [x] AI tools
   - [x] [Model Control Protocol](https://modelcontextprotocol.io/introduction) software
