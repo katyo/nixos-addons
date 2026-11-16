@@ -34,6 +34,7 @@ let
   extraPackages = {
     inspector = callPackage ./mcp-inspector {};
     openapi-schema = callPackage ./mcp-openapi-schema {};
+    browser-mcp = callPackage ./browser-mcp {};
   };
   
   pkgInfo = builtins.fromTOML (lib.readFile ./default.toml);

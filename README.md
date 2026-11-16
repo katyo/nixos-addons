@@ -55,6 +55,7 @@
     - [x] [MCP Servers](https://github.com/modelcontextprotocol/servers) Collection of servers which supports Model Context Protocol
     - [x] [MCP OpenAPI Schema](https://github.com/hannesj/mcp-openapi-schema) MCP Server to work with OpenAPI Schemas
     - [x] [MCP Inspector](https://github.com/modelcontextprotocol/inspector) Visual testing tool for MCP servers
+    - [x] [Browser MCP](https://browsermcp.io/) Browser MCP is a Model Context Provider (MCP) server that allows AI applications to control your browser
     - [x] [Rust docs MCP](https://github.com/snowmead/rust-docs-mcp) MCP server for agents to explore rust docs, analyze source code, and build with confidence
     - [x] [Crate docs MCP](https://github.com/d6e/cratedocs-mcp) An MCP server for rust crate docs
   - [x] [ComfyUI](https://www.comfy.org/) The most powerful open source node-based application for generative AI
